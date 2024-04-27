@@ -5,6 +5,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
+
 type APIServer struct {
 	addr string
 	store Store
@@ -16,9 +17,9 @@ func NewAPIServer (addr string, store Store) * APIServer {
 
 func (s*APIServer) Serve() {
 	router := mux.NewRouter()
-	subrouter := router.PathPrefix("/api/v1").subrouter()
+	subrouter := router.PathPrefix("/api/v1").Subrouter()
 
 	// Registering services
-
-	log.Fatal(http.ListenAndServer(s.addr, subrouter))
+	log.Println("starting server at", s.addr)
+	log.Fatal(http.ListenAndServe(s.addr, subrouter))
 }
