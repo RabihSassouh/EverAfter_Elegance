@@ -1,7 +1,7 @@
 package main
 
 import (
-	
+	"fmt"
 	"log"
 	"github.com/go-sql-driver/mysql"
 )
@@ -21,6 +21,12 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	defer db.Close()
+	err = db.Ping()
+	if err != nil {
+		log.Fatal("error: %v", err)
+	}
+	fmt.Println("connected")
 	store := NewStore(db)
 	api := NewAPIServer(":3000", store)
 	api.Serve()

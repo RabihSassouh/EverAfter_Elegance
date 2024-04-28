@@ -59,9 +59,7 @@ func (s *MySQLStorage) createUsersTable() error{
 		email VARCHAR(100) UNIQUE,
 		password VARCHAR(100)
 	)`)
-	if err != nil{
-		return err
-		}
+
 	return err
 }
 
@@ -85,36 +83,32 @@ func (s *MySQLStorage) createEventsTable() error{
 
 func (s *MySQLStorage) createUserstypeTable() error{
 	_,err := s.db.Exec(`
-	CREATE TABLE IF NOT EXISTS users (
+	CREATE TABLE IF NOT EXISTS user_types (
 		id INT AUTO_INCREMENT PRIMARY KEY,
 		user_type VARCHAR(50),
 		user_id INT,
 		FOREIGN KEY (user_id) REFERENCES users(id)
 	)`)
-	if err != nil{
-		return err
-		}
+	
 	return err
 }
 
 func (s *MySQLStorage) createPhotosTable() error{
 	_,err := s.db.Exec(`
-	CREATE TABLE IF NOT EXISTS users (
+	CREATE TABLE IF NOT EXISTS photos (
 		id INT AUTO_INCREMENT PRIMARY KEY,
 		filename VARCHAR(255),
 		description TEXT,
 		event_id INT,
 		FOREIGN KEY (event_id) REFERENCES events(id)
 	)`)
-	if err != nil{
-		return err
-		}
+	
 	return err
 }
 
 func (s *MySQLStorage) createVendorsTable() error{
 	_,err := s.db.Exec(`
-	CREATE TABLE IF NOT EXISTS users (
+	CREATE TABLE IF NOT EXISTS vendors (
 		id INT AUTO_INCREMENT PRIMARY KEY,
 		company_name VARCHAR(100),
 		phone VARCHAR(50),
@@ -129,9 +123,7 @@ func (s *MySQLStorage) createVendorsTable() error{
 		business_id INT,
 		FOREIGN KEY (business_id) REFERENCES users(id)
 	)`)
-	if err != nil{
-		return err
-		}
+	
 	return err
 }
 
@@ -144,9 +136,7 @@ func (s *MySQLStorage) createGuestsTable() error{
 		phone VARCHAR(20),
 		RSVP_status BOOLEAN
 	)`)
-	if err != nil{
-		return err
-		}
+	
 	return err
 }
 
@@ -162,9 +152,7 @@ func (s *MySQLStorage) createGuestsbookTable() error{
 		FOREIGN KEY (guest_id) REFERENCES guests(id),
 		FOREIGN KEY (event_id) REFERENCES events(id)
 	)`)
-	if err != nil{
-		return err
-		}
+
 	return err
 }
 
@@ -179,9 +167,7 @@ func (s *MySQLStorage) createListOfGiftsTable() error{
 		event_id INT,
 		FOREIGN KEY (event_id) REFERENCES events(id)
 	)`)
-	if err != nil{
-		return err
-		}
+
 	return err
 }
 
