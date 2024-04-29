@@ -12,6 +12,7 @@ import (
 func main() {
 	r := mux.NewRouter()
 	routes.RegisterUserRoutes(r)
+	routes.RegisterEventRoutes(r)
 	http.Handle("/",r)
 	log.Fatal(http.ListenAndServe("localhost:8080",r))
 }
