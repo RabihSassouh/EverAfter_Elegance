@@ -29,3 +29,8 @@ func CreateEvent(event *Event) *Event {
 	return event
 }
 
+func GetAllEvents() []Event {
+	var events []Event
+	db.Find(&events)
+	return events
+}

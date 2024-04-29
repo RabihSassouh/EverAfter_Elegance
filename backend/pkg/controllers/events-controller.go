@@ -19,3 +19,10 @@ func CreateEvent(w http.ResponseWriter, r *http.Request) {
 	w.Write(res)
 }
 
+func GetEvents(w http.ResponseWriter, r *http.Request) {
+	events := models.GetAllEvents()
+	res, _ := json.Marshal(events)
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	w.Write(res)
+}
