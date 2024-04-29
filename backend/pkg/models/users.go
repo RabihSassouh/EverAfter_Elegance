@@ -1,8 +1,9 @@
 package models
 
-import(
-	"github.com/jinzhu/gorm"
+import (
 	"github.com/RabihSassouh/final-project/backend/pkg/config"
+	"github.com/jinzhu/gorm"
+	"golang.org/x/crypto/bcrypt"
 )
 
 var db *gorm.DB
@@ -12,7 +13,7 @@ type User struct{
 	FirstName string `json:"firstname"`
 	LastName string `json:"lastname"`
 	Email string `json:"email"`
-	Password string "json:\"password\" hashed:\"password\""
+	Password string `json:"password"`
 }
 
 func init(){
@@ -22,10 +23,24 @@ func init(){
 }
 
 func (u *User) CreateUser() *User{
+	hashPassword, err := hashPassword(u.Password)
+	if err != nil {
+		return nil
+	}
+	u.Password = hashPassword
 	db.NewRecord(u)
 	db.Create(&u)
 	return u
 }
+
+func hashPassword(password string) (string, error){
+	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
+	if err != nil {
+		return "error", err
+	}
+	return string(hashedPassword), nil
+}
+
 
 func GetAllUsers() []User{
 	var Users [] User
