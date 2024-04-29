@@ -34,3 +34,9 @@ func GetAllEvents() []Event {
 	db.Find(&events)
 	return events
 }
+
+func GetEventByID(id uint) (*Event, *gorm.DB) {
+	var event Event
+	db := db.Where("id = ?", id).Find(&event)
+	return &event, db
+}
