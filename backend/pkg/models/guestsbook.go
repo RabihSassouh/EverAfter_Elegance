@@ -29,3 +29,9 @@ func GetGuestbookEntryByID(ID uint) (*Guestbook, *gorm.DB) {
 	db := db.Where("ID=?", ID).Find(&guestbookEntry)
 	return &guestbookEntry, db
 }
+
+func DeleteGuestbookEntry(ID uint) Guestbook {
+	var guestbookEntry Guestbook
+	db.Where("ID=?", ID).Delete(guestbookEntry)
+	return guestbookEntry
+}
