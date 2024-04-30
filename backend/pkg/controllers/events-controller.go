@@ -40,3 +40,17 @@ func GetEventByID(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	w.Write(res)
 }
+
+func DeleteEvent(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	eventID := vars["eventID"]
+	ID, err := strconv.ParseUint(eventID, 10, 64)
+	if err != nil {
+		fmt.Println("Error while parsing event ID:", err)
+	}
+	deletedEvent := models.DeleteEvent(uint(ID))
+	res, _ := json.Marshal(deletedEvent)
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	w.Write(res)
+}

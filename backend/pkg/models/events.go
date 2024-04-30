@@ -40,3 +40,9 @@ func GetEventByID(id uint) (*Event, *gorm.DB) {
 	db := db.Where("id = ?", id).Find(&event)
 	return &event, db
 }
+
+func DeleteEvent(id uint) Event {
+	var event Event
+	db.Where("id = ?", id).Delete(&event)
+	return event
+}
