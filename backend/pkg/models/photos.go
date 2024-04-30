@@ -21,3 +21,9 @@ func GetAllPhotos() []Photo {
 	db.Find(&photos)
 	return photos
 }
+
+func GetPhotoByID(ID uint) (*Photo, *gorm.DB) {
+	var photo Photo
+	db := db.Where("ID=?", ID).Find(&photo)
+	return &photo, db
+}
