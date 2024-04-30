@@ -22,3 +22,9 @@ func GetAllGuests() []Guest {
 	db.Find(&guests)
 	return guests
 }
+
+func GetGuestByID(ID uint) (*Guest, *gorm.DB) {
+	var guest Guest
+	db := db.Where("ID=?", ID).Find(&guest)
+	return &guest, db
+}
