@@ -7,5 +7,6 @@ import (
 
 var RegisterGuestsRoutes = func(router *mux.Router) {
 	router.HandleFunc("/guests", controllers.CreateGuest).Methods("POST")
+	router.HandleFunc("/guests", controllers.GetAllGuests).Methods("GET")
 
 }

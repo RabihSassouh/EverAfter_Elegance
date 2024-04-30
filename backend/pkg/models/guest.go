@@ -16,3 +16,9 @@ func (g *Guest) CreateGuest() *Guest {
 	db.Create(&g)
 	return g
 }
+
+func GetAllGuests() []Guest {
+	var guests []Guest
+	db.Find(&guests)
+	return guests
+}
