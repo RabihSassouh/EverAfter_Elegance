@@ -20,3 +20,9 @@ func GetAllUserstypes() []Userstype {
 	db.Find(&Userstypes)
 	return Userstypes
 }
+
+func GetUserstypeByID(ID uint) (*Userstype, *gorm.DB) {
+	var getUserstype Userstype
+	db := db.Where("ID=?", ID).Find(&getUserstype)
+	return &getUserstype, db
+}
