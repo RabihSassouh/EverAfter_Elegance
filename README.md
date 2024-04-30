@@ -11,9 +11,10 @@
 > 3D demonstration to help couples envision how their dream day will look like.
 
 ### User Stories
-- As a user, I want to explore wedding themes and styles, so I can find inspiration for my dream wedding.
-- As a user, I want to customize my wedding package, so I can modify it to match my unique preferences and vision.
-- As a user, I want to manage my payments online, so I can easily keep track of my wedding expenses and avoid any inconveniences during the planning process.
+- As a couple, we want to explore wedding themes and styles, so we can find inspiration for our dream wedding.
+- As a couple, we want to customize our wedding package, so we can modify it to match our unique preferences and vision.
+- As a couple, we want to manage our payments online, so we can easily keep track of our wedding expenses and avoid any inconveniences during the planning process.
+
 
 <br><br>
 <!-- Tech stack -->
