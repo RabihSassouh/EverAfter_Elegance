@@ -16,3 +16,8 @@ func (s *Photo) CreatePhoto() *Photo {
 	return s
 }
 
+func GetAllPhotos() []Photo {
+	var photos []Photo
+	db.Find(&photos)
+	return photos
+}

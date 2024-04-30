@@ -19,3 +19,10 @@ func CreatePhoto(w http.ResponseWriter, r *http.Request) {
 	w.Write(res)
 }
 
+func GetAllPhotos(w http.ResponseWriter, r *http.Request) {
+	photos := models.GetAllPhotos()
+	res, _ := json.Marshal(photos)
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	w.Write(res)
+}

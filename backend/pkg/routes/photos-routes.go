@@ -6,5 +6,6 @@ import (
 )
 var RegisterPhotosRoutes = func(router *mux.Router) {
 	router.HandleFunc("/photos", controllers.CreatePhoto).Methods("POST")
+	router.HandleFunc("/photos", controllers.GetAllPhotos).Methods("GET")
 
 }
