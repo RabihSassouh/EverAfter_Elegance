@@ -40,3 +40,17 @@ func GetGuestbookEntryByID(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	w.Write(res)
 }
+
+func DeleteGuestbookEntry(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	entryID := vars["entryID"]
+	ID, err := strconv.ParseUint(entryID, 10, 64)
+	if err != nil {
+		fmt.Println("Error while parsing entry ID:", err)
+	}
+	deletedEntry := models.DeleteGuestbookEntry(uint(ID))
+	res, _ := json.Marshal(deletedEntry)
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	w.Write(res)
+}
