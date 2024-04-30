@@ -40,3 +40,17 @@ func GetUserstypeByID(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	w.Write(res)
 }
+
+func DeleteUserstype(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	usertypeID := vars["userTypeID"]
+	ID, err := strconv.ParseUint(usertypeID, 10, 64)
+	if err != nil {
+		fmt.Println("Error while parsing user type ID:", err)
+	}
+	deletedUserstype := models.DeleteUserstype(uint(ID))
+	res, _ := json.Marshal(deletedUserstype)
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	w.Write(res)
+}

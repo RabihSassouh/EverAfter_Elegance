@@ -26,3 +26,9 @@ func GetUserstypeByID(ID uint) (*Userstype, *gorm.DB) {
 	db := db.Where("ID=?", ID).Find(&getUserstype)
 	return &getUserstype, db
 }
+
+func DeleteUserstype(ID uint) Userstype {
+	var userstype Userstype
+	db.Where("ID=?", ID).Delete(userstype)
+	return userstype
+}
