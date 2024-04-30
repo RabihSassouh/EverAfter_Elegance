@@ -29,3 +29,9 @@ func GetAllVendors() []Vendor {
 	db.Find(&vendors)
 	return vendors
 }
+
+func GetVendorByID(ID uint) (*Vendor, *gorm.DB) {
+	var vendor Vendor
+	db := db.Where("ID=?", ID).Find(&vendor)
+	return &vendor, db
+}
