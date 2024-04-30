@@ -35,3 +35,9 @@ func GetVendorByID(ID uint) (*Vendor, *gorm.DB) {
 	db := db.Where("ID=?", ID).Find(&vendor)
 	return &vendor, db
 }
+
+func DeleteVendor(ID uint) Vendor {
+	var vendor Vendor
+	db.Where("ID=?", ID).Delete(vendor)
+	return vendor
+}

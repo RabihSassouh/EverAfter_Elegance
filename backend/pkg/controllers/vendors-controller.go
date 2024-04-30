@@ -40,3 +40,17 @@ func GetVendorByID(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	w.Write(res)
 }
+
+func DeleteVendor(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	vendorID := vars["vendorID"]
+	ID, err := strconv.ParseUint(vendorID, 10, 64)
+	if err != nil {
+		fmt.Println("Error while parsing vendor ID:", err)
+	}
+	deletedVendor := models.DeleteVendor(uint(ID))
+	res, _ := json.Marshal(deletedVendor)
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	w.Write(res)
+}
