@@ -7,7 +7,7 @@ import (
 
 var RegisterUserstypeRoutes = func(router *mux.Router) {
 	router.HandleFunc("/userstype/", controllers.CreateUserstype).Methods("POST")
-	router.HandleFunc("/userstypes", controllers.GetAllUserstypes).Methods("GET")
-	router.HandleFunc("/userstypes/{userTypeID}", controllers.GetUserstypeByID).Methods("GET")
-	router.HandleFunc("/userstypes/{userTypeID}", controllers.DeleteUserstype).Methods("DELETE")
+	router.HandleFunc("/userstype", controllers.GetAllUserstypes).Methods("GET")
+	router.HandleFunc("/userstype/{userTypeID}", controllers.GetUserstypeByID).Methods("GET")
+	router.HandleFunc("/userstype/{userTypeID}", controllers.DeleteUserstype).Methods("DELETE")
 }

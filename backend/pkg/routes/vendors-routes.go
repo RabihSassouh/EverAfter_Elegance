@@ -6,9 +6,9 @@ import (
 )
 
 var RegisterVendorsRoutes = func(router *mux.Router) {
-	router.HandleFunc("/vendors", controllers.CreateVendor).Methods("POST")
-	router.HandleFunc("/vendors", controllers.GetAllVendors).Methods("GET")
-	router.HandleFunc("/vendors/{vendorID}", controllers.GetVendorByID).Methods("GET")
-	router.HandleFunc("/vendors/{vendorID}", controllers.DeleteVendor).Methods("DELETE")
-	router.HandleFunc("/vendors/{vendorID}", controllers.UpdateVendor).Methods("PUT")
+	router.HandleFunc("/vendor", controllers.CreateVendor).Methods("POST")
+	router.HandleFunc("/vendor", controllers.GetAllVendors).Methods("GET")
+	router.HandleFunc("/vendor/{vendorID}", controllers.GetVendorByID).Methods("GET")
+	router.HandleFunc("/vendor/{vendorID}", controllers.DeleteVendor).Methods("DELETE")
+	router.HandleFunc("/vendor/{vendorID}", controllers.UpdateVendor).Methods("PUT")
 }
