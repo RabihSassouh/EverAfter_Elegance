@@ -10,5 +10,5 @@ var RegisterVendorsRoutes = func(router *mux.Router) {
 	router.HandleFunc("/vendors", controllers.GetAllVendors).Methods("GET")
 	router.HandleFunc("/vendors/{vendorID}", controllers.GetVendorByID).Methods("GET")
 	router.HandleFunc("/vendors/{vendorID}", controllers.DeleteVendor).Methods("DELETE")
-
+	router.HandleFunc("/vendors/{vendorID}", controllers.UpdateVendor).Methods("PUT")
 }
