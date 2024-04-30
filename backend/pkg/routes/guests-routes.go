@@ -9,5 +9,5 @@ var RegisterGuestsRoutes = func(router *mux.Router) {
 	router.HandleFunc("/guests", controllers.CreateGuest).Methods("POST")
 	router.HandleFunc("/guests", controllers.GetAllGuests).Methods("GET")
 	router.HandleFunc("/guests/{guestID}", controllers.GetGuestByID).Methods("GET")
-
+	router.HandleFunc("/guests/{guestID}", controllers.DeleteGuest).Methods("DELETE")
 }
