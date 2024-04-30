@@ -27,3 +27,9 @@ func GetPhotoByID(ID uint) (*Photo, *gorm.DB) {
 	db := db.Where("ID=?", ID).Find(&photo)
 	return &photo, db
 }
+
+func DeletePhoto(ID uint) Photo {
+	var photo Photo
+	db.Where("ID=?", ID).Delete(photo)
+	return photo
+}
