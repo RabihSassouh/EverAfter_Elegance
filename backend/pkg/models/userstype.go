@@ -15,3 +15,8 @@ func (s *Userstype) CreateUserstype() *Userstype {
 	return s
 }
 
+func GetAllUserstypes() []Userstype {
+	var Userstypes []Userstype
+	db.Find(&Userstypes)
+	return Userstypes
+}

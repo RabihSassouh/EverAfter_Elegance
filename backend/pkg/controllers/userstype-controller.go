@@ -18,3 +18,11 @@ func CreateUserstype(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	w.Write(res)
 }
+
+func GetAllUserstypes(w http.ResponseWriter, r *http.Request) {
+	userstypes := models.GetAllUserstypes()
+	res, _ := json.Marshal(userstypes)
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	w.Write(res)
+}
