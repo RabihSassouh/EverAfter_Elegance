@@ -10,5 +10,5 @@ var RegisterEventRoutes = func(router *mux.Router) {
 	router.HandleFunc("/event/", controllers.GetEvents).Methods("GET")
 	router.HandleFunc("/event/{eventID}", controllers.GetEventByID).Methods("GET")
 	router.HandleFunc("/event/{eventID}", controllers.DeleteEvent).Methods("DELETE")
-
+	router.HandleFunc("/event/{eventID}", controllers.UpdateEvent).Methods("PUT")
 }
