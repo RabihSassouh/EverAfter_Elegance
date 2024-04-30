@@ -17,3 +17,9 @@ func (g *Guestbook) CreateGuestbook() *Guestbook {
 	db.Create(&g)
 	return g
 }
+
+func GetAllGuestbookEntries() []Guestbook {
+	var guestbookEntries []Guestbook
+	db.Find(&guestbookEntries)
+	return guestbookEntries
+}
