@@ -73,7 +73,7 @@ func (s *MySQLStorage) createEventsTable() error{
 		venue VARCHAR(100),
 		directions TEXT,
 		user_id INT,
-		FOREIGN KEY (user_id) REFERENCES users(id)
+		FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 	)`)
 	if err != nil{
 		return err
@@ -87,7 +87,7 @@ func (s *MySQLStorage) createUserstypeTable() error{
 		id INT AUTO_INCREMENT PRIMARY KEY,
 		user_type VARCHAR(50),
 		user_id INT,
-		FOREIGN KEY (user_id) REFERENCES users(id)
+		FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 	)`)
 	
 	return err
@@ -100,7 +100,7 @@ func (s *MySQLStorage) createPhotosTable() error{
 		filename VARCHAR(255),
 		description TEXT,
 		event_id INT,
-		FOREIGN KEY (event_id) REFERENCES events(id)
+		FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE CASCADE
 	)`)
 	
 	return err
@@ -121,7 +121,7 @@ func (s *MySQLStorage) createVendorsTable() error{
 		booking_info TEXT,
 		special_offers TEXT,
 		business_id INT,
-		FOREIGN KEY (business_id) REFERENCES users(id)
+		FOREIGN KEY (business_id) REFERENCES users(id) ON DELETE CASCADE
 	)`)
 	
 	return err
@@ -150,7 +150,7 @@ func (s *MySQLStorage) createGuestsbookTable() error{
 		guest_id INT,
 		event_id INT,
 		FOREIGN KEY (guest_id) REFERENCES guests(id),
-		FOREIGN KEY (event_id) REFERENCES events(id)
+		FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE CASCADE
 	)`)
 
 	return err
@@ -165,7 +165,7 @@ func (s *MySQLStorage) createListOfGiftsTable() error{
 		price DECIMAL(10, 2),
 		status BOOLEAN,
 		event_id INT,
-		FOREIGN KEY (event_id) REFERENCES events(id)
+		FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE CASCADE
 	)`)
 
 	return err
