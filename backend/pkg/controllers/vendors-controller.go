@@ -18,3 +18,11 @@ func CreateVendor(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	w.Write(res)
 }
+
+func GetAllVendors(w http.ResponseWriter, r *http.Request) {
+	vendors := models.GetAllVendors()
+	res, _ := json.Marshal(vendors)
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	w.Write(res)
+}

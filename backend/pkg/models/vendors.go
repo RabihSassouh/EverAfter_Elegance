@@ -23,3 +23,9 @@ func (v *Vendor) CreateVendor() *Vendor {
 	db.Create(&v)
 	return v
 }
+
+func GetAllVendors() []Vendor {
+	var vendors []Vendor
+	db.Find(&vendors)
+	return vendors
+}
