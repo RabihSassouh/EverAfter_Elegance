@@ -23,3 +23,9 @@ func GetAllGuestbookEntries() []Guestbook {
 	db.Find(&guestbookEntries)
 	return guestbookEntries
 }
+
+func GetGuestbookEntryByID(ID uint) (*Guestbook, *gorm.DB) {
+	var guestbookEntry Guestbook
+	db := db.Where("ID=?", ID).Find(&guestbookEntry)
+	return &guestbookEntry, db
+}
