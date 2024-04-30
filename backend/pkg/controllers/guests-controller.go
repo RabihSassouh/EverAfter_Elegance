@@ -40,3 +40,17 @@ func GetGuestByID(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	w.Write(res)
 }
+
+func DeleteGuest(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	guestID := vars["guestID"]
+	ID, err := strconv.ParseUint(guestID, 10, 64)
+	if err != nil {
+		fmt.Println("Error while parsing guest ID:", err)
+	}
+	deletedGuest := models.DeleteGuest(uint(ID))
+	res, _ := json.Marshal(deletedGuest)
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	w.Write(res)
+}
