@@ -16,6 +16,7 @@ func main() {
 	routes.RegisterUserstypeRoutes(r)
 	routes.RegisterPhotosRoutes(r)
 	routes.RegisterVendorsRoutes(r)
+	routes.RegisterGuestsRoutes(r)
 	http.Handle("/",r)
 	log.Fatal(http.ListenAndServe("localhost:8080",r))
 }
