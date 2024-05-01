@@ -12,4 +12,5 @@ require (
 require (
 	filippo.io/edwards25519 v1.1.0 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
+	github.com/stripe/stripe-go v70.15.0+incompatible // indirect
 )
