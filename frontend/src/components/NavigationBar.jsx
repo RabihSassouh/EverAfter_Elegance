@@ -36,6 +36,6 @@ const NavigationBar = () => {
         }
     ]
     return(
-        
+        <p>Hello</p>
     )
 }
