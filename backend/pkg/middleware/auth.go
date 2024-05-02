@@ -10,8 +10,8 @@ import (
 
 var jwtKey = []byte("your-secret-key")
 
-func AuthenticationMiddleware(next http.Handler) http.Handler {
-    return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+func AuthenticationMiddleware(next http.HandlerFunc) http.HandlerFunc {
+    return func(w http.ResponseWriter, r *http.Request) {
         tokenString := r.Header.Get("Authorization")
         if tokenString == "" {
             w.WriteHeader(http.StatusUnauthorized)
@@ -28,5 +28,5 @@ func AuthenticationMiddleware(next http.Handler) http.Handler {
         }
 
         next.ServeHTTP(w, r)
-    })
+    }
 }
