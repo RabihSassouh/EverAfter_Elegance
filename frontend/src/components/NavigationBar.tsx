@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+// import { useState } from "react";
+// import { Link, useNavigate } from "react-router-dom";
 
 const NavigationBar = () => {
 
-    const navigate = useNavigate();
-    const [showMobileNav, setShowMobileNav] = useState(true);
+    // const navigate = useNavigate();
+    // const [showMobileNav, setShowMobileNav] = useState(true);
     const menuItems = [
         {
             value: 1,
@@ -38,7 +38,7 @@ const NavigationBar = () => {
         }
     ];
     return(
-        <>Hello</>
+        <>{menuItems}</>
     )
 }
 
