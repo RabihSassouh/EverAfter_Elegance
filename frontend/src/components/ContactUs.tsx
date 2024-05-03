@@ -18,6 +18,10 @@ function ContactUs() {
                     <input type="email" id='email' placeholder="Fullname@gmail.com" className="border-2 p-3 rounded-md placeholder:font-poppins" />
                 </div>
             </div>
+            <div className='flex flex-col w-full'>
+                <label htmlFor="message" className='font-poppins text-[#494949]'>Message</label>
+                <textarea id='message' placeholder="Hello I have a question" className="border-2 p-3 rounded-md w-full h-32 placeholder:font-poppins"></textarea>
+            </div>
         </form>
     </div>
   );
