@@ -20,8 +20,11 @@ function ContactUs() {
             </div>
             <div className='flex flex-col w-full'>
                 <label htmlFor="message" className='font-poppins text-[#494949]'>Message</label>
-                <textarea id='message' placeholder="Hello I have a question" className="border-2 p-3 rounded-md w-full h-32 placeholder:font-poppins"></textarea>
+                <textarea id='message' placeholder="Hello, I have a question" className="border-2 p-3 rounded-md w-full h-32 placeholder:font-poppins"></textarea>
             </div>
+            <button type="submit" className="bg-primary w-full p-3 max-w-sm rounded-lg text-white hover:bg-secondary hover:shadow-md font-poppins">
+                Submit
+            </button>
         </form>
     </div>
   );
