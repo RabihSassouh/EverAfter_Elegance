@@ -138,6 +138,13 @@ function Footer() {
       >
         Privacy Policy
       </a>
+      <p className="font-medium font-poppins text-sm text-[#FFFFFF66]">|</p>
+      <a
+        href=""
+        className="font-medium font-poppins text-sm text-[#FFFFFF66] hover:text-primary"
+      >
+        Terms of Service
+      </a>
     </footer>
   );
 }
