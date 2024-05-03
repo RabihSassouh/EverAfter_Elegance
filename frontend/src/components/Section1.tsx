@@ -5,14 +5,14 @@ function Section1() {
         <h2 className="text-4xl font-semibold font-poppins mb-5">
           Ever After Elegance
         </h2>
-        <p >
+        <p className="mb-5 font-poppins">
           We're committed to turning your dream fairytale wedding into reality,
           with careful attention to every detail. Our goal is to create a
           memorable experience that reflects your personal style, from grand
           gestures to small touches. Let us make your special day a magical
           celebration that you'll remember forever...
         </p>
-        <p >
+        <p className="italic font-poppins font-semibold mb-10">
           So let us handle the details, while you focus on forever...
         </p>
       </div>
