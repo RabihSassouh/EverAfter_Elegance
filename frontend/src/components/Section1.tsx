@@ -32,6 +32,18 @@ function Section1() {
         <p className="italic font-poppins font-semibold mb-10">
           So let us handle the details, while you focus on forever...
         </p>
+        <div className="flex justify-center space-x-10">
+          {serviceList.map((service) => (
+            <div
+              key={service.index}
+              className="w-170 h-170 flex flex-col gap-3 p-10 items-center justify-center"
+            >
+              <button className="">
+                <img src={service.icon} alt={service.title} />
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
