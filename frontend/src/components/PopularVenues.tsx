@@ -1,4 +1,8 @@
 function PopularVenues() {
+    const venues = [
+        { name: "Blanc De Chene", location: "Brittany", imageUrl: "../../venue1.jpg" }
+          ];
+    
   return (
     <div className="py-12 px-12">
       <div className="mx-auto px-4">
