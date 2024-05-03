@@ -80,6 +80,12 @@ const NavigationBar = () => {
           >
             Login
           </button>
+          <button
+            className="w-full md:w-auto text-center text-[16px] font-medium font-poppins text-white border-2 border-primary bg-primary rounded-lg px-4 py-1 hover:border-secondary hover:bg-secondary hover:shadow-md"
+            
+          >
+            Sign Up
+          </button>
         </div>
       </nav>
     </header>
