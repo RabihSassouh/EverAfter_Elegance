@@ -12,6 +12,9 @@ function Section1() {
           gestures to small touches. Let us make your special day a magical
           celebration that you'll remember forever...
         </p>
+        <p >
+          So let us handle the details, while you focus on forever...
+        </p>
       </div>
     </div>
   );
