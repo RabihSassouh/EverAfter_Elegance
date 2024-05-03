@@ -5,7 +5,7 @@ function Footer() {
     <footer className="bg-black text-gray-400 py-10 px-12">
       <div className="flex flex-col gap-3">
         <div>
-          <Link to="/" >
+          <Link to="/">
             <img
               src="/logoFooter.png"
               alt="Ever After Elegance Logo"
@@ -34,8 +34,35 @@ function Footer() {
           </div>
         </div>
       </div>
-      <h2 className="text-white font-semibold font-poppins mb-2">Quick Links</h2>
-            
+      <h2 className="text-white font-semibold font-poppins mb-2">
+        Quick Links
+      </h2>
+      <div className="flex flex-col gap-1">
+        <a
+          href=""
+          className="font-medium font-poppins text-sm text-[#FFFFFF66] hover:text-primary"
+        >
+          Home
+        </a>
+        <a
+          href=""
+          className="font-medium font-poppins text-sm text-[#FFFFFF66] hover:text-primary"
+        >
+          About Us
+        </a>
+        <a
+          href=""
+          className="font-medium font-poppins tetx-sm text-[#FFFFFF66] hover:text-primary"
+        >
+          Careers
+        </a>
+        <a
+          href=""
+          className="font-medium font-poppins text-sm text-[#FFFFFF66] hover:text-primary"
+        >
+          Contact Us
+        </a>
+      </div>
     </footer>
   );
 }
