@@ -77,18 +77,22 @@ const NavigationBar = () => {
               </li>
             ))}
           </ul>
-          <button
-            className="w-full md:w-auto text-center text-[16px] font-medium font-poppins text-[#00000066] border-2 border-[#00000066] rounded-lg px-4 py-1 hover:text-gray-600 hover:border-gray-600 hover:bg-white hover:shadow-md"
-            onClick={handleGoToLogin}
+          <div
+            className={`w-full md:w-auto flex flex-col md:flex-row gap-3 `}
           >
-            Login
-          </button>
-          <button
-            className="w-full md:w-auto text-center text-[16px] font-medium font-poppins text-white border-2 border-primary bg-primary rounded-lg px-4 py-1 hover:border-secondary hover:bg-secondary hover:shadow-md"
-            onClick={handleGoToSignUp}
-          >
-            Sign Up
-          </button>
+            <button
+              className="w-full md:w-auto text-center text-[16px] font-medium font-poppins text-[#00000066] border-2 border-[#00000066] rounded-lg px-4 py-1 hover:text-gray-600 hover:border-gray-600 hover:bg-white hover:shadow-md"
+              onClick={handleGoToLogin}
+            >
+              Login
+            </button>
+            <button
+              className="w-full md:w-auto text-center text-[16px] font-medium font-poppins text-white border-2 border-primary bg-primary rounded-lg px-4 py-1 hover:border-secondary hover:bg-secondary hover:shadow-md"
+              onClick={handleGoToSignUp}
+            >
+              Sign Up
+            </button>
+          </div>
         </div>
       </nav>
     </header>
