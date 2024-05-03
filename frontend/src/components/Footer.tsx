@@ -132,21 +132,24 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="flex gap-3 justify-center items-center text-center mt-8">
-        <a
-          href=""
-          className="font-medium font-poppins text-sm text-[#FFFFFF66] hover:text-primary"
-        >
-          Privacy Policy
-        </a>
-        <p className="font-medium font-poppins text-sm text-[#FFFFFF66]">|</p>
-        <a
-          href=""
-          className="font-medium font-poppins text-sm text-[#FFFFFF66] hover:text-primary"
-        >
-          Terms of Service
-        </a>
-      </div>
+      
+        <div className="flex gap-3 justify-center items-center mt-8">
+          <a
+            href=""
+            className="font-medium font-poppins text-sm text-[#FFFFFF66] hover:text-primary"
+          >
+            Privacy Policy
+          </a>
+          <p className="font-medium font-poppins text-sm text-[#FFFFFF66]">|</p>
+          <a
+            href=""
+            className="font-medium font-poppins text-sm text-[#FFFFFF66] hover:text-primary"
+          >
+            Terms of Service
+          </a>
+        </div>
+        <p className="flex justify-end font-medium font-poppins text-sm text-[#FFFFFF66]">Made with love by: Rabih Saasouh</p>
+
     </footer>
   );
 }
