@@ -1,7 +1,8 @@
 function PopularVenues() {
     const venues = [
         { name: "Blanc De Chene", location: "Brittany", imageUrl: "../../venue1.jpg" },
-        { name: "Byblos Su Mer", location: "Jbeil", imageUrl: "../../venue2.jpg" }      ];
+        { name: "Byblos Su Mer", location: "Jbeil", imageUrl: "../../venue2.jpg" },
+        { name: "Nuit Blanche", location: "Mar Roukoz", imageUrl: "../../venue3.jpg" }      ];
     
   return (
     <div className="py-12 px-12">
