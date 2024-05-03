@@ -19,7 +19,14 @@ function Services() {
         title: "Marry Me",
         link: "",
         description:  `Where love stories begin and dreams come true. Whether you're popping the question or planning heartfelt vows, here you'll find all the inspiration you need for unforgettable moments of love and commitment. Let's make your journey to 'I do' truly special.`   
+    },
+    {
+        image: "../../offer4.jpg",    
+        title: "Prewedding Stories",
+        link: "",
+        description:  `Explore our 'Pre-Wedding Stories' section, where love comes alive before the vows. From the first sparks to cherished memories, discover heartwarming tales that echo the beauty of your own journey.`   
     }
+    
     
   ];
   return (
