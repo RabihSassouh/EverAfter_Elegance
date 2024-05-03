@@ -103,6 +103,8 @@ function Footer() {
             </a>
           </div>
         </div>
+        <h2 className="text-white font-semibold font-poppins mb-2">Our Social Media</h2>
+            
       </div>
     </footer>
   );
