@@ -12,6 +12,7 @@ function PopularVenues() {
         <h2 className="text-4xl font-semibold font-poppins mb-10 text-center">
           Popular Venues
         </h2>
+        
       </div>
     </div>
   );
