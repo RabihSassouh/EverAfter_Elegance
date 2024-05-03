@@ -1,4 +1,21 @@
 function Section1() {
+  const serviceList = [
+    {
+      index: 1,
+      title: "Destination Weddings",
+      icon: "/DestinationWeddings.png",
+    },
+    {
+      index: 2,
+      title: "Inspiration",
+      icon: "/Inspiration.png",
+    },
+    {
+      index: 3,
+      title: "Honeymoon & Travel Wedding",
+      icon: "/Honeymoon.png",
+    },
+  ];
   return (
     <div className="bg-white text-gray-800 py-10 px-12">
       <div className="container mx-auto text-center">
