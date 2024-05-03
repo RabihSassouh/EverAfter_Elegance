@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 const NavigationBar = () => {
   const navigate = useNavigate();
   const [showMobileNav, setShowMobileNav] = useState(true);
+  // Menu items for navigation
   const menuItems = [
     {
       value: 1,
@@ -36,9 +37,13 @@ const NavigationBar = () => {
       href: "/",
     },
   ];
+
+  // Function to navigate to login page
   const handleGoToLogin = () => {
     navigate("/login");
   };
+
+  // Function to navigate to sign up page
   const handleGoToSignUp = () => {
     navigate("/sign-up");
   };
@@ -65,6 +70,7 @@ const NavigationBar = () => {
             showMobileNav ? "" : "hidden"
           }`}
         >
+          {/* Menu items */}
           <ul className="text-base text-gray-700 pt-4 md:flex md:justify-between md:pt-0">
             {menuItems.map((item) => (
               <li key={item.value}>
@@ -96,6 +102,7 @@ const NavigationBar = () => {
               />
             </svg>
           </button>
+          {/* Login and Sign Up buttons */}
           <div
             className={`w-full md:w-auto flex flex-col md:flex-row gap-3 ${
               showMobileNav ? "" : "hidden"
