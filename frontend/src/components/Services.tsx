@@ -32,8 +32,6 @@ function Services() {
         link: "",
         description:  `Keep up with the latest in weddings with our 'Latest' section. From trendy dresses to fresh decor ideas, we've got you covered with all the newest trends and tips. Don't miss out – stay in the loop for your dream day!`   
     }
-    
-    
   ];
   return (
     <div className="py-12 px-12 bg-white">
