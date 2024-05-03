@@ -36,6 +36,10 @@ const NavigationBar = () => {
       href: "/",
     },
   ];
+  const handleGoToLogin = () => {
+    navigate("/login");
+  };
+
   return (
     <header>
       <nav className="flex flex-wrap md:flex items-center justify-between w-full py-5 px-12 text-lg text-gray-700 bg-white">
@@ -72,7 +76,7 @@ const NavigationBar = () => {
           </ul>
           <button
             className="w-full md:w-auto text-center text-[16px] font-medium font-poppins text-[#00000066] border-2 border-[#00000066] rounded-lg px-4 py-1 hover:text-gray-600 hover:border-gray-600 hover:bg-white hover:shadow-md"
-            
+            onClick={handleGoToLogin}
           >
             Login
           </button>
