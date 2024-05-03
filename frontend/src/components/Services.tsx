@@ -25,6 +25,12 @@ function Services() {
         title: "Prewedding Stories",
         link: "",
         description:  `Explore our 'Pre-Wedding Stories' section, where love comes alive before the vows. From the first sparks to cherished memories, discover heartwarming tales that echo the beauty of your own journey.`   
+    },
+    {
+        image: "../../offer5.jpg",    
+        title: "Latest",
+        link: "",
+        description:  `Keep up with the latest in weddings with our 'Latest' section. From trendy dresses to fresh decor ideas, we've got you covered with all the newest trends and tips. Don't miss out – stay in the loop for your dream day!`   
     }
     
     
