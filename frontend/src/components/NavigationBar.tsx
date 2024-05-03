@@ -77,8 +77,29 @@ const NavigationBar = () => {
               </li>
             ))}
           </ul>
+          <button
+            className="h-8 w-8 cursor-pointer md:hidden block hover:shadow-md rounded-md p-1"
+            onClick={() => setShowMobileNav(!showMobileNav)}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              id="menu-button"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
           <div
-            className={`w-full md:w-auto flex flex-col md:flex-row gap-3 `}
+            className={`w-full md:w-auto flex flex-col md:flex-row gap-3 ${
+              showMobileNav ? "" : "hidden"
+            }`}
           >
             <button
               className="w-full md:w-auto text-center text-[16px] font-medium font-poppins text-[#00000066] border-2 border-[#00000066] rounded-lg px-4 py-1 hover:text-gray-600 hover:border-gray-600 hover:bg-white hover:shadow-md"
