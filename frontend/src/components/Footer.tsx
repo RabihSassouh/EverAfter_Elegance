@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { FaTwitter } from 'react-icons/fa';
-import { IoLogoInstagram } from 'react-icons/io';
-import { MdFacebook } from 'react-icons/md';
+import { FaTwitter } from "react-icons/fa";
+import { IoLogoInstagram } from "react-icons/io";
+import { MdFacebook } from "react-icons/md";
 
 function Footer() {
   return (
@@ -106,28 +106,30 @@ function Footer() {
             </a>
           </div>
         </div>
-        <h2 className="text-white font-semibold font-poppins mb-2">
-          Our Social Media
-        </h2>
-        <div className="flex gap-3">
-          <a
-            href=""
-            className="font-medium font-poppins text-sm text-[#FFFFFF66] hover:text-primary"
-          >
-            <MdFacebook className="h-8 w-8" />
-          </a>
-          <a
-            href=""
-            className="font-medium font-poppins text-sm text-[#FFFFFF66] hover:text-primary"
-          >
-            <IoLogoInstagram className="h-8 w-8" />
-          </a>
-          <a
-            href=""
-            className="font-medium font-poppins tetx-sm text-[#FFFFFF66] hover:text-primary"
-          >
-            <FaTwitter className="h-8 w-8" />
-          </a>
+        <div className="flex flex-col gap-3">
+          <h2 className="text-white font-semibold font-poppins mb-2">
+            Our Social Media
+          </h2>
+          <div className="flex gap-3">
+            <a
+              href=""
+              className="font-medium font-poppins text-sm text-[#FFFFFF66] hover:text-primary"
+            >
+              <MdFacebook className="h-8 w-8" />
+            </a>
+            <a
+              href=""
+              className="font-medium font-poppins text-sm text-[#FFFFFF66] hover:text-primary"
+            >
+              <IoLogoInstagram className="h-8 w-8" />
+            </a>
+            <a
+              href=""
+              className="font-medium font-poppins tetx-sm text-[#FFFFFF66] hover:text-primary"
+            >
+              <FaTwitter className="h-8 w-8" />
+            </a>
+          </div>
         </div>
       </div>
     </footer>
