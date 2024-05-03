@@ -70,6 +70,12 @@ const NavigationBar = () => {
               </li>
             ))}
           </ul>
+          <button
+            className="w-full md:w-auto text-center text-[16px] font-medium font-poppins text-[#00000066] border-2 border-[#00000066] rounded-lg px-4 py-1 hover:text-gray-600 hover:border-gray-600 hover:bg-white hover:shadow-md"
+            
+          >
+            Login
+          </button>
         </div>
       </nav>
     </header>
