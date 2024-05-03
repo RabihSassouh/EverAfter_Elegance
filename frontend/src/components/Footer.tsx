@@ -132,6 +132,12 @@ function Footer() {
           </div>
         </div>
       </div>
+      <a
+        href=""
+        className="font-medium font-poppins text-sm text-[#FFFFFF66] hover:text-primary"
+      >
+        Privacy Policy
+      </a>
     </footer>
   );
 }
