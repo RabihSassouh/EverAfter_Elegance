@@ -1,22 +1,14 @@
-import { useState } from 'react'
-import './App.css'
-// import Home from './pages/Home'
-import NavigationBar from './components/NavigationBar'
+import { BrowserRouter as Router } from "react-router-dom";
+
+import "./App.css";
+import Home from "./pages/Home";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <NavigationBar/>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-    </>
-  )
+    <Router>
+      <Home />
+    </Router>
+  );
 }
 
-export default App
+export default App;
