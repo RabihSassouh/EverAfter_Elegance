@@ -5,6 +5,7 @@ import Banner1 from "../components/Banner1"
 import Services from "../components/Services";
 import PopularVenues from "../components/PopularVenues";
 import ContactUs from "../components/ContactUs";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <Services/>
       <PopularVenues/>
       <ContactUs/>
+      <Footer/>
     </div>
   );
 };
