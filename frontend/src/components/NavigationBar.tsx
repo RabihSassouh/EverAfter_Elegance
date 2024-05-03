@@ -39,6 +39,9 @@ const NavigationBar = () => {
   const handleGoToLogin = () => {
     navigate("/login");
   };
+  const handleGoToSignUp = () => {
+    navigate("/sign-up");
+  };
 
   return (
     <header>
@@ -82,7 +85,7 @@ const NavigationBar = () => {
           </button>
           <button
             className="w-full md:w-auto text-center text-[16px] font-medium font-poppins text-white border-2 border-primary bg-primary rounded-lg px-4 py-1 hover:border-secondary hover:bg-secondary hover:shadow-md"
-            
+            onClick={handleGoToSignUp}
           >
             Sign Up
           </button>
