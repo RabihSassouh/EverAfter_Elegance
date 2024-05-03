@@ -12,7 +12,10 @@ function ContactUs() {
                     <label htmlFor="name" className='font-poppins text-[#494949]'>Name</label>
                     <input type="text" id='name' placeholder="Full Name" className="border-2 p-3 rounded-md placeholder:font-poppins" />
                 </div>
-                
+                <div className='flex flex-col w-1/2'>
+                    <label htmlFor="email" className='font-poppins text-[#494949]'>Email</label>
+                    <input type="email" id='email' placeholder="Fullname@gmail.com" className="border-2 p-3 rounded-md placeholder:font-poppins" />
+                </div>
             
         </form>
     </div>
