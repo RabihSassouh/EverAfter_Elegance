@@ -66,40 +66,42 @@ function Footer() {
             </a>
           </div>
         </div>
-        <h2 className="text-white font-semibold font-poppins mb-2">
-          Suppliers
-        </h2>
-        <div className="flex flex-col gap-1">
-          <a
-            href=""
-            className="font-medium font-poppins text-sm text-[#FFFFFF66] hover:text-primary"
-          >
-            Photographers
-          </a>
-          <a
-            href=""
-            className="font-medium font-poppins text-sm text-[#FFFFFF66] hover:text-primary"
-          >
-            Decorators
-          </a>
-          <a
-            href=""
-            className="font-medium font-poppins tetx-sm text-[#FFFFFF66] hover:text-primary"
-          >
-            Venues Planner
-          </a>
-          <a
-            href=""
-            className="font-medium font-poppins text-sm text-[#FFFFFF66] hover:text-primary"
-          >
-            Designers
-          </a>
-          <a
-            href=""
-            className="font-medium font-poppins text-sm text-[#FFFFFF66] hover:text-primary"
-          >
-            Makeup Artists
-          </a>
+        <div className="flex flex-col gap-3">
+          <h2 className="text-white font-semibold font-poppins mb-2">
+            Suppliers
+          </h2>
+          <div className="flex flex-col gap-1">
+            <a
+              href=""
+              className="font-medium font-poppins text-sm text-[#FFFFFF66] hover:text-primary"
+            >
+              Photographers
+            </a>
+            <a
+              href=""
+              className="font-medium font-poppins text-sm text-[#FFFFFF66] hover:text-primary"
+            >
+              Decorators
+            </a>
+            <a
+              href=""
+              className="font-medium font-poppins tetx-sm text-[#FFFFFF66] hover:text-primary"
+            >
+              Venues Planner
+            </a>
+            <a
+              href=""
+              className="font-medium font-poppins text-sm text-[#FFFFFF66] hover:text-primary"
+            >
+              Designers
+            </a>
+            <a
+              href=""
+              className="font-medium font-poppins text-sm text-[#FFFFFF66] hover:text-primary"
+            >
+              Makeup Artists
+            </a>
+          </div>
         </div>
       </div>
     </footer>
