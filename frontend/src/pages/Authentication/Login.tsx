@@ -27,12 +27,10 @@ function Login() {
               <FcGoogle className="w-5 h-5 mr-2" />
               Login with Google
             </button>
-            <div className="flex items-center justify-center mt-9 mb-6">
-              <div className="flex items-center">
+            <div className="flex items-center justify-center mt-9 mb-6">              
                 <div className="border-t border-gray-300 w-20 mr-4"></div>
                 <div className="text-gray-600 text-xs font-bold">OR</div>
                 <div className="border-t border-gray-300 w-20 ml-4"></div>
-              </div>
             </div>
             <form action="" method="post" className="space-y-4">
               <div>
