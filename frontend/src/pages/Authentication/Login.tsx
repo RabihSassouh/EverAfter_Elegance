@@ -1,10 +1,23 @@
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { MdChevronLeft } from "react-icons/md";
 
 function Login() {
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1);
+  };
   return (
     <div className="min-h-screen flex">
       <div className="w-full md:w-1/2 flex flex-col items-center justify-center p-8">
+        <button
+          className="w-full flex items-center justify-start font-poppins text-primary font-medium hover:text-secondary"
+          onClick={handleGoBack}
+        >
+          <MdChevronLeft className="h-6 w-6" />
+          Back
+        </button>
         <div className="w-full max-w-md mt-5">
           <div className="bg-[#FFFFFFB2] p-8 rounded-lg max-w-md">
             <h1 className="flex justify-center text-4xl font-medium text-start font-poppins mb-8 text-[#00000099]">
