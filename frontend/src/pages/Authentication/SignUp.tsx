@@ -1,9 +1,31 @@
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import { MdChevronLeft } from "react-icons/md";
+// import { useState } from 'react';
+// import axios from "axios";
 
 function SignUp() {
   const navigate = useNavigate();
+//   const [name, setName] = useState("");
+//   const [email, setEmail] = useState("");
+//   const [username, setUsername] = useState("");
+//   const [password, setPassword] = useState("");
+  
+//   const handleSignup= async ()=>{
+    
+//     try{
+//         const response= await axios.post("http://127.0.0.1:8080/",{
+//             email,
+//             name,
+//             username,
+//             password,
+//         });
+//         window.localStorage.setItem("token", response.data.authorisation.token);
+//         navigate("/homepage");
+//     } catch (error){
+//         console.error("error",error);
+//     }
+//   }
 
   const handleGoBack = () => {
     navigate(-1);
