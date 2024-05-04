@@ -5,7 +5,9 @@ import (
 	"fmt"
 	"github.com/RabihSassouh/final-project/backend/pkg/models"
 	"github.com/RabihSassouh/final-project/backend/pkg/utils"
+	// "github.com/dgrijalva/jwt-go"
 	"github.com/gorilla/mux"
+	"golang.org/x/crypto/bcrypt"
 	"net/http"
 	"strconv"
 )
@@ -90,16 +92,77 @@ func GetUsers(w http.ResponseWriter, r *http.Request) {
 	w.Write(res)
 }
 
+// func GetUserById(w http.ResponseWriter, r *http.Request) {
+// 	vars := mux.Vars(r)
+// 	userId := vars["userId"]
+// 	ID, err := strconv.ParseInt(userId, 0, 0)
+// 	if err != nil {
+// 		fmt.Println("error while parsing")
+// 	}
+// 	userDetails, _ := models.GetUserById(ID)
+// 	res, _ := json.Marshal(userDetails)
+// 	w.Header().Set("Content-Type", "pkglication/json")
+// 	w.WriteHeader(http.StatusOK)
+// 	w.Write(res)
+// }
+
 func GetUserById(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-	userId := vars["userId"]
-	ID, err := strconv.ParseInt(userId, 0, 0)
+	// Parse email and password from request body
+	loginInfo := struct {
+		Email    string `json:"email"`
+		Password string `json:"password"`
+	}{}
+	utils.ParseBody(r, &loginInfo)
+
+	// Check if the email exists in the database
+	user, err := models.GetUserByEmail(loginInfo.Email)
 	if err != nil {
-		fmt.Println("error while parsing")
+		// Error occurred while checking email existence
+		http.Error(w, "Internal server error", http.StatusInternalServerError)
+		return
 	}
-	userDetails, _ := models.GetUserById(ID)
-	res, _ := json.Marshal(userDetails)
-	w.Header().Set("Content-Type", "pkglication/json")
+	if user == nil {
+		// Email not found in database
+		http.Error(w, "Your email is not registered, please sign up", http.StatusUnauthorized)
+		return
+	}
+
+	// Compare hashed password with the provided password
+	err = bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(loginInfo.Password))
+	if err != nil {
+		// Incorrect password
+		http.Error(w, "Wrong password", http.StatusUnauthorized)
+		return
+	}
+
+	// Password is correct, generate JWT token
+	tokenString, err := utils.GenerateToken(user)
+	if err != nil {
+		http.Error(w, "Failed to generate JWT token", http.StatusInternalServerError)
+		return
+	}
+
+	// Return user details (excluding password and ID) and JWT token
+	userDetails := struct {
+		FirstName string `json:"firstname"`
+		LastName  string `json:"lastname"`
+		Email     string `json:"email"`
+		Token     string `json:"token"`
+	}{
+		FirstName: user.FirstName,
+		LastName:  user.LastName,
+		Email:     user.Email,
+		Token:     tokenString,
+	}
+
+	// Marshal user details to JSON and write response
+	res, err := json.Marshal(userDetails)
+	if err != nil {
+		http.Error(w, "Failed to marshal JSON response", http.StatusInternalServerError)
+		return
+	}
+
+	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	w.Write(res)
 }
