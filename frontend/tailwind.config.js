@@ -15,6 +15,9 @@ export default {
         roboto: ["Roboto", "sans-serif"], // Add Roboto font
         poppins: ["Poppins", "sans-serif"],
       },
+      borderRadius: {
+        32: "32px",
+      },
     },
   },
   plugins: [],
