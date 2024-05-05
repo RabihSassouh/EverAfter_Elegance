@@ -1,0 +1,22 @@
+/* Scrollbar Styles */
+/* Works only in Firefox */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Works on Chrome, Edge, and Safari */
+::-webkit-scrollbar-track {
+    background: #FFFFFF0F;
+    /* border-radius: 10px; */
+    /* border-bottom-right-radius: 20px; */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #BF7A0F;
+    border-radius: 10px;
+    /* border-bottom-right-radius: 20px; */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #996A0C;
+}
