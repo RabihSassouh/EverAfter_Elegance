@@ -43,7 +43,7 @@ func (u *User) CreateUser() *User {
     }
 
     // Hash the password
-    hashedPassword, err := hashPassword(u.Password)
+    hashedPassword, err := HashPassword(u.Password)
     if err != nil {
         // Error hashing password, return nil indicating failure
         return nil
@@ -98,7 +98,7 @@ func GetUserByEmail(email string) (*User, error) {
 }
 
 
-func hashPassword(password string) (string, error){
+func HashPassword(password string) (string, error){
 	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
 	if err != nil {
 		return "error", err

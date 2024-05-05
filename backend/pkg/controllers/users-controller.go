@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/RabihSassouh/final-project/backend/pkg/models"
 	"github.com/RabihSassouh/final-project/backend/pkg/utils"
+	"github.com/RabihSassouh/final-project/backend/pkg/middleware"
 	// "github.com/dgrijalva/jwt-go"
 	"github.com/gorilla/mux"
 	"golang.org/x/crypto/bcrypt"
@@ -135,12 +136,11 @@ func GetUserById(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Password is correct, generate JWT token
-	tokenString, err := utils.GenerateToken(user)
-	if err != nil {
-		http.Error(w, "Failed to generate JWT token", http.StatusInternalServerError)
-		return
-	}
+	tokenString, err := utils.GenerateToken(user, middleware.JWTKey)
+    if err != nil {
+        http.Error(w, "Failed to generate JWT token", http.StatusInternalServerError)
+        return
+    }
 
 	// Return user details (excluding password and ID) and JWT token
 	userDetails := struct {
@@ -200,8 +200,14 @@ func UpdateUser(w http.ResponseWriter, r *http.Request) {
 	if updateUser.Email != "" {
 		userDetails.Email = updateUser.Email
 	}
-	if updateUser.Password != "" {
-		userDetails.Password = updateUser.Password
+	if updateUser.Password != ""  {
+		// Update the password only if a new password is provided
+		hashedPassword, err := models.HashPassword(updateUser.Password)
+		if err != nil {
+			http.Error(w, "Failed to hash password", http.StatusInternalServerError)
+			return
+		}
+		userDetails.Password = hashedPassword
 	}
 	db.Save(&userDetails)
 	res, _ := json.Marshal(userDetails)

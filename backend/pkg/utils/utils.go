@@ -20,7 +20,7 @@ func ParseBody(r *http.Request, x interface{}){
 
 var jwtKey = []byte("your-secret-key")
 
-func GenerateToken(user *models.User) (string, error) {
+func GenerateToken(user *models.User, jwtKey []byte) (string, error) {
     claims := jwt.MapClaims{
         "user_id": user.ID,
         "exp":     time.Now().Add(time.Hour * 24).Unix(),
