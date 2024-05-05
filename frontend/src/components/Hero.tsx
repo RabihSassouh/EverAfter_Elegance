@@ -1,17 +1,16 @@
-import { useState } from 'react'
+import React, { useState } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import "../styles/Hero.css";
 
-const Hero = () => {
+interface Category {
+  id: number;
+  label: string;
+}
+const Hero: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState<Category | null>(null);
 
-    type Category = {
-      id: number;
-      label: string;
-  };
-    const [isOpen, setIsOpen] = useState(false);
-    const [selectedOption, setSelectedOption] = useState<Category | null>(null);
-
-    const categories = [
+  const categories: Category[] = [
     {
       id: 1,
       label: "Wedding Venues",
@@ -66,11 +65,10 @@ const Hero = () => {
     },
   ];
 
-
   const handleCategoryClick = (category: Category): void => {
     setSelectedOption(category);
     setIsOpen(false);
-}
+  };
   return (
     <div
       className="hero relative bg-cover bg-center h-[450px]"
@@ -87,10 +85,16 @@ const Hero = () => {
         <div className=" p-4 flex justify-center items-center w-full">
           <div className=" flex justify-center items-center overflow-hidden w-full">
             <div className="relative inline-block w-[50%]">
-              <select className="appearance-none bg-[#FFFFFF0F] px-4 py-2 text-[#FFFFFFCC] focus:outline-none font-poppins w-full rounded-s-lg">
-                <option>Select Category</option>
-                {/* Categories of the business to be added */}
-              </select>
+              <div
+                className={`cursor-pointer appearance-none bg-[#FFFFFF0F] px-4 py-2 text-[#FFFFFFCC] focus:outline-none font-poppins w-full transition-all duration-300 ease-in-out ${
+                  isOpen ? "rounded-tl-lg" : "rounded-s-lg"
+                }`}
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                <p className="tracking-wide bg-transparent">
+                  {selectedOption ? selectedOption.label : "Select Category"}
+                </p>
+              </div>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-white">
                 <MdOutlineKeyboardArrowDown className="w-6 h-6" />
               </div>
@@ -99,6 +103,23 @@ const Hero = () => {
               Search
             </button>
           </div>
+          {isOpen && (
+            <div className="flex flex-col justify-start px-4 mt-2 my-3 items-start overflow-hidden w-[94%] appearance-none bg-[#FFFFFF0F] py-2 text-[#FFFFFFCC] focus:outline-none font-poppins rounded-b-lg max-h-52 overflow-y-scroll transition-all duration-300 ease-in-out">
+              {categories.map((category) => (
+                <div
+                  className={`group flex items-center tracking-wide cursor-pointer hover:text-primary w-full ${
+                    selectedOption?.id === category.id
+                      ? "text-primary font-semibold"
+                      : ""
+                  }`}
+                  onClick={() => handleCategoryClick(category)}
+                  key={category.id}
+                >
+                  <span>{category.label}</span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>
