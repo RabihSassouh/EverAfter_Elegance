@@ -1,9 +1,17 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import "../styles/Hero.css";
 
 const Hero = () => {
-  const categories = [
+
+    type Category = {
+      id: number;
+      label: string;
+  };
+    const [isOpen, setIsOpen] = useState(false);
+    const [selectedOption, setSelectedOption] = useState<Category | null>(null);
+
+    const categories = [
     {
       id: 1,
       label: "Wedding Venues",
@@ -57,6 +65,12 @@ const Hero = () => {
       label: "Entertainment",
     },
   ];
+
+
+  const handleCategoryClick = (category: Category): void => {
+    setSelectedOption(category);
+    setIsOpen(false);
+}
   return (
     <div
       className="hero relative bg-cover bg-center h-[450px]"
