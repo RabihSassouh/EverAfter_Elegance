@@ -1,10 +1,18 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import {useSelector, useDispatch} from "react-redux"
+import { setSelectedMenu } from '../reducers/utilitySlice'
+import { RootState } from "../store/store";
 import "../styles/NavigationBar.css"
 
 const NavigationBar = () => {
   const navigate = useNavigate();
   const [showMobileNav, setShowMobileNav] = useState(true);
+  const location = useLocation();
+  const state: RootState['utility'] = useSelector((state: RootState) => state.utility);
+
+   const dispatch = useDispatch();
+  
   // Menu items for navigation
   const menuItems = [
     {
@@ -20,7 +28,7 @@ const NavigationBar = () => {
     {
       value: 3,
       label: "Venue",
-      href: "/",
+      href: "/venue",
     },
     {
       value: 4,
@@ -48,6 +56,17 @@ const NavigationBar = () => {
   const handleGoToSignUp = () => {
     navigate("/sign-up");
   };
+
+  const findMenuItemByHref = (href:string) => {
+    return menuItems.find(item => item.href === href);
+  }
+
+  useEffect(() => {
+    const menu = findMenuItemByHref(location.pathname);
+    if (menu) {
+        dispatch(setSelectedMenu(menu.value));
+    }
+}, [location, state]);
 
   return (
     <header>
