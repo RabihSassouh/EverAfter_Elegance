@@ -57,6 +57,12 @@ const NavigationBar = () => {
     navigate("/sign-up");
   };
 
+  // Function to handle logout
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    navigate("/");
+  };
+
   const findMenuItemByHref = (href:string) => {
     return menuItems.find(item => item.href === href);
   }
@@ -67,6 +73,8 @@ const NavigationBar = () => {
         dispatch(setSelectedMenu(menu.value));
     }
 }, [location, state]);
+
+const token = localStorage.getItem('token');
 
   return (
     <header>
@@ -123,24 +131,33 @@ const NavigationBar = () => {
             </svg>
           </button>
           {/* Login and Sign Up buttons */}
-          <div
-            className={`w-full md:w-auto flex flex-col md:flex-row gap-3 ${
-              showMobileNav ? "" : "hidden"
-            }`}
-          >
+          {token ? (
             <button
               className="w-full md:w-auto text-center text-[16px] font-medium font-poppins text-[#00000066] border-2 border-[#00000066] rounded-lg px-4 py-1 hover:text-gray-600 hover:border-gray-600 hover:bg-white hover:shadow-md"
-              onClick={handleGoToLogin}
+              onClick={handleLogout}
             >
-              Login
+              Logout
             </button>
-            <button
-              className="w-full md:w-auto text-center text-[16px] font-medium font-poppins text-white border-2 border-primary bg-primary rounded-lg px-4 py-1 hover:border-secondary hover:bg-secondary hover:shadow-md"
-              onClick={handleGoToSignUp}
+          ) : (
+            <div
+              className={`w-full md:w-auto flex flex-col md:flex-row gap-3 ${
+                showMobileNav ? "" : "hidden"
+              }`}
             >
-              Sign Up
-            </button>
-          </div>
+              <button
+                className="w-full md:w-auto text-center text-[16px] font-medium font-poppins text-[#00000066] border-2 border-[#00000066] rounded-lg px-4 py-1 hover:text-gray-600 hover:border-gray-600 hover:bg-white hover:shadow-md"
+                onClick={handleGoToLogin}
+              >
+                Login
+              </button>
+              <button
+                className="w-full md:w-auto text-center text-[16px] font-medium font-poppins text-white border-2 border-primary bg-primary rounded-lg px-4 py-1 hover:border-secondary hover:bg-secondary hover:shadow-md"
+                onClick={handleGoToSignUp}
+              >
+                Sign Up
+              </button>
+            </div>
+          )}
         </div>
       </nav>
     </header>
