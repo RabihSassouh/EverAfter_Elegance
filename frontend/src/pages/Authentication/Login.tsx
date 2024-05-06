@@ -1,13 +1,50 @@
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import { MdChevronLeft } from "react-icons/md";
+import  React, { useState } from "react";
+import axios from 'axios';
 
-function Login() {
+const Login: React.FC=()=> {
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
   const navigate = useNavigate();
 
   const handleGoBack = () => {
     navigate(-1);
   };
+
+    const handleLogin = async () => {
+      try {
+        const response = await axios.post('http://127.0.0.1:8080/api/login/', {
+          email: email,
+          password: password
+        });
+  
+        console.log(response.data); // Log the response data
+      } catch (error) {
+        console.error('Error logging in:', error);
+      }
+    };
+  // const handleLogin = async () => {
+  //   try {
+  //     const response = await axios.post("http://127.0.0.1:8080/api/login/", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     },
+  //     body: JSON.stringify({
+  //       email,
+  //       password
+  //     })
+  //   })
+  //     // window.localStorage.setItem("token", response.data.authorisation.token);
+  //     // navigate("/");
+  //     console.log(response);
+  //   } catch (error) {
+  //     console.error("error", error);
+  //   }
+  // };
+
   return (
     <div className="min-h-screen flex">
       <div className="w-full md:w-1/2 flex flex-col items-center justify-center p-8">
@@ -42,6 +79,8 @@ function Login() {
                   name="email"
                   type="email"
                   placeholder="Your Email Address"
+                  value={email}
+                  onChange={(e)=> setEmail(e.target.value)}
                   className="px-4 mt-1 bg-transparent border-[2px] border-[#00000033] w-full p-2 rounded-lg font-poppins  placeholder:text-[#00000066] focus:border-[2px]"
                 />
               </div>
@@ -54,6 +93,8 @@ function Login() {
                   name="password"
                   type="password"
                   placeholder="Your Password"
+                  value={password}
+                  onChange={(e)=> setPassword(e.target.value)}
                   className="px-4 mt-1 bg-transparent border-[2px] border-[#00000033] w-full p-2 rounded-lg font-poppins placeholder:text-[#00000066] focus:border-[2px]"
                 />
                 <Link
@@ -63,7 +104,9 @@ function Login() {
                   Forgot Password?
                 </Link>
               </div>
-              <button className=" bg-primary text-white font-poppins font-medium w-full p-2 rounded-lg hover:bg-secondary">
+              <button className=" bg-primary text-white font-poppins font-medium w-full p-2 rounded-lg hover:bg-secondary"
+              onClick={handleLogin}
+              >
                 Login
               </button>
             </form>
@@ -85,7 +128,7 @@ function Login() {
       <div className="hidden md:block md:w-1/2">
         <div className="relative w-full h-full">
           <img
-            src="../../../public/login.jpg"
+            src="/login.jpg"
             alt="Wedding"
             className="w-full h-full object-cover rounded-tr-32 rounded-br-32"
           />
