@@ -20,8 +20,14 @@ const Login: React.FC = () => {
         email: email,
         password: password,
       });
-      window.localStorage.setItem("token", response.data.authorisation.token);
+      const token = response.data.token;
+      if (token){
+      window.localStorage.setItem("token", token);
       navigate("/");
+      }
+      else {
+        console.error("token not found in response:", response.data);
+      }
     } catch (error) {
       console.error("Error logging in:", error);
     }
