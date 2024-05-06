@@ -1,49 +1,31 @@
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import { MdChevronLeft } from "react-icons/md";
-import  React, { useState } from "react";
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
 
-const Login: React.FC=()=> {
-  const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
+const Login: React.FC = () => {
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   const navigate = useNavigate();
 
   const handleGoBack = () => {
     navigate(-1);
   };
 
-    const handleLogin = async () => {
-      try {
-        const response = await axios.post('http://127.0.0.1:8080/api/login/', {
-          email: email,
-          password: password
-        });
-  
-        console.log(response.data); // Log the response data
-      } catch (error) {
-        console.error('Error logging in:', error);
-      }
-    };
-  // const handleLogin = async () => {
-  //   try {
-  //     const response = await axios.post("http://127.0.0.1:8080/api/login/", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json"
-  //     },
-  //     body: JSON.stringify({
-  //       email,
-  //       password
-  //     })
-  //   })
-  //     // window.localStorage.setItem("token", response.data.authorisation.token);
-  //     // navigate("/");
-  //     console.log(response);
-  //   } catch (error) {
-  //     console.error("error", error);
-  //   }
-  // };
+  const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    try {
+      const response = await axios.post("http://127.0.0.1:8080/api/login/", {
+        email: email,
+        password: password,
+      });
+      window.localStorage.setItem("token", response.data.authorisation.token);
+      navigate("/");
+    } catch (error) {
+      console.error("Error logging in:", error);
+    }
+  };
 
   return (
     <div className="min-h-screen flex">
@@ -64,12 +46,12 @@ const Login: React.FC=()=> {
               <FcGoogle className="w-5 h-5 mr-2" />
               Login with Google
             </button>
-            <div className="flex items-center justify-center mt-9 mb-6">              
-                <div className="border-t border-gray-300 w-20 mr-4"></div>
-                <div className="text-gray-600 text-xs font-bold">OR</div>
-                <div className="border-t border-gray-300 w-20 ml-4"></div>
+            <div className="flex items-center justify-center mt-9 mb-6">
+              <div className="border-t border-gray-300 w-20 mr-4"></div>
+              <div className="text-gray-600 text-xs font-bold">OR</div>
+              <div className="border-t border-gray-300 w-20 ml-4"></div>
             </div>
-            <form action="" method="post" className="space-y-4">
+            <form onSubmit={handleLogin} className="space-y-4">
               <div>
                 <p className="flex justify-left font-poppins text[#494949]">
                   Email
@@ -80,7 +62,7 @@ const Login: React.FC=()=> {
                   type="email"
                   placeholder="Your Email Address"
                   value={email}
-                  onChange={(e)=> setEmail(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="px-4 mt-1 bg-transparent border-[2px] border-[#00000033] w-full p-2 rounded-lg font-poppins  placeholder:text-[#00000066] focus:border-[2px]"
                 />
               </div>
@@ -94,7 +76,7 @@ const Login: React.FC=()=> {
                   type="password"
                   placeholder="Your Password"
                   value={password}
-                  onChange={(e)=> setPassword(e.target.value)}
+                  onChange={(e) => setPassword(e.target.value)}
                   className="px-4 mt-1 bg-transparent border-[2px] border-[#00000033] w-full p-2 rounded-lg font-poppins placeholder:text-[#00000066] focus:border-[2px]"
                 />
                 <Link
@@ -104,9 +86,7 @@ const Login: React.FC=()=> {
                   Forgot Password?
                 </Link>
               </div>
-              <button className=" bg-primary text-white font-poppins font-medium w-full p-2 rounded-lg hover:bg-secondary"
-              onClick={handleLogin}
-              >
+              <button className=" bg-primary text-white font-poppins font-medium w-full p-2 rounded-lg hover:bg-secondary">
                 Login
               </button>
             </form>
@@ -136,5 +116,5 @@ const Login: React.FC=()=> {
       </div>
     </div>
   );
-}
+};
 export default Login;
