@@ -6,22 +6,22 @@ import { MdChevronLeft } from "react-icons/md";
 
 function SignUp() {
   const navigate = useNavigate();
-//   const [name, setName] = useState("");
+//   const [firstname, setFirstname] = useState("");
+// const [lastname, setLastname] = useState("");
 //   const [email, setEmail] = useState("");
-//   const [username, setUsername] = useState("");
 //   const [password, setPassword] = useState("");
   
 //   const handleSignup= async ()=>{
     
 //     try{
-//         const response= await axios.post("http://127.0.0.1:8080/",{
+//         const response= await axios.post("http://127.0.0.1:8080/signup",{
 //             email,
 //             name,
 //             username,
 //             password,
 //         });
 //         window.localStorage.setItem("token", response.data.authorisation.token);
-//         navigate("/homepage");
+//         navigate("/");
 //     } catch (error){
 //         console.error("error",error);
 //     }
