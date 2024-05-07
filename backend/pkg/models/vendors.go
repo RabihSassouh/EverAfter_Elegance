@@ -2,6 +2,7 @@ package models
 
 import (
 	"github.com/jinzhu/gorm"
+	"github.com/RabihSassouh/final-project/backend/pkg/config"
 )
 
 type Vendor struct {
@@ -16,7 +17,18 @@ type Vendor struct {
 	Images        string `json:"images"`
 	BookingInfo   string `json:"booking_info"`
 	SpecialOffers string `json:"special_offers"`
+	Location      string `json:"location"`
+	Rating        string `json:"rating"`
+	Review_count  string `json:"review_count"`
+	Description   string `json:"description"`
+	Slug          string `json:"slug"`
 	BusinessID    uint   `json:"business_id"`
+}
+
+func init(){
+	config.Connect()
+	db = config.GetDB()
+	db.AutoMigrate(&Vendor{})
 }
 
 func (v *Vendor) CreateVendor() *Vendor {
