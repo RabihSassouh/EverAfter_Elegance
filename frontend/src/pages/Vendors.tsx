@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import NavigationBar from "../components/NavigationBar";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-
+import Footer from "../components/Footer";
 interface Option {
   label: string | number;
   value: string | number;
@@ -133,6 +133,7 @@ const Venue: React.FC = () => {
           Search
         </button>
       </div>
+      <Footer/>
     </div>
   );
 };
