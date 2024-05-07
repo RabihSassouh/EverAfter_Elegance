@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Add this in your global CSS file or inside a style tag */
+.swiper-pagination-bullet {
+    background: #FFFFFF66;
+    opacity: 0.6;
+    /* Default state */
+    width: 12px;
+    height: 12px;
+    /* Custom border color */
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #BF7A0F;
+    /* Active bullet color */
+}
