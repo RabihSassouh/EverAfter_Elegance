@@ -1,7 +1,21 @@
-import { useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import NavigationBar from "../components/NavigationBar";
 
-const Venue = () => {
+interface Option {
+  label: string | number;
+  value: string | number;
+}
+
+interface Select {
+  id: number;
+  label: string;
+  options: Option[];
+}
+
+const Venue: React.FC = () => {
+  const [selectBox, setSelectBox] = useState<Select | null>(null);
+  const selectsRef = useRef<HTMLDivElement>(null);
+
   const selects: Select[] = [
     {
       id: 1,
@@ -55,7 +69,18 @@ const Venue = () => {
 
   useEffect(() => {
     document.title = "Venue";
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        selectsRef.current &&
+        !selectsRef.current.contains(event.target as Node)
+      ) {
+        setSelectBox(null);
+      }
+    };
+    document.addEventListener("click", handleClickOutside);
   }, []);
+
 
   return (
     <div>
