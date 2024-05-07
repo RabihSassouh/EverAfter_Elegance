@@ -78,28 +78,28 @@ const token = localStorage.getItem('token');
 
   return (
     <header>
-      <nav className="flex flex-wrap md:flex items-center justify-between w-full py-5 px-12 text-lg text-gray-700 bg-white">
+      <nav className="flex flex-wrap md:flex items-center justify-between w-full py-3 px-12 text-lg text-gray-700">
         {/* logo */}
         <div>
           <Link to="/" className="flex justify-center items-center gap-2">
             <img
               src="/logo.png"
               alt="Ever After Elegance Logo"
-              width="72"
-              height="61"
+              width="60"
+              height="50"
             />
-            <p className="font-poppins font-medium text-black">
+            <p className="font-poppins font-medium text-black mt-2">
               Ever After Elegance
             </p>
           </Link>
         </div>
         <div
-          className={`w-full md:w-auto md:flex md:items-center ${
+          className={`w-full md:w-auto md:flex md:items-center mt-2 ${
             showMobileNav ? "" : "hidden"
           }`}
         >
           {/* Menu items */}
-          <ul className="text-base text-gray-700 pt-4 md:flex md:justify-between md:pt-0">
+          <ul className="text-base text-gray-700 pt-4 md:flex md:justify-between md:pt-0 mr-20">
             {menuItems.map((item) => (
               <li key={item.value}>
                 <Link
