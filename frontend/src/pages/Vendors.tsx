@@ -129,6 +129,9 @@ const Venue: React.FC = () => {
             )}
           </div>
         ))}
+        <button className="bg-primary text-white px-4 py-2 rounded-lg w-40 hover:bg-secondary hover:shadow-md tracking-wide font-poppins">
+          Search
+        </button>
       </div>
     </div>
   );
