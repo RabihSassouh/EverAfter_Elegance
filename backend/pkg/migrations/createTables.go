@@ -125,6 +125,7 @@ func (s *MySQLStorage) createVendorsTable() error{
 		review_count VARCHAR(50),
 		description TEXT,
 		slug TEXT,
+		guests VARCHAR(50),
 		business_id INT,
 		FOREIGN KEY (business_id) REFERENCES users(id) ON DELETE CASCADE
 	)`)
