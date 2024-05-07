@@ -6,6 +6,8 @@ import { Provider } from "react-redux";
 import { store } from "./store/store.ts";
 import './scrollBar.css'
 
+
+
 const root = ReactDOM as any;
 root.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
