@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import NavigationBar from "../components/NavigationBar";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 interface Option {
   label: string | number;
@@ -81,7 +82,6 @@ const Venue: React.FC = () => {
     document.addEventListener("click", handleClickOutside);
   }, []);
 
-
   return (
     <div>
       <NavigationBar />
@@ -96,6 +96,39 @@ const Venue: React.FC = () => {
           gestures to small touches. Let us make your special day a magical
           celebration that you'll remember forever...
         </p>
+      </div>
+      <div
+        className="relative w-full flex items-start justify-evenly gap-1 lg:gap-0 px-12 pb-12"
+        ref={selectsRef}
+      >
+        {selects.map((select) => (
+          <div
+            className={`relative flex flex-col items-center justify-between md:w-56 cursor-pointer border-[#0000001A] font-poppins text-[#000000CC] py-2 px-4 ${
+              selectBox?.id === select.id
+                ? "rounded-t-lg border-t border-x"
+                : "rounded-lg border"
+            }`}
+            key={select.id}
+            onClick={() => setSelectBox(select)}
+          >
+            <div className="w-full flex items-center justify-between">
+              <p className="tracking-wide bg-transparent">{select.label}</p>
+              <MdOutlineKeyboardArrowDown className="w-6 h-6" />
+            </div>
+            {selectBox?.id === select.id && (
+              <div className="absolute top-7 border-[#0000001A] border-[1px] flex flex-col justify-start px-4 my-3 items-start overflow-hidden w-full appearance-none bg-[#FFFFFF0F] py-2 text-[#000000CC] focus:outline-none font-poppins rounded-b-lg max-h-52 overflow-y-scroll transition-all duration-300 ease-in-out left-0 z-20 bg-white">
+                {select.options.map((option) => (
+                  <div
+                    className={`group flex items-center tracking-wide cursor-pointer hover:text-primary w-full `}
+                    key={option.value}
+                  >
+                    <span>{option.label}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );
