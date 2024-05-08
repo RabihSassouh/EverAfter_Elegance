@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import "../styles/Hero.css";
+import { Category } from "@mui/icons-material";
 
 interface Category {
   id: number;
   label: string;
+  value: string;
 }
 const Hero: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,54 +16,67 @@ const Hero: React.FC = () => {
     {
       id: 1,
       label: "Wedding Venues",
+      value: "venues",
     },
     {
       id: 2,
       label: "Photographers",
+      value: "photographers",
     },
     {
       id: 3,
       label: "Wedding Florists",
+      value: "florists",
     },
     {
       id: 4,
       label: "Sounds & Lighting",
+      value: "sounds_lighting",
     },
     {
       id: 5,
       label: "DJ's",
+      value: "djs",
     },
     {
       id: 6,
       label: "Cars & Limos",
+      value: "cars",
     },
     {
       id: 7,
       label: "Wedding FireWorks",
+      value: "fireworks",
     },
     {
       id: 8,
       label: "Cakes & Chocalate",
+      value: "cakes",
     },
     {
       id: 9,
       label: "Hotels & Resorts",
+      value: "hotels",
     },
     {
       id: 10,
       label: "Wedding Dresses",
+      value: "dresses",
     },
     {
       id: 11,
       label: "Hair & Make-Up",
+      value: "hair_makeup",
     },
     {
       id: 12,
       label: "Wedding Men'swear",
+      value: "men_wear",
     },
     {
       id: 13,
       label: "Entertainment",
+      value: "entertainment",
     },
   ];
 
@@ -69,6 +84,14 @@ const Hero: React.FC = () => {
     setSelectedOption(category);
     setIsOpen(false);
   };
+  const handleSearchClick = (): void => {   
+    if (selectedOption) {
+      console.log(selectedOption.value);
+    } else {
+      console.log("No category selected");
+    }
+  };
+
   return (
     <div
       className="hero relative bg-cover bg-center h-[450px]"
@@ -99,7 +122,8 @@ const Hero: React.FC = () => {
                 <MdOutlineKeyboardArrowDown className="w-6 h-6" />
               </div>
             </div>
-            <button className="bg-primary text-white px-4 py-2 hover:bg-secondary font-poppins rounded-e-lg">
+            <button className="bg-primary text-white px-4 py-2 hover:bg-secondary font-poppins rounded-e-lg"
+            onClick={handleSearchClick}>
               Search
             </button>
           </div>
