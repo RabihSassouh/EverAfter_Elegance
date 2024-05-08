@@ -14,7 +14,7 @@ func main() {
 	r := mux.NewRouter()
 	routes.RegisterUserRoutes(r)
 	routes.RegisterEventRoutes(r)
-	routes.RegisterUserstypeRoutes(r)
+	// routes.RegisterUserstypeRoutes(r)
 	routes.RegisterPhotosRoutes(r)
 	routes.RegisterVendorsRoutes(r)
 	routes.RegisterGuestsRoutes(r)

@@ -16,6 +16,7 @@ type User struct{
 	LastName string `json:"lastname"`
 	Email string `json:"email"`
 	Password string `json:"password"`
+	UserType string `json:"user_type"`
 }
 
 func init(){
@@ -23,6 +24,7 @@ func init(){
 	db = config.GetDB()
 	db.AutoMigrate(&User{})
 }
+
 
 // func (u *User) CreateUser() *User{
 // 	hashPassword, err := hashPassword(u.Password)
@@ -97,6 +99,21 @@ func GetUserByEmail(email string) (*User, error) {
     return &user, nil
 }
 
+
+func GetUsersByUserType(user_type string) (*User, error) {
+    var user User
+    result := db.Where("email = ?", user_type).First(&user)
+    if result.Error != nil {
+        if result.RecordNotFound() {
+            // User with the provided email does not exist
+            return nil, nil
+        }
+        // Some other error occurred
+        return nil, result.Error
+    }
+    // User with the provided email found
+    return &user, nil
+}
 
 func HashPassword(password string) (string, error){
 	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
