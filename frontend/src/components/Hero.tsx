@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import "../styles/Hero.css";
 import { Category } from "@mui/icons-material";
+import axios from "axios";
+import VenueCard from "./VenueCard";
 
 interface Category {
   id: number;
@@ -11,6 +13,9 @@ interface Category {
 const Hero: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<Category | null>(null);
+  const [venueData, setVenueData] = useState<any[]>([]);
+  
+
 
   const categories: Category[] = [
     {
@@ -84,9 +89,17 @@ const Hero: React.FC = () => {
     setSelectedOption(category);
     setIsOpen(false);
   };
-  const handleSearchClick = (): void => {   
+  const handleSearchClick = async (): Promise<void> => {
     if (selectedOption) {
-      console.log(selectedOption.value);
+      try {
+        const response = await axios.post("http://127.0.0.1:8080/vendors", {
+          category: selectedOption.value,
+        });
+        console.log(response.data); 
+        setVenueData(response.data);
+      } catch (error) {
+        console.error("Error fetching data from API:", error);
+      }
     } else {
       console.log("No category selected");
     }
@@ -106,7 +119,7 @@ const Hero: React.FC = () => {
           Bringing Dreams to life...
         </h1>
         <div className=" p-4 flex justify-center items-center w-full">
-          <div className=" flex justify-center items-center overflow-hidden w-full">
+          <div style={{transition:"all 3s"}} className=" flex justify-center items-center overflow-hidden w-full">
             <div className="relative inline-block w-[50%]">
               <div
                 className={`cursor-pointer appearance-none bg-[#FFFFFF0F] px-4 py-2 text-[#FFFFFFCC] focus:outline-none font-poppins w-full transition-all duration-300 ease-in-out ${
