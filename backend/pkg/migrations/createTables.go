@@ -47,6 +47,9 @@ func (s *MySQLStorage) Init() (*sql.DB, error){
 	if err := s.createListOfGiftsTable(); err != nil{
 		return nil, err
 	}
+	if err := s.createCouplesTable(); err != nil{
+		return nil, err
+	}
 	return s.db, nil
 }
 
@@ -172,6 +175,29 @@ func (s *MySQLStorage) createListOfGiftsTable() error{
 		status BOOLEAN,
 		event_id INT,
 		FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE CASCADE
+	)`)
+
+	return err
+}
+
+func (s *MySQLStorage) createCouplesTable() error{
+	_,err := s.db.Exec(`
+	CREATE TABLE IF NOT EXISTS couples (
+		id INT AUTO_INCREMENT PRIMARY KEY,
+		groom_firstname VARCHAR(100),
+		groom_lastname VARCHAR(100),
+		groom_email TEXT,
+		groom_phone TEXT,
+		bride_firstname VARCHAR(100),
+		bride_lastname VARCHAR(100),
+		bride_email TEXT,
+		bride_phone TEXT,
+		wedding_date DATE,
+		venue_preference TEXT,
+		budget TEXT,
+		guest_count VARCHAR(50),
+		couple_id INT,
+		FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 	)`)
 
 	return err
