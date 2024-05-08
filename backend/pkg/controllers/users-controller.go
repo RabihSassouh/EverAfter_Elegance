@@ -77,6 +77,20 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// userType := r.FormValue("user_type")
+
+    // // Create the user type and insert into users_type table
+    // userTypeID, err := models.CreateUserType(userType)
+    // if err != nil {
+    //     errorMessage := map[string]string{"error": "error creating user type"}
+    //     respondWithError(w, errorMessage, http.StatusInternalServerError)
+    //     return
+    // }
+
+    // // Set the user type ID in newUser
+    // newUser.ID = userTypeID
+
+
 	// Create the user
 	createdUser := newUser.CreateUser()
 	res, _ := json.Marshal(createdUser)
@@ -84,6 +98,13 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	w.Write(res)
 }
+
+// func respondWithError(w http.ResponseWriter, errorMessage map[string]string, statusCode int) {
+//     res, _ := json.Marshal(errorMessage)
+//     w.Header().Set("Content-Type", "application/json")
+//     w.WriteHeader(statusCode)
+//     w.Write(res)
+// }
 
 func GetUsers(w http.ResponseWriter, r *http.Request) {
 	NewUsers := models.GetAllUsers()
@@ -147,11 +168,13 @@ func GetUserById(w http.ResponseWriter, r *http.Request) {
 		FirstName string `json:"firstname"`
 		LastName  string `json:"lastname"`
 		Email     string `json:"email"`
+		UserType string `json:"user_type"`
 		Token     string `json:"token"`
 	}{
 		FirstName: user.FirstName,
 		LastName:  user.LastName,
 		Email:     user.Email,
+		UserType: user.UserType,
 		Token:     tokenString,
 	}
 
