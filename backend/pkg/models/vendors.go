@@ -80,3 +80,10 @@ func DeleteVendor(ID uint) Vendor {
 	db.Where("ID=?", ID).Delete(vendor)
 	return vendor
 }
+func GetVendorsByCategory(category string) ([]Vendor, error) {
+    var vendors []Vendor
+    if err := db.Where("category = ?", category).Find(&vendors).Error; err != nil {
+        return nil, err
+    }
+    return vendors, nil
+}
