@@ -24,25 +24,3 @@ func main() {
 	log.Fatal(http.ListenAndServe("localhost:8080",handler))
 	
 }
-
-// import (
-//     "net/http"
-//     "yourapp/controllers"
-//     "yourapp/middleware"
-
-// func main() {
-//     mux := http.NewServeMux()
-
-    // Routes
-    // mux.HandleFunc("/login", controllers.LoginHandler)
-    // mux.HandleFunc("/other_api", controllers.OtherAPIHandler)
-
-    // Apply middleware
-    // handler := middleware.CORSMiddleware(mux)
-
-    // Start server
-    // server := &http.Server{
-    //     Addr:    ":8080",
-    //     Handler: handler,
-    // }
-    // server.ListenAndServe()
