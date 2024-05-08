@@ -120,3 +120,26 @@ func UpdateVendor(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	w.Write(res)
 }
+
+func GetVendorsByCategory(w http.ResponseWriter, r *http.Request) {
+    vars := mux.Vars(r)
+    category := vars["category"]
+
+   vendorList, err := models.GetVendorsByCategory(category)
+    if err != nil {
+        fmt.Println("Error while retrieving vendors by category:", err)
+        w.WriteHeader(http.StatusInternalServerError)
+        return
+    }
+
+    res, err := json.Marshal(vendorList)
+    if err != nil {
+        fmt.Println("Error while marshalling vendor list into JSON:", err)
+        w.WriteHeader(http.StatusInternalServerError)
+        return
+    }
+
+    w.Header().Set("Content-Type", "application/json")
+    w.WriteHeader(http.StatusOK)
+    w.Write(res)
+}
