@@ -2,6 +2,7 @@ package models
 
 import (
 	"github.com/jinzhu/gorm"
+	"github.com/RabihSassouh/EverAfter_Elegance/backend/pkg/config"
 )
 
 type Photo struct {
@@ -10,6 +11,13 @@ type Photo struct {
 	Description string `json:"description"`
 	EventID     uint   `json:"event_id"`
 }
+
+func init(){
+	config.Connect()
+	db = config.GetDB()
+	db.AutoMigrate(&Photo{})
+}
+
 
 func (s *Photo) CreatePhoto() *Photo {
 	db.Create(&s)
