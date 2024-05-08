@@ -77,7 +77,7 @@ func UpdateVendor(w http.ResponseWriter, r *http.Request) {
 	if updateVendor.SocialMedia != "" {
 		vendorDetails.SocialMedia = updateVendor.SocialMedia
 	}
-	if updateVendor.Facilities != "" {
+	if len(updateVendor.Facilities) != 0 {
 		vendorDetails.Facilities = updateVendor.Facilities
 	}
 	if updateVendor.Vision != "" {
@@ -92,9 +92,28 @@ func UpdateVendor(w http.ResponseWriter, r *http.Request) {
 	if updateVendor.BookingInfo != "" {
 		vendorDetails.BookingInfo = updateVendor.BookingInfo
 	}
-	if updateVendor.SpecialOffers != "" {
+	if len(updateVendor.SpecialOffers) != 0 {
 		vendorDetails.SpecialOffers = updateVendor.SpecialOffers
 	}
+	if updateVendor.Location != ""{
+		vendorDetails.Location = updateVendor.Location
+	}
+	if updateVendor.Rating != "" {
+		vendorDetails.Rating = updateVendor.Rating
+	}        
+	if updateVendor.Review_count != "" {
+		vendorDetails.Review_count = updateVendor.Review_count
+	}  
+	if updateVendor.Description  != "" {
+		vendorDetails.Description = updateVendor.Description
+	}
+	if updateVendor.Slug != "" {
+		vendorDetails.Slug = updateVendor.Slug
+	}        
+	if updateVendor.Guests != "" {
+		vendorDetails.Guests = updateVendor.Guests
+	}
+	
 	db.Save(&vendorDetails)
 	res, _ := json.Marshal(vendorDetails)
 	w.Header().Set("Content-Type", "application/json")
