@@ -2,6 +2,7 @@ package models
 
 import (
 	"github.com/jinzhu/gorm"
+	"github.com/RabihSassouh/EverAfter_Elegance/backend/pkg/config"
 )
 
 type Guestbook struct {
@@ -11,6 +12,12 @@ type Guestbook struct {
 	Timestamp string `json:"timestamp"`
 	GuestID   uint   `json:"guest_id"`
 	EventID   uint   `json:"event_id"`
+}
+
+func init(){
+	config.Connect()
+	db = config.GetDB()
+	db.AutoMigrate(&Guestbook{})
 }
 
 func (g *Guestbook) CreateGuestbook() *Guestbook {

@@ -2,6 +2,7 @@ package models
 
 import (
 	"github.com/jinzhu/gorm"
+	"github.com/RabihSassouh/EverAfter_Elegance/backend/pkg/config"
 )
 
 type Guest struct {
@@ -10,6 +11,13 @@ type Guest struct {
 	Email      string `json:"email"`
 	Phone      string `json:"phone"`
 	RSVPStatus bool   `json:"rsvp_status"`
+}
+
+
+func init(){
+	config.Connect()
+	db = config.GetDB()
+	db.AutoMigrate(&Guest{})
 }
 
 func (g *Guest) CreateGuest() *Guest {
