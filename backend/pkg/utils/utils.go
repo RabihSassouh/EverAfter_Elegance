@@ -5,7 +5,7 @@ import(
 	"io"
 	"net/http"
 	"github.com/dgrijalva/jwt-go"
-    "github.com/RabihSassouh/final-project/backend/pkg/models"
+    "github.com/RabihSassouh/EverAfter_Elegance/backend/pkg/models"
     "time"
 
 )

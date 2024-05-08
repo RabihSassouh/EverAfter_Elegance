@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"strconv"
 	"github.com/gorilla/mux"
-	"github.com/RabihSassouh/final-project/backend/pkg/models"
-	"github.com/RabihSassouh/final-project/backend/pkg/utils"
+	"github.com/RabihSassouh/EverAfter_Elegance/backend/pkg/models"
+	"github.com/RabihSassouh/EverAfter_Elegance/backend/pkg/utils"
 )
 
 func CreateUserstype(w http.ResponseWriter, r *http.Request) {

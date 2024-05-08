@@ -1,7 +1,7 @@
 package models
 
 import (
-	"github.com/RabihSassouh/final-project/backend/pkg/config"
+	"github.com/RabihSassouh/EverAfter_Elegance/backend/pkg/config"
 	"github.com/jinzhu/gorm"
 	"golang.org/x/crypto/bcrypt"
 	"errors"

@@ -8,7 +8,7 @@ import (
 	"strings"
 
 	"github.com/dgrijalva/jwt-go"
-	// "github.com/RabihSassouh/final-project/backend/pkg/models"
+	// "github.com/RabihSassouh/EverAfter_Elegance/backend/pkg/models"
 )
 
 var JWTKey = []byte("your-secret-key")

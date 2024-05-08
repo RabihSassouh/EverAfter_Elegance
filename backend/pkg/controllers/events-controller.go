@@ -6,8 +6,8 @@ import (
 	"github.com/gorilla/mux"
 	"net/http"
 	"strconv"
-	"github.com/RabihSassouh/final-project/backend/pkg/utils"
-	"github.com/RabihSassouh/final-project/backend/pkg/models"
+	"github.com/RabihSassouh/EverAfter_Elegance/backend/pkg/utils"
+	"github.com/RabihSassouh/EverAfter_Elegance/backend/pkg/models"
 )
 
 func CreateEvent(w http.ResponseWriter, r *http.Request) {

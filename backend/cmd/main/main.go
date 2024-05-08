@@ -5,9 +5,9 @@ import (
 	"net/http"
 	"github.com/gorilla/mux"
 	_ `github.com/jinzhu/gorm/dialects/mysql`
-	"github.com/RabihSassouh/final-project/backend/pkg/routes"
+	"github.com/RabihSassouh/EverAfter_Elegance/backend/pkg/routes"
 	// "github.com/go-sql-driver/mysql"
-	"github.com/RabihSassouh/final-project/backend/pkg/middleware" 
+	"github.com/RabihSassouh/EverAfter_Elegance/backend/pkg/middleware" 
 )
 
 func main() {

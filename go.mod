@@ -1,4 +1,4 @@
-module github.com/RabihSassouh/final-project
+module github.com/RabihSassouh/EverAfter_Elegance
 
 go 1.22.2
 
