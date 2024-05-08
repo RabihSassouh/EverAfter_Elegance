@@ -122,20 +122,31 @@ func UpdateVendor(w http.ResponseWriter, r *http.Request) {
 }
 
 func GetVendorsByCategory(w http.ResponseWriter, r *http.Request) {
-    vars := mux.Vars(r)
-    category := vars["category"]
+    var requestData struct {
+        Category string `json:"category"`
+    }
+    if err := json.NewDecoder(r.Body).Decode(&requestData); err != nil {
+        http.Error(w, "Invalid JSON payload", http.StatusBadRequest)
+        return
+    }
 
-   vendorList, err := models.GetVendorsByCategory(category)
+    category := requestData.Category
+    if category == "" {
+        http.Error(w, "Missing category parameter", http.StatusBadRequest)
+        return
+    }
+
+    vendorList, err := models.GetVendorsByCategory(category)
     if err != nil {
         fmt.Println("Error while retrieving vendors by category:", err)
-        w.WriteHeader(http.StatusInternalServerError)
+        http.Error(w, "Internal server error", http.StatusInternalServerError)
         return
     }
 
     res, err := json.Marshal(vendorList)
     if err != nil {
         fmt.Println("Error while marshalling vendor list into JSON:", err)
-        w.WriteHeader(http.StatusInternalServerError)
+        http.Error(w, "Internal server error", http.StatusInternalServerError)
         return
     }
 
@@ -143,3 +154,4 @@ func GetVendorsByCategory(w http.ResponseWriter, r *http.Request) {
     w.WriteHeader(http.StatusOK)
     w.Write(res)
 }
+
