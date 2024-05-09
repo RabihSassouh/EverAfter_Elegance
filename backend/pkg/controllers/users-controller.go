@@ -88,6 +88,14 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 
 // Create the user
 createdUser := newUser.CreateUser()
+if createdUser == nil {
+    errorMessage := map[string]string{"error": "failed to create user"}
+    res, _ := json.Marshal(errorMessage)
+    w.Header().Set("Content-Type", "application/json")
+    w.WriteHeader(http.StatusInternalServerError)
+    w.Write(res)
+    return
+}
 
 res, _ := json.Marshal(createdUser)
 w.Header().Set("Content-Type", "application/json")
