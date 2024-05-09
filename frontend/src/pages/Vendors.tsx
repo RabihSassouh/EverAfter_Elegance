@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import NavigationBar from "../components/NavigationBar";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import Footer from "../components/Footer";
+import VenueCard from "../components/VenueCard";
 interface Option {
   label: string | number;
   value: string | number;
@@ -133,7 +134,14 @@ const Venue: React.FC = () => {
           Search
         </button>
       </div>
-      <Footer/>
+      <div className="pb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          {venuesData.map((venue, index) => (
+            <VenueCard key={index} {...venue} />
+          ))}
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 };

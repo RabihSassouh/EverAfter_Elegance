@@ -13,7 +13,7 @@ interface Category {
 const Hero: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<Category | null>(null);
-  const [venueData, setVenueData] = useState<any[]>([]);
+  const [VenueData, setVenueData] = useState<any[]>([]);
   
 
 
