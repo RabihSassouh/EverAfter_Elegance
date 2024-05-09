@@ -26,16 +26,6 @@ func init(){
 }
 
 
-// func (u *User) CreateUser() *User{
-// 	hashPassword, err := hashPassword(u.Password)
-// 	if err != nil {
-// 		return nil
-// 	}
-// 	u.Password = hashPassword
-// 	db.NewRecord(u)
-// 	db.Create(&u)
-// 	return u
-// }
 
 func (u *User) CreateUser() *User {
     // Validate the user object
