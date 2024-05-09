@@ -58,9 +58,16 @@ func init() {
 	db.AutoMigrate(&Vendor{})
 }
 
+
 func (v *Vendor) CreateVendor() *Vendor {
-	db.Create(&v)
-	return v
+    // Save the vendor object to the database
+    db.NewRecord(v)
+    if err := db.Create(&v).Error; err != nil {
+        return nil
+    }
+
+    // Return the created vendor
+    return v
 }
 
 func GetAllVendors() []Vendor {
