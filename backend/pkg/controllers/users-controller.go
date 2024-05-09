@@ -77,6 +77,13 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	createdUser := newUser.CreateUser()
+    if createdUser == nil {
+        errorMessage := map[string]string{"error": "failed to create user"}
+        respondWithError(w, errorMessage, http.StatusInternalServerError)
+        return
+    }
+	
 	if newUser.UserType == "vendor" {
         res, _ := json.Marshal(map[string]string{"message": "Vendor registration requires additional information"})
         w.Header().Set("Content-Type", "application/json")
@@ -87,15 +94,15 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 
 
 // Create the user
-createdUser := newUser.CreateUser()
-if createdUser == nil {
-    errorMessage := map[string]string{"error": "failed to create user"}
-    res, _ := json.Marshal(errorMessage)
-    w.Header().Set("Content-Type", "application/json")
-    w.WriteHeader(http.StatusInternalServerError)
-    w.Write(res)
-    return
-}
+// createdUser := newUser.CreateUser()
+// if createdUser == nil {
+//     errorMessage := map[string]string{"error": "failed to create user"}
+//     res, _ := json.Marshal(errorMessage)
+//     w.Header().Set("Content-Type", "application/json")
+//     w.WriteHeader(http.StatusInternalServerError)
+//     w.Write(res)
+//     return
+// }
 
 res, _ := json.Marshal(createdUser)
 w.Header().Set("Content-Type", "application/json")
@@ -103,12 +110,12 @@ w.WriteHeader(http.StatusOK)
 w.Write(res)
 }
 
-// func respondWithError(w http.ResponseWriter, errorMessage map[string]string, statusCode int) {
-//     res, _ := json.Marshal(errorMessage)
-//     w.Header().Set("Content-Type", "application/json")
-//     w.WriteHeader(statusCode)
-//     w.Write(res)
-// }
+func respondWithError(w http.ResponseWriter, errorMessage map[string]string, statusCode int) {
+    res, _ := json.Marshal(errorMessage)
+    w.Header().Set("Content-Type", "application/json")
+    w.WriteHeader(statusCode)
+    w.Write(res)
+}
 
 func GetUsers(w http.ResponseWriter, r *http.Request) {
 	NewUsers := models.GetAllUsers()
