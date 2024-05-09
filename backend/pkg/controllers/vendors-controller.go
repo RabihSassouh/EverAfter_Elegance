@@ -11,12 +11,18 @@ import (
 )
 
 func CreateVendor(w http.ResponseWriter, r *http.Request) {
-	vendor := &models.Vendor{}
-	utils.ParseBody(r, vendor)
-	createdVendor := vendor.CreateVendor()
-	res, _ := json.Marshal(createdVendor)
-	w.WriteHeader(http.StatusOK)
-	w.Write(res)
+    // Parse vendor-specific information from the request body
+    vendorInfo := &models.Vendor{}
+    utils.ParseBody(r, vendorInfo)
+
+    // Create a new vendor object and save it to the database
+    createdVendor := vendorInfo.CreateVendor()
+    
+    // Return the created vendor object in the response
+    res, _ := json.Marshal(createdVendor)
+    w.Header().Set("Content-Type", "application/json")
+    w.WriteHeader(http.StatusOK)
+    w.Write(res)
 }
 
 func GetAllVendors(w http.ResponseWriter, r *http.Request) {
