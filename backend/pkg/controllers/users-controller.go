@@ -77,26 +77,22 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// userType := r.FormValue("user_type")
-
-    // // Create the user type and insert into users_type table
-    // userTypeID, err := models.CreateUserType(userType)
-    // if err != nil {
-    //     errorMessage := map[string]string{"error": "error creating user type"}
-    //     respondWithError(w, errorMessage, http.StatusInternalServerError)
-    //     return
-    // }
-
-    // // Set the user type ID in newUser
-    // newUser.ID = userTypeID
+	if newUser.UserType == "vendor" {
+        res, _ := json.Marshal(map[string]string{"message": "Vendor registration requires additional information"})
+        w.Header().Set("Content-Type", "application/json")
+        w.WriteHeader(http.StatusOK)
+        w.Write(res)
+        return
+    }
 
 
-	// Create the user
-	createdUser := newUser.CreateUser()
-	res, _ := json.Marshal(createdUser)
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusOK)
-	w.Write(res)
+// Create the user
+createdUser := newUser.CreateUser()
+
+res, _ := json.Marshal(createdUser)
+w.Header().Set("Content-Type", "application/json")
+w.WriteHeader(http.StatusOK)
+w.Write(res)
 }
 
 // func respondWithError(w http.ResponseWriter, errorMessage map[string]string, statusCode int) {
