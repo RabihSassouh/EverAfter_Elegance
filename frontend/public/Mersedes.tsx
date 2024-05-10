@@ -285,6 +285,17 @@ export default function Model(props: ModelProps): JSX.Element {
           <mesh geometry={nodes.sw221_exhausttip_L_c_sw221_0.geometry} material={materials.sw221} />
           <mesh geometry={nodes.sw221_exhausttip_L_c_sw221_nodamage_lod0_amg_0.geometry} material={materials.sw221_nodamage_lod0_amg} />
         </group>
+        <group position={[5.887, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <mesh geometry={nodes.sw221_headlight_R_fl_sw221_0.geometry} material={materials.sw221} />
+          <mesh geometry={nodes.sw221_headlight_R_fl_sw221_b_0.geometry} material={materials.sw221_b} />
+          <mesh geometry={nodes.sw221_headlight_R_fl_sw221_lights_lod0_0.geometry} material={materials.sw221_lights_lod0} />
+          <mesh geometry={nodes.sw221_headlight_R_fl_sw221_lights_lod0_2_0.geometry} material={materials.sw221_lights_lod0_2} />
+          <mesh geometry={nodes.sw221_headlight_R_fl_sw221_runninglight_fl_0.geometry} material={materials.sw221_runninglight_fl} />
+          <mesh geometry={nodes.sw221_headlight_R_fl_sw221_signal_R_fl_0.geometry} material={materials.sw221_signal_R_fl} />
+          <mesh geometry={nodes.sw221_headlight_R_fl_sw221_glass_0.geometry} material={materials.sw221_glass} />
+          <mesh geometry={nodes.sw221_headlight_R_fl_sw221_lowbeam_fl_0.geometry} material={materials.sw221_lowbeam_fl} />
+          <mesh geometry={nodes.sw221_headlight_R_fl_sw221_interior_hl_0.geometry} material={materials.sw221_interior_hl} />
+        </group>
 
               </group>
     </group>
