@@ -268,6 +268,10 @@ export default function Model(props: ModelProps): JSX.Element {
           <mesh geometry={nodes.sw221_body_sedan_sw221_chmsl_0.geometry} material={materials.sw221_chmsl} />
           <mesh geometry={nodes.sw221_body_sedan_sw221_interior_lod0_b_0.geometry} material={materials.sw221_interior_lod0_b} />
         </group>
+        <group position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <mesh geometry={nodes.sw221_sunvisor_b_sw221_dvd_0.geometry} material={materials.sw221_dvd} />
+          <mesh geometry={nodes.sw221_sunvisor_b_sw221_alcantara_b_0.geometry} material={materials.sw221_alcantara_b} />
+        </group>
 
               </group>
     </group>
