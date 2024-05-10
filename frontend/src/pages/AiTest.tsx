@@ -74,6 +74,15 @@ const AiTest: React.FC = () => {
         }).then((data:any)=>{
             console.log(data);
             console.log(data.choices[0].message.content);
+            setMessages(
+                [...chatMessages,{
+                    message: data.choices[0].message.content,
+                    sender: "AI",
+                    direction: "incoming",
+                    position: "single"
+                }]
+            );
+            setTyping(false);
         })
 }
 
