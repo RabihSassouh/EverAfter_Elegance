@@ -277,6 +277,10 @@ export default function Model(props: ModelProps): JSX.Element {
           <mesh geometry={nodes.sw221_intmirror_b_mirror_0.geometry} material={materials.mirror} />
           <mesh geometry={nodes.sw221_intmirror_b_sw221_ambient_b_0.geometry} material={materials.sw221_ambient_b} />
         </group>
+        <group position={[30.327, 90.833, 43.988]} rotation={[-2.995, 0, 0]} scale={100}>
+          <mesh geometry={nodes.sw221_needle_tacho_sw221_interior_lod0_0.geometry} material={materials.sw221_interior_lod0} />
+          <mesh geometry={nodes.sw221_needle_tacho_sw221_interior_emissive_lod0_0.geometry} material={materials.sw221_interior_emissive_lod0} />
+        </group>
 
               </group>
     </group>
