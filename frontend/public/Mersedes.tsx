@@ -53,6 +53,14 @@ export default function Model(props: ModelProps): JSX.Element {
           <mesh geometry={nodes.sw221_taillight_L_fl_sw221_lights_lod0_trans_0.geometry} material={materials.sw221_lights_lod0_trans} />
           <mesh geometry={nodes.sw221_taillight_L_fl_sw221_signal_LR_fl_0.geometry} material={materials.sw221_signal_LR_fl} />
         </group>
+        <group position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <mesh geometry={nodes.sw221_tailgate_sedan_sw221_0.geometry} material={materials.sw221} />
+          <mesh geometry={nodes.sw221_tailgate_sedan_sw221_lights_lod0_0.geometry} material={materials.sw221_lights_lod0} />
+          <mesh geometry={nodes.sw221_tailgate_sedan_sw221_nodamage_lod0_0.geometry} material={materials.sw221_nodamage_lod0} />
+          <mesh geometry={nodes.sw221_tailgate_sedan_sw221_interior_lod0_0.geometry} material={materials.sw221_interior_lod0} />
+          <mesh geometry={nodes.sw221_tailgate_sedan_sw221_paint_0.geometry} material={materials.sw221_paint} />
+          <mesh geometry={nodes.sw221_tailgate_sedan_sw221_carpet_0.geometry} material={materials.sw221_carpet} />
+        </group>
 
               </group>
     </group>
