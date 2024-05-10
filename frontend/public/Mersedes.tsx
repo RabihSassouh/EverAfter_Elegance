@@ -320,6 +320,11 @@ export default function Model(props: ModelProps): JSX.Element {
           <mesh geometry={nodes['3_Wheel001_amdb11_misc002_0'].geometry} material={materials['amdb11_misc.002']} />
           <mesh geometry={nodes['3_Wheel001_amdb11_caliper002_0'].geometry} material={materials['amdb11_caliper.002']} />
         </group>
+        <group position={[-68.64, 35.186, 136.499]} rotation={[-Math.PI / 2, 0, 0]} scale={[-108.297, 108.297, 108.297]}>
+          <mesh geometry={nodes.sw221_wheel_e002_sw221001_0.geometry} material={materials['sw221.001']} />
+          <mesh geometry={nodes.sw221_wheel_e002_sw221_wheel_05a_0.geometry} material={materials.sw221_wheel_05a} />
+          <mesh geometry={nodes.sw221_wheel_e002_sw221_wheel_05a_b_0.geometry} material={materials.sw221_wheel_05a_b} />
+        </group>
 
               </group>
     </group>
