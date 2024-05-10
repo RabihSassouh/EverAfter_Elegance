@@ -344,6 +344,67 @@ export default function Model(props: ModelProps): JSX.Element {
           <mesh geometry={nodes['3_Wheel003_amdb11_misc002_0'].geometry} material={materials['amdb11_misc.002']} />
           <mesh geometry={nodes['3_Wheel003_amdb11_caliper002_0'].geometry} material={materials['amdb11_caliper.002']} />
         </group>
+        <mesh geometry={nodes.sw221_needle_speedo_sw221_interior_emissive_lod1_0.geometry} material={materials.sw221_interior_emissive_lod1} position={[41.517, 92.375, 43.871]} rotation={[-2.995, 0, 0]} scale={100} />
+        <mesh geometry={nodes.sw221_wipers_sw221_b_0.geometry} material={materials.sw221_b} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+        <mesh geometry={nodes.sw221_tubs_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_sideskirts_amg_sw221_paint_0.geometry} material={materials.sw221_paint} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+        <mesh geometry={nodes.sw221_roof_panoramic_glass_sw221_tinted_glass_0.geometry} material={materials.sw221_tinted_glass} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+        <mesh geometry={nodes.sw221_radsupport_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_mirrorbase_R_fl_sw221_paint_0.geometry} material={materials.sw221_paint} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+        <mesh geometry={nodes.sw221_mirrorbase_L_fl_sw221_paint_0.geometry} material={materials.sw221_paint} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+        <mesh geometry={nodes.sw221_lettering_R_s63_sw221_0.geometry} material={materials.sw221} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+        <mesh geometry={nodes.sw221_heatshield_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_headlightglass_R_fl_sw221_glass_0.geometry} material={materials.sw221_glass} position={[5.525, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+        <mesh geometry={nodes.sw221_headlightglass_L_fl_sw221_glass_0.geometry} material={materials.sw221_glass} position={[5.525, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+        <mesh geometry={nodes.sw221_chassis_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_badge_v8biturbo_R_sw221_0.geometry} material={materials.sw221} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+        <mesh geometry={nodes.sw221_badge_v8biturbo_L_sw221_0.geometry} material={materials.sw221} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+        <mesh geometry={nodes.sw221_badge_R_fl_sw221_0.geometry} material={materials.sw221} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+        <mesh geometry={nodes.sw221_badge_hood_fl_sw221_0.geometry} material={materials.sw221} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+        <mesh geometry={nodes.sw221_intercooler_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_upperarm_R_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_transfercase_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_tierod_R_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_tierod_F_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_swaybar_R_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_swaybar_F_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_subframe_R_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_subframe_F_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_strut_F_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_steeringbox_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_spring_R_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_shock_R_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.w221_radiator_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_lowerarm_R_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_lowerarm_F_b_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_lowerarm_F_a_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_hub_R_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_hub_F_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_halfshaft_R_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_halfshaft_F_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_fueltank_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_driveshaft_F_sw221_main_0.geometry} material={materials.sw221_main} position={[19.786, 29.811, 83.639]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_driveshaft_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, 31.032, -44.79]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_diff_F_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_diff_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_bumperbar_F_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_badge_dash_4matic_sw221_0.geometry} material={materials.sw221} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+        <mesh geometry={nodes.sw221_spoiler_wald_sw221_paint_0.geometry} material={materials.sw221_paint} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+        <mesh geometry={nodes.sw221_spoiler_roof_wald_sw221_paint_0.geometry} material={materials.sw221_paint} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+        <mesh geometry={nodes.sw221_spoiler_brabus_sw221_paint_0.geometry} material={materials.sw221_paint} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+        <mesh geometry={nodes.sw221_exhaust_L_b001_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_exhaust_R001_sw221_main_0.geometry} material={materials.sw221_main} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} />
+        <mesh geometry={nodes.sw221_doorglass_RL_sticker_sw221_nodamage_lod0_0.geometry} material={materials.sw221_nodamage_lod0} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+        <mesh geometry={nodes.sw221_doorglass_RR_sticker_sw221_nodamage_lod0_0.geometry} material={materials.sw221_nodamage_lod0} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+        <mesh geometry={nodes.sw221_doorglass_FR_sticker_sw221_nodamage_lod0_0.geometry} material={materials.sw221_nodamage_lod0} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+        <mesh geometry={nodes.sw221_doorglass_FL_sticker_sw221_nodamage_lod0_0.geometry} material={materials.sw221_nodamage_lod0} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+        <mesh geometry={nodes.sw221_backlight_sedan_defrost_sw221_b_0.geometry} material={materials.sw221_b} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+        <mesh geometry={nodes.sw221_doorglass_RR_sedan_tint_sw221_glass_tint_0.geometry} material={materials.sw221_glass_tint} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+        <mesh geometry={nodes.sw221_doorglass_RL_sedan_tint_sw221_glass_tint_0.geometry} material={materials.sw221_glass_tint} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+        <mesh geometry={nodes.sw221_doorglass_FR_tint_sw221_glass_tint_0.geometry} material={materials.sw221_glass_tint} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+        <mesh geometry={nodes.sw221_doorglass_FL_tint_sw221_glass_tint_0.geometry} material={materials.sw221_glass_tint} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+        <mesh geometry={nodes.sw221_backlight_sedan_tint_sw221_glass_tint_0.geometry} material={materials.sw221_glass_tint} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
+        <mesh geometry={nodes.sw221_windshield_tint_sw221_glass_tint_0.geometry} material={materials.sw221_glass_tint} position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100} />
 
               </group>
     </group>
