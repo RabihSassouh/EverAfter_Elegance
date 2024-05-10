@@ -14,3 +14,39 @@ interface MessageModel {
     type?: MessageType;
     payload?: MessagePayload;
 }
+
+const AiTest: React.FC = () => {
+    const [typing,setTyping]= useState(false);
+    const [messages, setMessages] = useState<MessageModel[]>([
+        {
+            message: "Hello from chatgpt",
+            sender: "AI",
+            direction: "incoming",
+            position: "single"
+        }
+    ]);
+
+    return (
+                <div>
+                    <div style={{ position: "relative", height: "600px", width: "700px" }}>
+                        <MainContainer>
+                            <ChatContainer>
+                                <MessageList
+                                
+                                >
+                                    {messages.map((message, i) => (
+                                        <Message key={i} model={message as MessageModel} />
+                                    ))}
+                                </MessageList>
+                                <MessageInput placeholder='Type msg here' />
+                            </ChatContainer>
+                        </MainContainer>
+                    </div>
+                </div>
+            );
+        }
+        
+        export default AiTest;
+        
+
+
