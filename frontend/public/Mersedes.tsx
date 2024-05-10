@@ -84,6 +84,14 @@ export default function Model(props: ModelProps): JSX.Element {
           <mesh geometry={nodes.sw221_seats_R_sw221_alcantara1_b_0.geometry} material={materials.sw221_alcantara1_b} />
           <mesh geometry={nodes.sw221_seats_R_sw221_leather1_0.geometry} material={materials.sw221_leather1} />
         </group>
+        <group position={[-85.932, 97.767, 41.299]} rotation={[-Math.PI / 2, 0, 0.698]} scale={100}>
+          <mesh geometry={nodes.sw221_mirror_R_fl_sw221_0.geometry} material={materials.sw221} />
+          <mesh geometry={nodes.sw221_mirror_R_fl_sw221_b_0.geometry} material={materials.sw221_b} />
+          <mesh geometry={nodes.sw221_mirror_R_fl_mirror_0.geometry} material={materials.mirror} />
+          <mesh geometry={nodes.sw221_mirror_R_fl_sw221_paint_0.geometry} material={materials.sw221_paint} />
+          <mesh geometry={nodes.sw221_mirror_R_fl_sw221_metal_0.geometry} material={materials.sw221_metal} />
+          <mesh geometry={nodes.sw221_mirror_R_fl_sw221_signal_R_mirror_fl_0.geometry} material={materials.sw221_signal_R_mirror_fl} />
+        </group>
 
               </group>
     </group>
