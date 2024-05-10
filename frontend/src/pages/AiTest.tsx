@@ -26,19 +26,32 @@ const AiTest: React.FC = () => {
         }
     ]);
 
+    const handleSend = async (message: string) => {
+        const newMessage: MessageModel = {
+            message: message,
+            sender: "user",
+            direction: "outgoing",
+            position: "single"
+        }
+        const newMessages = [...messages, newMessage];
+        setMessages(newMessages);
+
+    }
+
+
     return (
                 <div>
                     <div style={{ position: "relative", height: "600px", width: "700px" }}>
                         <MainContainer>
                             <ChatContainer>
                                 <MessageList
-                                
+                                typingIndicator={typing ? <TypingIndicator content="typing"/> : null}
                                 >
                                     {messages.map((message, i) => (
                                         <Message key={i} model={message as MessageModel} />
                                     ))}
                                 </MessageList>
-                                <MessageInput placeholder='Type msg here' />
+                                <MessageInput placeholder='Type msg here' onSend={handleSend}/>
                             </ChatContainer>
                         </MainContainer>
                     </div>
