@@ -35,7 +35,7 @@ const AiTest: React.FC = () => {
         }
         const newMessages = [...messages, newMessage];
         setMessages(newMessages);
-
+        setTyping(true)
     }
 
 
