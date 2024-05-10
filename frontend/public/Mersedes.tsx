@@ -205,6 +205,10 @@ export default function Model(props: ModelProps): JSX.Element {
           <mesh geometry={nodes.sw221_dash_sw221_screen_b_0.geometry} material={materials.sw221_screen_b} />
           <mesh geometry={nodes.sw221_dash_sw221_priborka_0.geometry} material={materials.sw221_priborka} />
         </group>
+        <group position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <mesh geometry={nodes.sw221_bumper_R_fl_amg_sw221_0.geometry} material={materials.sw221} />
+          <mesh geometry={nodes.sw221_bumper_R_fl_amg_sw221_paint_0.geometry} material={materials.sw221_paint} />
+        </group>
 
               </group>
     </group>
