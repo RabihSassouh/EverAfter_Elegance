@@ -296,6 +296,11 @@ export default function Model(props: ModelProps): JSX.Element {
           <mesh geometry={nodes.sw221_headlight_R_fl_sw221_lowbeam_fl_0.geometry} material={materials.sw221_lowbeam_fl} />
           <mesh geometry={nodes.sw221_headlight_R_fl_sw221_interior_hl_0.geometry} material={materials.sw221_interior_hl} />
         </group>
+        <group position={[79.526, 35.186, 136.499]} rotation={[-Math.PI / 2, 0, 0]} scale={108.297}>
+          <mesh geometry={nodes.sw221_wheel_e_sw221001_0.geometry} material={materials['sw221.001']} />
+          <mesh geometry={nodes.sw221_wheel_e_sw221_wheel_05a_0.geometry} material={materials.sw221_wheel_05a} />
+          <mesh geometry={nodes.sw221_wheel_e_sw221_wheel_05a_b_0.geometry} material={materials.sw221_wheel_05a_b} />
+        </group>
 
               </group>
     </group>
