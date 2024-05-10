@@ -45,6 +45,14 @@ export default function Model(props: ModelProps): JSX.Element {
           <mesh geometry={nodes.sw221_taillight_R_fl_sw221_reverselight_fl_0.geometry} material={materials.sw221_reverselight_fl} />
           <mesh geometry={nodes.sw221_taillight_R_fl_sw221_lights_lod0_trans_0.geometry} material={materials.sw221_lights_lod0_trans} />
         </group>
+        <group position={[5.268, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <mesh geometry={nodes.sw221_taillight_L_fl_sw221_0.geometry} material={materials.sw221} />
+          <mesh geometry={nodes.sw221_taillight_L_fl_sw221_lights_lod0_0.geometry} material={materials.sw221_lights_lod0} />
+          <mesh geometry={nodes.sw221_taillight_L_fl_sw221_runninglight_fl_0.geometry} material={materials.sw221_runninglight_fl} />
+          <mesh geometry={nodes.sw221_taillight_L_fl_sw221_reverselight_fl_0.geometry} material={materials.sw221_reverselight_fl} />
+          <mesh geometry={nodes.sw221_taillight_L_fl_sw221_lights_lod0_trans_0.geometry} material={materials.sw221_lights_lod0_trans} />
+          <mesh geometry={nodes.sw221_taillight_L_fl_sw221_signal_LR_fl_0.geometry} material={materials.sw221_signal_LR_fl} />
+        </group>
 
               </group>
     </group>
