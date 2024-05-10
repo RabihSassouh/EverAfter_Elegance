@@ -100,6 +100,11 @@ export default function Model(props: ModelProps): JSX.Element {
           <mesh geometry={nodes.sw221_mirror_L_fl_sw221_signal_L_mirror_fl_0.geometry} material={materials.sw221_signal_L_mirror_fl} />
           <mesh geometry={nodes.sw221_mirror_L_fl_sw221_metal_0.geometry} material={materials.sw221_metal} />
         </group>
+        <group position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <mesh geometry={nodes.sw221_intmirror_sw221_interior_lod0_0.geometry} material={materials.sw221_interior_lod0} />
+          <mesh geometry={nodes.sw221_intmirror_mirror_0.geometry} material={materials.mirror} />
+          <mesh geometry={nodes.sw221_intmirror_sw221_alcantara_0.geometry} material={materials.sw221_alcantara} />
+        </group>
 
               </group>
     </group>
