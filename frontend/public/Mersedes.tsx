@@ -241,6 +241,10 @@ export default function Model(props: ModelProps): JSX.Element {
           <mesh geometry={nodes.sw221_exhausttip_R_c_sw221_0.geometry} material={materials.sw221} />
           <mesh geometry={nodes.sw221_exhausttip_R_c_sw221_nodamage_lod0_amg_0.geometry} material={materials.sw221_nodamage_lod0_amg} />
         </group>
+        <group position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]}>
+          <mesh geometry={nodes.sw221_exhaust_R_sw221_0.geometry} material={materials.sw221} />
+          <mesh geometry={nodes.sw221_exhaust_R_sw221_main_0.geometry} material={materials.sw221_main} />
+        </group>
 
               </group>
     </group>
