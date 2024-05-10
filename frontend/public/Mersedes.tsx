@@ -75,6 +75,15 @@ export default function Model(props: ModelProps): JSX.Element {
           <mesh geometry={nodes.sw221_steer_sw221_leather2_0.geometry} material={materials.sw221_leather2} />
           <mesh geometry={nodes.sw221_steer_sw221_stitching1_0.geometry} material={materials.sw221_stitching1} />
         </group>
+        <group position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <mesh geometry={nodes.sw221_seats_R_sw221_0.geometry} material={materials.sw221} />
+          <mesh geometry={nodes.sw221_seats_R_sw221_interior_lod0_0.geometry} material={materials.sw221_interior_lod0} />
+          <mesh geometry={nodes.sw221_seats_R_sw221_belt_0.geometry} material={materials.sw221_belt} />
+          <mesh geometry={nodes.sw221_seats_R_sw221_perforated_0.geometry} material={materials.sw221_perforated} />
+          <mesh geometry={nodes.sw221_seats_R_sw221_stitching1_0.geometry} material={materials.sw221_stitching1} />
+          <mesh geometry={nodes.sw221_seats_R_sw221_alcantara1_b_0.geometry} material={materials.sw221_alcantara1_b} />
+          <mesh geometry={nodes.sw221_seats_R_sw221_leather1_0.geometry} material={materials.sw221_leather1} />
+        </group>
 
               </group>
     </group>
