@@ -15,6 +15,8 @@ interface MessageModel {
     payload?: MessagePayload;
 }
 
+const API_key= "sk-proj-g0FQMKiJXvgCnXvwe7RpT3BlbkFJoVsuqzKXkArwQjvRD1Hw";
+
 const AiTest: React.FC = () => {
     const [typing,setTyping]= useState(false);
     const [messages, setMessages] = useState<MessageModel[]>([
@@ -36,8 +38,44 @@ const AiTest: React.FC = () => {
         const newMessages = [...messages, newMessage];
         setMessages(newMessages);
         setTyping(true)
+        await processMessageToAI(newMessages);
     }
 
+    async function processMessageToAI(chatMessages: MessageModel[]){
+        let apiMessages = chatMessages.map((messageObject)=>{
+            let role= "";
+            if (messageObject.sender=== "AI"){
+                role="assistant"
+            }else{
+                role="user"
+            }
+            return{role: role, content: messageObject.message}
+        });
+        const systemMessage = {
+            role: "system",
+            content: "Explain all concepts"
+        }
+        const apiRequestBody = {
+            "model": "gpt-3.5-turbo",
+            "messages":[
+                systemMessage,
+                ...apiMessages
+            ]
+        }
+        await fetch("https://api.openai.com/v1/chat/completions",{
+            method:"POST",
+            headers:{
+                "Authorization": "Bearer " + API_key,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(apiRequestBody)
+        }).then((data)=>{
+            return data.json();
+        }).then((data:any)=>{
+            console.log(data);
+            console.log(data.choices[0].message.content);
+        })
+}
 
     return (
                 <div>
