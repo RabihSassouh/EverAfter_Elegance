@@ -226,6 +226,17 @@ export default function Model(props: ModelProps): JSX.Element {
           <mesh geometry={nodes.sw221_seat_FR_sw221_stitching1_0.geometry} material={materials.sw221_stitching1} />
           <mesh geometry={nodes.sw221_seat_FR_sw221_leather1_0.geometry} material={materials.sw221_leather1} />
         </group>
+        <group position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <mesh geometry={nodes.sw221_seat_FL_sw221_nodamage_lod0_0.geometry} material={materials.sw221_nodamage_lod0} />
+          <mesh geometry={nodes.sw221_seat_FL_sw221_interior_lod0_0.geometry} material={materials.sw221_interior_lod0} />
+          <mesh geometry={nodes.sw221_seat_FL_sw221_dvd_0.geometry} material={materials.sw221_dvd} />
+          <mesh geometry={nodes.sw221_seat_FL_sw221_harmankardon1_0.geometry} material={materials.sw221_harmankardon1} />
+          <mesh geometry={nodes.sw221_seat_FL_sw221_leather3_0.geometry} material={materials.sw221_leather3} />
+          <mesh geometry={nodes.sw221_seat_FL_sw221_perforated_0.geometry} material={materials.sw221_perforated} />
+          <mesh geometry={nodes.sw221_seat_FL_sw221_alcantara2_0.geometry} material={materials.sw221_alcantara2} />
+          <mesh geometry={nodes.sw221_seat_FL_sw221_stitching1_0.geometry} material={materials.sw221_stitching1} />
+          <mesh geometry={nodes.sw221_seat_FL_sw221_leather1_0.geometry} material={materials.sw221_leather1} />
+        </group>
 
               </group>
     </group>
