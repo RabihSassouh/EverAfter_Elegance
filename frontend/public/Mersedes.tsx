@@ -30,6 +30,11 @@ export default function Model(props: ModelProps): JSX.Element {
           <mesh geometry={nodes.sw221_headlight_L_fl_sw221_interior_hl_0.geometry} material={materials.sw221_interior_hl} />
           <mesh geometry={nodes.sw221_headlight_L_fl_sw221_signal_L_fl_0.geometry} material={materials.sw221_signal_L_fl} />
         </group>
+        <group position={[5.105, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <mesh geometry={nodes.sw221_taillightglass_R_fl_sw221_glass_0.geometry} material={materials.sw221_glass} />
+          <mesh geometry={nodes.sw221_taillightglass_R_fl_sw221_redglass_0.geometry} material={materials.sw221_redglass} />
+        </group>
+
               </group>
     </group>
   )

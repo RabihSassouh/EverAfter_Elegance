@@ -135,11 +135,11 @@ const Venue: React.FC = () => {
         </button>
       </div>
       <div className="pb-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {venuesData.map((venue, index) => (
             <VenueCard key={index} {...venue} />
           ))}
-        </div>
+        </div> */}
       </div>
       <Footer />
     </div>
