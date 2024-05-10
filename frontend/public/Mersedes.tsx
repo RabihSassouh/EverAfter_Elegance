@@ -249,6 +249,25 @@ export default function Model(props: ModelProps): JSX.Element {
           <mesh geometry={nodes.sw221_exhaust_L_b_sw221_0.geometry} material={materials.sw221} />
           <mesh geometry={nodes.sw221_exhaust_L_b_sw221_main_0.geometry} material={materials.sw221_main} />
         </group>
+        <group position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <mesh geometry={nodes.sw221_body_sedan_sw221_0.geometry} material={materials.sw221} />
+          <mesh geometry={nodes.sw221_body_sedan_sw221_badges_0.geometry} material={materials.sw221_badges} />
+          <mesh geometry={nodes.sw221_body_sedan_sw221_paint_0.geometry} material={materials.sw221_paint} />
+          <mesh geometry={nodes.sw221_body_sedan_sw221_b_0.geometry} material={materials.sw221_b} />
+          <mesh geometry={nodes.sw221_body_sedan_sw221_lights_lod0_0.geometry} material={materials.sw221_lights_lod0} />
+          <mesh geometry={nodes.sw221_body_sedan_sw221_glass_0.geometry} material={materials.sw221_glass} />
+          <mesh geometry={nodes.sw221_body_sedan_sw221_nodamage_lod0_0.geometry} material={materials.sw221_nodamage_lod0} />
+          <mesh geometry={nodes.sw221_body_sedan_sw221_interior_emissive_lod0_0.geometry} material={materials.sw221_interior_emissive_lod0} />
+          <mesh geometry={nodes.sw221_body_sedan_sw221_carpet_0.geometry} material={materials.sw221_carpet} />
+          <mesh geometry={nodes.sw221_body_sedan_sw221_alcantara_0.geometry} material={materials.sw221_alcantara} />
+          <mesh geometry={nodes.sw221_body_sedan_sw221_belt_0.geometry} material={materials.sw221_belt} />
+          <mesh geometry={nodes.sw221_body_sedan_sw221_harmankardon1_0.geometry} material={materials.sw221_harmankardon1} />
+          <mesh geometry={nodes.sw221_body_sedan_sw221_leather3_0.geometry} material={materials.sw221_leather3} />
+          <mesh geometry={nodes.sw221_body_sedan_sw221_grill4_0.geometry} material={materials.sw221_grill4} />
+          <mesh geometry={nodes.sw221_body_sedan_sw221_interior_0.geometry} material={materials.sw221_interior} />
+          <mesh geometry={nodes.sw221_body_sedan_sw221_chmsl_0.geometry} material={materials.sw221_chmsl} />
+          <mesh geometry={nodes.sw221_body_sedan_sw221_interior_lod0_b_0.geometry} material={materials.sw221_interior_lod0_b} />
+        </group>
 
               </group>
     </group>
