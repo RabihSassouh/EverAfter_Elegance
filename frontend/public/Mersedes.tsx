@@ -112,6 +112,10 @@ export default function Model(props: ModelProps): JSX.Element {
           <mesh geometry={nodes.sw221_hood_fl_sw221_paint_0.geometry} material={materials.sw221_paint} />
           <mesh geometry={nodes.sw221_hood_fl_sw221_grill_0.geometry} material={materials.sw221_grill} />
         </group>
+        <group position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <mesh geometry={nodes.sw221_fender_R_fl_sw221_0.geometry} material={materials.sw221} />
+          <mesh geometry={nodes.sw221_fender_R_fl_sw221_paint_0.geometry} material={materials.sw221_paint} />
+        </group>
 
               </group>
     </group>
