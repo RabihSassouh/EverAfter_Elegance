@@ -337,6 +337,13 @@ export default function Model(props: ModelProps): JSX.Element {
           <mesh geometry={nodes.sw221_wheel_e003_sw221_wheel_05a_0.geometry} material={materials.sw221_wheel_05a} />
           <mesh geometry={nodes.sw221_wheel_e003_sw221_wheel_05a_b_0.geometry} material={materials.sw221_wheel_05a_b} />
         </group>
+        <group position={[-68.64, 35.186, -181.314]} rotation={[-Math.PI / 2, 0, -Math.PI / 2]} scale={[-91.733, 91.733, 91.733]}>
+          <mesh geometry={nodes['3_Wheel003_Scene_-_Root002_0'].geometry} material={materials['Scene_-_Root.002']} />
+          <mesh geometry={nodes['3_Wheel003_amdb11_brake002_0'].geometry} material={materials['amdb11_brake.002']} />
+          <mesh geometry={nodes['3_Wheel003_amdb11_misc_chrome002_0'].geometry} material={materials['amdb11_misc_chrome.002']} />
+          <mesh geometry={nodes['3_Wheel003_amdb11_misc002_0'].geometry} material={materials['amdb11_misc.002']} />
+          <mesh geometry={nodes['3_Wheel003_amdb11_caliper002_0'].geometry} material={materials['amdb11_caliper.002']} />
+        </group>
 
               </group>
     </group>
