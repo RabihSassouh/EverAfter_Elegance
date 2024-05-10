@@ -34,6 +34,10 @@ export default function Model(props: ModelProps): JSX.Element {
           <mesh geometry={nodes.sw221_taillightglass_R_fl_sw221_glass_0.geometry} material={materials.sw221_glass} />
           <mesh geometry={nodes.sw221_taillightglass_R_fl_sw221_redglass_0.geometry} material={materials.sw221_redglass} />
         </group>
+        <group position={[5.502, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <mesh geometry={nodes.sw221_taillightglass_L_fl_sw221_glass_0.geometry} material={materials.sw221_glass} />
+          <mesh geometry={nodes.sw221_taillightglass_L_fl_sw221_redglass_0.geometry} material={materials.sw221_redglass} />
+        </group>
 
               </group>
     </group>
