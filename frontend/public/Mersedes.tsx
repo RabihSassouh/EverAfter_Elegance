@@ -183,6 +183,12 @@ export default function Model(props: ModelProps): JSX.Element {
           <mesh geometry={nodes.sw221_door_FR_sw221_b_0.geometry} material={materials.sw221_b} />
           <mesh geometry={nodes.sw221_door_FR_sw221_paint_0.geometry} material={materials.sw221_paint} />
         </group>
+        <group position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <mesh geometry={nodes.sw221_door_FL_sw221_0.geometry} material={materials.sw221} />
+          <mesh geometry={nodes.sw221_door_FL_sw221_b_0.geometry} material={materials.sw221_b} />
+          <mesh geometry={nodes.sw221_door_FL_sw221_nodamage_lod0_0.geometry} material={materials.sw221_nodamage_lod0} />
+          <mesh geometry={nodes.sw221_door_FL_sw221_paint_0.geometry} material={materials.sw221_paint} />
+        </group>
 
               </group>
     </group>
