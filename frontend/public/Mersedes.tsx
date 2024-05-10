@@ -61,6 +61,10 @@ export default function Model(props: ModelProps): JSX.Element {
           <mesh geometry={nodes.sw221_tailgate_sedan_sw221_paint_0.geometry} material={materials.sw221_paint} />
           <mesh geometry={nodes.sw221_tailgate_sedan_sw221_carpet_0.geometry} material={materials.sw221_carpet} />
         </group>
+        <group position={[5.42, -3.629, -2.714]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <mesh geometry={nodes.sw221_sunvisor_sw221_alcantara_0.geometry} material={materials.sw221_alcantara} />
+          <mesh geometry={nodes.sw221_sunvisor_sw221_dvd_b_0.geometry} material={materials.sw221_dvd_b} />
+        </group>
 
               </group>
     </group>
