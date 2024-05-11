@@ -3,7 +3,8 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import "../styles/Hero.css";
 import { Category } from "@mui/icons-material";
 import axios from "axios";
-import VenueCard from "./VenueCard";
+import { useNavigate } from "react-router-dom";
+// import { Context, ContextType } from "../App";
 
 interface Category {
   id: number;
@@ -13,9 +14,9 @@ interface Category {
 const Hero: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<Category | null>(null);
-  const [VenueData, setVenueData] = useState<any[]>([]);
-  
-
+  const navigate= useNavigate();
+  // const [VenueData, setVenueData] = useState<any[]>([]);
+  // const { venuesData, setVenuesData } = useContext(Context);
 
   const categories: Category[] = [
     {
@@ -85,6 +86,8 @@ const Hero: React.FC = () => {
     },
   ];
 
+
+
   const handleCategoryClick = (category: Category): void => {
     setSelectedOption(category);
     setIsOpen(false);
@@ -95,8 +98,9 @@ const Hero: React.FC = () => {
         const response = await axios.post("http://127.0.0.1:8080/vendors", {
           category: selectedOption.value,
         });
-        console.log(response.data); 
-        setVenueData(response.data);
+        localStorage.setItem('venuesData', JSON.stringify(response.data));
+        console.log(response.data);
+        navigate("/venue")
       } catch (error) {
         console.error("Error fetching data from API:", error);
       }
