@@ -3,6 +3,9 @@ import NavigationBar from "../components/NavigationBar";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import Footer from "../components/Footer";
 import VenueCard from "../components/VenueCard";
+// import { useAppContext } from "../DataContext";
+import VenueCardProps from "../components/VenueCard";
+
 interface Option {
   label: string | number;
   value: string | number;
@@ -17,6 +20,8 @@ interface Select {
 const Venue: React.FC = () => {
   const [selectBox, setSelectBox] = useState<Select | null>(null);
   const selectsRef = useRef<HTMLDivElement>(null);
+  const [venuesData, setVenuesData] = useState([]);
+  // const { venueData } = useAppContext();
 
   const selects: Select[] = [
     {
@@ -83,6 +88,26 @@ const Venue: React.FC = () => {
     document.addEventListener("click", handleClickOutside);
   }, []);
 
+
+  useEffect(() => {
+    // Function to retrieve data from local storage
+    const fetchDataFromLocalStorage = () => {
+      const storedData = localStorage.getItem('venuesData');
+      if (storedData) {
+        try {
+          // Parse the stored data if it's a string
+          const parsedData = JSON.parse(storedData);
+          setVenuesData(parsedData);
+        } catch (error) {
+          console.error('Error parsing stored data:', error);
+        }
+      }
+    };
+
+    // Call the function when the component mounts
+    fetchDataFromLocalStorage();
+  }, []);
+
   return (
     <div>
       <NavigationBar />
@@ -135,11 +160,11 @@ const Venue: React.FC = () => {
         </button>
       </div>
       <div className="pb-12">
-        {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {venuesData.map((venue, index) => (
-            <VenueCard key={index} {...venue} />
+            <VenueCard key={index} venue={venue} />
           ))}
-        </div> */}
+        </div>
       </div>
       <Footer />
     </div>
