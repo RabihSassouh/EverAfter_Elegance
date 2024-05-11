@@ -4,7 +4,7 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import Footer from "../components/Footer";
 import VenueCard from "../components/VenueCard";
 // import { useAppContext } from "../DataContext";
-import VenueCardProps from "../components/VenueCard";
+// import VenueCardProps from "../components/VenueCard";
 
 interface Option {
   label: string | number;
