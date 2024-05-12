@@ -2,14 +2,12 @@ import React, { useEffect } from "react";
 import NavigationBar from "../components/NavigationBar";
 import Slider from "../components/Slider";
 import VenueDetails from "../components/VendorDetails";
-// import { string } from 'three/examples/jsm/nodes/Nodes.js';
-
 import { useParams } from "react-router-dom";
 import Footer from "../components/Footer";
 import Car1 from "./Test";
 import Dress1 from "../components/Dress3d";
 import Venue1 from "../components/Venue3d";
-// import Venue from './Vendors';
+
 
 interface VenueData {
   company_name: string;
