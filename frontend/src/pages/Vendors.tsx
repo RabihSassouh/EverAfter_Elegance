@@ -16,11 +16,20 @@ interface Select {
   label: string;
   options: Option[];
 }
-
+interface Venue {
+  name: string;
+    guests: string;
+    location: string;
+    rating: number;
+    reviewCount: number;
+    imageUrl: string;
+    slug: string;
+    category: string;
+}
 const Venue: React.FC = () => {
   const [selectBox, setSelectBox] = useState<Select | null>(null);
   const selectsRef = useRef<HTMLDivElement>(null);
-  const [venuesData, setVenuesData] = useState([]);
+  const [venuesData, setVenuesData] = useState<Venue[]>([]);
   // const { venueData } = useAppContext();
 
   const selects: Select[] = [
@@ -123,6 +132,7 @@ const Venue: React.FC = () => {
           celebration that you'll remember forever...
         </p>
       </div>
+      {venuesData.length > 0 && 'category' in venuesData[0] && venuesData[0].category === "venues" && (
       <div
         className="relative w-full flex items-start justify-evenly gap-1 lg:gap-0 px-12 pb-12"
         ref={selectsRef}
@@ -159,6 +169,7 @@ const Venue: React.FC = () => {
           Search
         </button>
       </div>
+      )}
       <div className="pb-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {venuesData.map((venue, index) => (

@@ -6,6 +6,9 @@ import VenueDetails from "../components/VendorDetails";
 
 import { useParams } from "react-router-dom";
 import Footer from "../components/Footer";
+import Car1 from "./Test";
+import Dress1 from "../components/Dress3d";
+import Venue1 from "../components/Venue3d";
 // import Venue from './Vendors';
 
 interface VenueData {
@@ -17,6 +20,10 @@ interface VenueData {
   facilities: string[];
   special_offers: string[];
   slug: string;
+  name: string;
+  location: string;
+  imageUrl: string;
+  category: string;
 }
 
 
@@ -61,6 +68,9 @@ const SingleVenue: React.FC = () => {
       <NavigationBar />
       <Slider />
       <VenueDetails venue={venue} />
+      {venue.category === "venues" && <Venue1 width="300" height="300" />}
+      {venue.category === "dresses" && <Dress1 />}
+      {venue.category === "photographers" && <Car1 />}
       <Footer />
     </div>
   );

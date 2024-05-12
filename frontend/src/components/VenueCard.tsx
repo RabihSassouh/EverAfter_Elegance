@@ -13,6 +13,7 @@ interface VenueData {
     reviewCount: number;
     imageUrl: string;
     slug: string;
+    category: string;
   }
   interface VenueCardProps {
     venue: VenueData;
