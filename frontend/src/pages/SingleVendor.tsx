@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 // import Venue from './Vendors';
 
 interface VenueData {
-  name: string;
+  company_name: string;
   guests: number;
   rating: number;
   reviewCount: number;
@@ -47,7 +47,7 @@ const SingleVenue: React.FC = () => {
   
     useEffect(() => {
       if (venue){
-      document.title = `Venue | ${venue.name}`;
+      document.title = `Venue | ${venue.company_name}`;
       window.scrollTo(0, 0);
       }
     }, [venue]);
