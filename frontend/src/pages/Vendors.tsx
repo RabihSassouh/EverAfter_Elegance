@@ -3,8 +3,6 @@ import NavigationBar from "../components/NavigationBar";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import Footer from "../components/Footer";
 import VenueCard from "../components/VenueCard";
-// import { useAppContext } from "../DataContext";
-// import VenueCardProps from "../components/VenueCard";
 
 interface Option {
   label: string | number;
@@ -30,7 +28,6 @@ const Venue: React.FC = () => {
   const [selectBox, setSelectBox] = useState<Select | null>(null);
   const selectsRef = useRef<HTMLDivElement>(null);
   const [venuesData, setVenuesData] = useState<Venue[]>([]);
-  // const { venueData } = useAppContext();
 
   const selects: Select[] = [
     {
