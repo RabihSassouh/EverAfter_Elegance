@@ -43,7 +43,18 @@ const SingleVenue: React.FC = () => {
       // Call the function when the component mounts
       fetchDataFromLocalStorage();
     }, []);
+    const venue = venueData.find((item) => item.slug === slug);
   
+    useEffect(() => {
+      if (venue){
+      document.title = `Venue | ${venue.name}`;
+      window.scrollTo(0, 0);
+      }
+    }, [venue]);
+  
+    if (!venue) {
+      return "No vendors at the mean time, we will have new vendors soon";
+    }
 
   return (
     <div>
