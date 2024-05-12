@@ -22,6 +22,28 @@ interface VenueData {
 
 const SingleVenue: React.FC = () => {
 
+    const { slug } = useParams<{ slug: string }>(); // Extract slug parameter from URL
+    const [venueData, setVenueData] = React.useState<VenueData[]>([]);
+  
+    useEffect(() => {
+      // Function to retrieve data from local storage
+      const fetchDataFromLocalStorage = () => {
+        const storedData = localStorage.getItem("venuesData");
+        if (storedData) {
+          try {
+            // Parse the stored data if it's a string
+            const parsedData = JSON.parse(storedData);
+            setVenueData(parsedData);
+          } catch (error) {
+            console.error("Error parsing stored data:", error);
+          }
+        }
+      };
+  
+      // Call the function when the component mounts
+      fetchDataFromLocalStorage();
+    }, []);
+  
 
   return (
     <div>
