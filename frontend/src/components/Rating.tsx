@@ -7,7 +7,7 @@ interface RatingProps {
 }
 
 const Rating: React.FC<RatingProps> = () => {
-  const rating = 4.5; // Sample rating value for demonstration
+  const rating = 4; // Sample rating value for demonstration
   const reviewCount = 100; // Sample review count for demonstration
 
   const fullStars = Math.floor(rating);

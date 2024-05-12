@@ -2,6 +2,7 @@ import React from 'react';
 import { FaUser } from 'react-icons/fa';
 import { MdLocationOn } from 'react-icons/md';
 import Rating from './Rating';
+import { Link } from 'react-router-dom';
 
 
 interface VenueData {
@@ -22,7 +23,7 @@ const VenueCard: React.FC<VenueCardProps> = ({ venue }) => {
   const { name, guests, location, rating, reviewCount, imageUrl, slug } = venue;
 
   return (
-    <a href={`/venue/${slug}`} className="md:max-w-sm rounded-lg overflow-hidden cursor-pointer">
+    <Link to={`/venue/${slug}`} className="md:max-w-sm rounded-lg overflow-hidden cursor-pointer">
       <div className="relative md:h-64">
         <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center rounded-lg"></div>
         <img className="w-full md:h-64 object-cover rounded-lg" src={imageUrl} alt={name} />
@@ -41,7 +42,7 @@ const VenueCard: React.FC<VenueCardProps> = ({ venue }) => {
         </div>
         <Rating rating={rating} reviewCount={reviewCount} />
       </div>
-    </a>
+    </Link>
   );
 };
 
