@@ -6,7 +6,7 @@ import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { GoGlobe, GoShareAndroid } from 'react-icons/go';
 
 interface Venue {
-  name: string;
+  company_name: string;
   guests: number;
   rating: number;
   reviewCount: number;
@@ -27,7 +27,7 @@ const VenueDetails: React.FC<VenueDetailsProps> = ({ venue }) => {
           <div className="flex flex-col gap-2">
             <div className="flex items-center gap-5">
               <h1 className="text-4xl font-semibold font-poppins tracking-wide text-[#121212]">
-                {venue.name}
+                {venue.company_name}
               </h1>
               <div className="flex items-center text-xl gap-1 font-poppins text-[#00000099]">
                 <MdLocationOn />
