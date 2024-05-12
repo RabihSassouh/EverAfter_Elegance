@@ -1,13 +1,17 @@
 package models
 
 import (
-	"github.com/RabihSassouh/EverAfter_Elegance/backend/pkg/config"
-	"github.com/jinzhu/gorm"
 	"database/sql/driver"
 	"encoding/json"
 	"errors"
-)
+	"io"
+	"mime/multipart"
+	"os"
+	"path/filepath"
 
+	"github.com/RabihSassouh/EverAfter_Elegance/backend/pkg/config"
+	"github.com/jinzhu/gorm"
+)
 
 // StringSlice is a custom type to handle string slices as JSONB
 type StringSlice []string
@@ -40,12 +44,12 @@ type Vendor struct {
 	Facilities    StringSlice    `json:"facilities" gorm:"type:json"`
 	Vision        string `json:"vision"`
 	Category      string `json:"category"`
-	Images        string `json:"images"`
+	Images        []string `json:"images"`
 	BookingInfo   string `json:"booking_info"`
 	SpecialOffers StringSlice    `json:"special_offers" gorm:"type:json"`
 	Location      string `json:"location"`
 	Rating        string `json:"rating"`
-	Review_count  string `json:"review_count"`
+	ReviewCount  string `json:"review_count"`
 	Description   string `json:"description"`
 	Slug          string `json:"slug"`
 	Guests        string `json:"guests"`
@@ -59,16 +63,43 @@ func init() {
 }
 
 
-func (v *Vendor) CreateVendor() *Vendor {
-    // Save the vendor object to the database
-    db.NewRecord(v)
-    if err := db.Create(&v).Error; err != nil {
-        return nil
+// CreateVendor creates a new vendor
+func (v *Vendor) CreateVendor() error {
+	// Save the vendor object to the database
+    if err := db.Create(v).Error; err != nil {
+		return err
+    }
+	
+	return nil
+}
+
+func (v *Vendor) UploadImage(fileHeader *multipart.FileHeader) (string, error) {
+	// Upload the image
+	var uploadsDir = filepath.Join("backend", "uploads")
+	
+filepath := filepath.Join(uploadsDir, fileHeader.Filename)
+    src, err := fileHeader.Open()
+    if err != nil {
+        return "", err
+    }
+    defer src.Close()
+
+    dst, err := os.Create(filepath)
+    if err != nil {
+        return "", err
+    }
+    defer dst.Close()
+
+    if _, err := io.Copy(dst, src); err != nil {
+        return "", err
     }
 
-    // Return the created vendor
-    return v
+    // Add the filepath to the Vendor's Images field
+    v.Images = append(v.Images, filepath)
+
+    return filepath, nil
 }
+    
 
 func GetAllVendors() []Vendor {
 	var vendors []Vendor
@@ -94,3 +125,18 @@ func GetVendorsByCategory(category string) ([]Vendor, error) {
     }
     return vendors, nil
 }
+
+
+// // SerializeImages serializes the Images field into a JSON string
+// func (v *Vendor) SerializeImages() (string, error) {
+// 	jsonData, err := json.Marshal(v.Images)
+// 	if err != nil {
+// 		return "", err
+// 	}
+// 	return string(jsonData), nil
+// }
+
+// // DeserializeImages deserializes the JSON string into the Images field
+// func (v *Vendor) DeserializeImages(jsonData string) error {
+// 	return json.Unmarshal([]byte(jsonData), &v.Images)
+// }
