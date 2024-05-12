@@ -5,6 +5,7 @@ const Step1 = () => {
 
   return (
     <div className='w-full h-screen flex items-center justify-center'>
+      <div className='relative flex items-center justify-center mx-12 max-w-5xl w-full h-[85%] bg-white'>
         <div className='absolute w-[80%] md:w-[45%] h-full md:left-20 z-10 flex items-center justify-center'>
           <div className='bg-white h-[80%] md:p-10 rounded-xl flex flex-col items-center justify-center'>
             <h1 className="text-4xl font-semibold font-poppins mb-10 text-center">Welcome User</h1>
@@ -26,7 +27,7 @@ const Step1 = () => {
             <button className="absolute bottom-5 right-5 bg-primary  font-poppins text-[#FFFFFFEB] font-semibold px-6 py-2 rounded-full hover:bg-secondary hover:shadow-md transition-colors" >Next</button>
           </div>
         </div>
-      
+      </div>
     </div>
   )
 }
