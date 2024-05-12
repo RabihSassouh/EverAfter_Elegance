@@ -19,6 +19,7 @@ interface VenueData {
   slug: string;
 }
 
+
 const SingleVenue: React.FC = () => {
 
 
