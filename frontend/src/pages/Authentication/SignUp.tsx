@@ -1,29 +1,29 @@
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import { MdChevronLeft } from "react-icons/md";
-// import { useState } from 'react';
-// import axios from "axios";
+import { useState } from "react";
+import axios from "axios";
 
 function SignUp() {
   const navigate = useNavigate();
-//   const [firstname, setFirstname] = useState("");
-// const [lastname, setLastname] = useState("");
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-//   const handleSignup= async ()=>{
-//     try{
-//         const response= await axios.post("http://127.0.0.1:8080/signup",{
-//             email,
-//             name,
-//             username,
-//             password,
-//         });
-//         window.localStorage.setItem("token", response.data.authorisation.token);
-//         navigate("/");
-//     } catch (error){
-//         console.error("error",error);
-//     }
-//   }
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const handleSignup = async () => {
+    try {
+      const response = await axios.post("http://127.0.0.1:8080/signup", {
+        firstname,
+        lastname,
+        email,
+        password,
+      });
+      window.localStorage.setItem("token", response.data.authorisation.token);
+      navigate("/");
+    } catch (error) {
+      console.error("error", error);
+    }
+  };
 
   const handleGoBack = () => {
     navigate(-1);
@@ -38,7 +38,7 @@ function SignUp() {
           <MdChevronLeft className="h-6 w-6" />
           Back
         </button>
-        <div className="relative w-full " style={{height:640}}>
+        <div className="relative w-full " style={{ height: 640 }}>
           <div
             className="absolute inset-0 bg-cover bg-center rounded-tr-32 rounded-br-32"
             style={{ backgroundImage: `url("../../offer2.jpg")` }}
@@ -56,7 +56,7 @@ function SignUp() {
             <div className="text-gray-600 text-xs font-bold">OR</div>
             <div className="border-t border-gray-300 w-20 ml-4"></div>
           </div>
-          <form action="" method="post" className="space-y-3">
+          <form action="" method="post" className="space-y-3" onSubmit={handleSignup}>
             <div>
               <label
                 className="flex flex-left font-poppins text[#494949]"
