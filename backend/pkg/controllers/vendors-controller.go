@@ -4,59 +4,59 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"path/filepath"
+	// "path/filepath"
 	"strconv"
 
 	"github.com/RabihSassouh/EverAfter_Elegance/backend/pkg/models"
 	"github.com/RabihSassouh/EverAfter_Elegance/backend/pkg/utils"
-	"io"
+	// "io"
 	"github.com/gorilla/mux"
-	"os"
+	// "os"
 )
 
-var uploadsDir = filepath.Join("backend", "uploads")
+// var uploadsDir = filepath.Join("backend", "uploads")
 
 // CreateVendor creates a new vendor
 
-func UploadImage(w http.ResponseWriter, r *http.Request) {
-    err := r.ParseMultipartForm(10 << 20) // 10 MB max file size
-    if err != nil {
-        http.Error(w, "failed to parse multipart form", http.StatusInternalServerError)
-        return
-    }
-    files := r.MultipartForm.File["images"]
+// func UploadImage(w http.ResponseWriter, r *http.Request) {
+//     err := r.ParseMultipartForm(10 << 20) // 10 MB max file size
+//     if err != nil {
+//         http.Error(w, "failed to parse multipart form", http.StatusInternalServerError)
+//         return
+//     }
+//     files := r.MultipartForm.File["images"]
 
-    var imagePaths []string
+//     var imagePaths []string
 
-    for _, file := range files {
-        // Upload each image
-		filepath := filepath.Join(uploadsDir, file.Filename)
-        src, err := file.Open()
-        if err != nil {
-            http.Error(w, "failed to open file", http.StatusInternalServerError)
-            return
-        }
-        defer src.Close()
-		fmt.Println(filepath) 
-        dst, err := os.Create(filepath)
-        if err != nil {
-			fmt.Println(filepath) 
-            http.Error(w, "failed to create file", http.StatusInternalServerError)
-            return
-        }
-        defer dst.Close()
+//     for _, file := range files {
+//         // Upload each image
+// 		filepath := filepath.Join(uploadsDir, file.Filename)
+//         src, err := file.Open()
+//         if err != nil {
+//             http.Error(w, "failed to open file", http.StatusInternalServerError)
+//             return
+//         }
+//         defer src.Close()
+// 		fmt.Println(filepath) 
+//         dst, err := os.Create(filepath)
+//         if err != nil {
+// 			fmt.Println(filepath) 
+//             http.Error(w, "failed to create file", http.StatusInternalServerError)
+//             return
+//         }
+//         defer dst.Close()
 
-        if _, err := io.Copy(dst, src); err != nil {
-            http.Error(w, "failed to save image", http.StatusInternalServerError)
-            return
-        }
-        imagePaths = append(imagePaths, filepath)
-    }
+//         if _, err := io.Copy(dst, src); err != nil {
+//             http.Error(w, "failed to save image", http.StatusInternalServerError)
+//             return
+//         }
+//         imagePaths = append(imagePaths, filepath)
+//     }
 
-    w.Header().Set("Content-Type", "application/json")
-    w.WriteHeader(http.StatusCreated)
-    json.NewEncoder(w).Encode(imagePaths)
-}
+//     w.Header().Set("Content-Type", "application/json")
+//     w.WriteHeader(http.StatusCreated)
+//     json.NewEncoder(w).Encode(imagePaths)
+// }
 
 func CreateVendor(w http.ResponseWriter, r *http.Request) {
     var vendor models.Vendor
@@ -66,21 +66,21 @@ func CreateVendor(w http.ResponseWriter, r *http.Request) {
     }
 
     // Process image uploading
-    err := r.ParseMultipartForm(10 << 20) // 10 MB max file size
-    if err != nil {
-        http.Error(w, "failed to parse multipart form", http.StatusInternalServerError)
-        return
-    }
-    files := r.MultipartForm.File["images"]
+    // err := r.ParseMultipartForm(10 << 20) // 10 MB max file size
+    // if err != nil {
+    //     http.Error(w, "failed to parse multipart form", http.StatusInternalServerError)
+    //     return
+    // }
+    // files := r.MultipartForm.File["images"]
 
-    for _, file := range files {
-        // Upload each image
-        _, err := vendor.UploadImage(file)
-        if err != nil {
-            http.Error(w, "failed to upload image", http.StatusInternalServerError)
-            return
-        }
-    }
+    // for _, file := range files {
+    //     // Upload each image
+    //     _, err := vendor.UploadImage(file)
+    //     if err != nil {
+    //         http.Error(w, "failed to upload image", http.StatusInternalServerError)
+    //         return
+    //     }
+    // }
 
     // Save the vendor to the database
     if err := vendor.CreateVendor(); err != nil {

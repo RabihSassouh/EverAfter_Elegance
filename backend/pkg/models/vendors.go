@@ -4,10 +4,10 @@ import (
 	"database/sql/driver"
 	"encoding/json"
 	"errors"
-	"io"
-	"mime/multipart"
-	"os"
-	"path/filepath"
+	// "io"
+	// "mime/multipart"
+	// "os"
+	// "path/filepath"
 
 	"github.com/RabihSassouh/EverAfter_Elegance/backend/pkg/config"
 	"github.com/jinzhu/gorm"
@@ -44,7 +44,7 @@ type Vendor struct {
 	Facilities    StringSlice    `json:"facilities" gorm:"type:json"`
 	Vision        string `json:"vision"`
 	Category      string `json:"category"`
-	Images        []string `json:"images"`
+	Images        string `json:"images"`
 	BookingInfo   string `json:"booking_info"`
 	SpecialOffers StringSlice    `json:"special_offers" gorm:"type:json"`
 	Location      string `json:"location"`
@@ -73,32 +73,32 @@ func (v *Vendor) CreateVendor() error {
 	return nil
 }
 
-func (v *Vendor) UploadImage(fileHeader *multipart.FileHeader) (string, error) {
-	// Upload the image
-	var uploadsDir = filepath.Join("backend", "uploads")
+// func (v *Vendor) UploadImage(fileHeader *multipart.FileHeader) (string, error) {
+// 	// Upload the image
+// 	var uploadsDir = filepath.Join("backend", "uploads")
 	
-filepath := filepath.Join(uploadsDir, fileHeader.Filename)
-    src, err := fileHeader.Open()
-    if err != nil {
-        return "", err
-    }
-    defer src.Close()
+// filepath := filepath.Join(uploadsDir, fileHeader.Filename)
+//     src, err := fileHeader.Open()
+//     if err != nil {
+//         return "", err
+//     }
+//     defer src.Close()
 
-    dst, err := os.Create(filepath)
-    if err != nil {
-        return "", err
-    }
-    defer dst.Close()
+//     dst, err := os.Create(filepath)
+//     if err != nil {
+//         return "", err
+//     }
+//     defer dst.Close()
 
-    if _, err := io.Copy(dst, src); err != nil {
-        return "", err
-    }
+//     if _, err := io.Copy(dst, src); err != nil {
+//         return "", err
+//     }
 
-    // Add the filepath to the Vendor's Images field
-    v.Images = append(v.Images, filepath)
+//     // Add the filepath to the Vendor's Images field
+//     v.Images = append(v.Images, filepath)
 
-    return filepath, nil
-}
+//     return filepath, nil
+// }
     
 
 func GetAllVendors() []Vendor {
