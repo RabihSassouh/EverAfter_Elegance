@@ -10,9 +10,7 @@ function SignUp() {
 // const [lastname, setLastname] = useState("");
 //   const [email, setEmail] = useState("");
 //   const [password, setPassword] = useState("");
-  
 //   const handleSignup= async ()=>{
-    
 //     try{
 //         const response= await axios.post("http://127.0.0.1:8080/signup",{
 //             email,
@@ -31,39 +29,34 @@ function SignUp() {
     navigate(-1);
   };
   return (
-    <div className="min-h-screen flex">
-      <div className="hidden md:block md:w-1/2 ">
+    <div className="h-full flex">
+      <div className="h-full relative hidden md:block md:w-1/2">
         <button
-          className="w-full flex items-center justify-start font-poppins text-primary font-medium hover:text-secondary"
+          className="absolute top-0 left-0 flex items-center justify-start z-10 p-4 font-poppins text-primary font-medium hover:text-secondary"
           onClick={handleGoBack}
         >
           <MdChevronLeft className="h-6 w-6" />
           Back
         </button>
-        <div className="relative w-full h-full">
-          <img
-            src="../../offer2.jpg"
-            alt="Wedding"
-            className="w-full h-full object-cover rounded-tr-32 rounded-br-32"
-          />
+        <div className="relative w-full " style={{height:640}}>
+          <div
+            className="absolute inset-0 bg-cover bg-center rounded-tr-32 rounded-br-32"
+            style={{ backgroundImage: `url("../../offer2.jpg")` }}
+          ></div>
         </div>
       </div>
-      <div className="w-full max-w-md mt-5 ml-10">
+      <div className="w-full max-w-md  ml-10 h-full">
         <div className="bg-[#FFFFFFB2] p-8 rounded-lg max-w-md">
           <button className="flex items-center justify-center p-2 border-[2px] border-[#00000033] text-[#000000CC] rounded-lg mb-4 w-full hover:shadow-md font-medium font-poppins">
             <FcGoogle className="w-5 h-5 mr-2" />
             Sign Up with Google
           </button>
-          <div className="flex items-center justify-center mt-9 mb-6">
-                <div className="border-t border-gray-300 w-20 mr-4"></div>
-                <div className="text-gray-600 text-xs font-bold">OR</div>
-                <div className="border-t border-gray-300 w-20 ml-4"></div>
-            </div>
-          <form
-            action=""
-            method="post"
-            className="space-y-4"
-          >
+          <div className="flex items-center justify-center mt-5 mb-3">
+            <div className="border-t border-gray-300 w-20 mr-4"></div>
+            <div className="text-gray-600 text-xs font-bold">OR</div>
+            <div className="border-t border-gray-300 w-20 ml-4"></div>
+          </div>
+          <form action="" method="post" className="space-y-3">
             <div>
               <label
                 className="flex flex-left font-poppins text[#494949]"
@@ -80,7 +73,10 @@ function SignUp() {
               />
             </div>
             <div>
-              <label className="flex flex-left font-poppins text[#494949]" htmlFor="last_name">
+              <label
+                className="flex flex-left font-poppins text[#494949]"
+                htmlFor="last_name"
+              >
                 Last Name
               </label>
               <input
@@ -92,7 +88,10 @@ function SignUp() {
               />
             </div>
             <div>
-              <label className="flex flex-left font-poppins text[#494949]" htmlFor="email">
+              <label
+                className="flex flex-left font-poppins text[#494949]"
+                htmlFor="email"
+              >
                 Email
               </label>
               <input
@@ -104,7 +103,10 @@ function SignUp() {
               />
             </div>
             <div>
-              <label className="flex flex-left font-poppins text[#494949]" htmlFor="password">
+              <label
+                className="flex flex-left font-poppins text[#494949]"
+                htmlFor="password"
+              >
                 Password
               </label>
               <input
