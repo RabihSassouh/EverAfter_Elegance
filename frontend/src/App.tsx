@@ -41,7 +41,7 @@ function App() {
           <Route element={<SignUp />} path="/sign-up"></Route>
           <Route element={<Home />} path="/"></Route>
           <Route element={<Venue />} path="/venue"></Route>
-          <Route element={<SingleVenue />} path="/v"></Route>
+          <Route element={<SingleVenue />} path="/venue/:slug"></Route>
         </Routes>
       </Router>
       </Context.Provider>
