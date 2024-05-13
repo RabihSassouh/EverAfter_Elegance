@@ -8,7 +8,9 @@ const WeddingInfo = () => {
                     Wedding information
                 </h1>
             </div>
-            
+                  <h1 className="text-4xl font-semibold font-poppins mb-10 text-center tracking-wide text-[#000000CC]">Your day</h1>
+                        
+                  
         </div>
     );
 };
