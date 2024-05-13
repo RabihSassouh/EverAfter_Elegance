@@ -29,7 +29,9 @@ const WeddingInfo = () => {
                     </div>
                 </div>
             </div>
-           
+            <div className='w-[90%] relative mt-5 flex items-center justify-end mx-12 max-w-5xl'>
+                <button className="bg-primary absolute mt-5 font-poppins text-[#FFFFFFEB] font-semibold px-6 py-2 rounded-full hover:bg-secondary hover:shadow-md transition-colors">Next</button>
+            </div>
         </div>
     );
 };
