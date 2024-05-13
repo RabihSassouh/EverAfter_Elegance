@@ -1,4 +1,7 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
+import { setData, setStep } from '../store/signUpSlice';
 
 interface Category {
     id: number;
@@ -7,6 +10,8 @@ interface Category {
 }
 
 const BusinessCategory: React.FC = () => {
+    const dispatch = useDispatch();
+    const { data } = useSelector((state: any) => state.signUp);
 
     const categories: Category[] = [
         { id: 1, name: "Wedding Venues", image: "../../venue.jpg" },
@@ -23,6 +28,13 @@ const BusinessCategory: React.FC = () => {
         { id: 12, name: "Hair & Make-Up", image: "../../hair_makeup.jpg" },
         { id: 13, name: "Entertainment", image: "../../entertainment.jpg" }
     ];
+
+    const handleCategorySelect = (category: Category) => {
+        const data = {
+            category
+        };
+        dispatch(setData(data));
+    };
 
 
 
