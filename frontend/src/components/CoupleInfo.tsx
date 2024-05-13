@@ -27,7 +27,15 @@ const CouplesInfo = () => {
                             </form>
                         </div>
                     </div>
-                    
+                    <div className="w-full md:w-1/2 h-full md:p-14 md:shadow-xl">
+                        <div className='mb-8 flex flex-col items-center justify-center'>
+                            <h2 className='font-poppins text-4xl font-semibold text-center text-[#000000CC] tracking-wide'>
+                                Groom
+                            </h2>
+                            <hr className='border-[2px] border-primary w-32'/>
+                        </div>
+                        
+                    </div>
                 </div>
                 
             </div>
