@@ -1,11 +1,22 @@
-// import React from 'react'
-// import SignupComponent from '../../components/SignupComponent'
-import Step1 from '../../components/SignupStep1'
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import SignupComponent from '../../components/SignupComponent'
+import Step2 from '../../components/SignupStep1'
+import { RootState } from '../../store/store';
 
-const SignUp = () => {
+const SignUp: React.FC = () => {
+  
+  const { step, userType } = useSelector((state: RootState) => state.signUp);
+
+  useEffect(() => {
+      document.title = 'Sign Up';
+  }, []);
+
   return (
-    // <SignupComponent/>
-    <Step1/>
+    <>
+    {step === 1 && <SignupComponent/>}
+    {step === 2 && <Step2/>}
+    </>
   )
 }
 
