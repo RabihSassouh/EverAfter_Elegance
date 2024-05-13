@@ -34,7 +34,14 @@ const CouplesInfo = () => {
                             </h2>
                             <hr className='border-[2px] border-primary w-32'/>
                         </div>
-                        
+                        <div className='flex flex-col gap-4 h-full items-center justify-between w-full'>
+                            <form className='h-full flex flex-col gap-4 w-full' >
+                                <input type="text" className='w-full border-[1px] border-gray-600 rounded-xl font-poppins px-4 py-2 placeholder:font-poppins' placeholder='First name' name='first_name'/>
+                                <input type="text" className='w-full border-[1px] border-gray-600 rounded-xl font-poppins px-4 py-2 placeholder:font-poppins' placeholder='Last name' name='last_name'/>
+                                <input type="text" className='w-full border-[1px] border-gray-600 rounded-xl font-poppins px-4 py-2 placeholder:font-poppins' placeholder='Email' name='email'/>
+                                <input type="text" className='w-full border-[1px] border-gray-600 rounded-xl font-poppins px-4 py-2 placeholder:font-poppins' placeholder='Phone' name='phone'/>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 
