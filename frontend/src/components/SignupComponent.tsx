@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { MdChevronLeft } from "react-icons/md";
 import { useState } from "react";
 import axios from "axios";
+import { useDispatch } from 'react-redux';
+import { setData, setStep } from '../store/signUpSlice';
 
 function SignupComponent() {
   const navigate = useNavigate();
@@ -10,6 +12,8 @@ function SignupComponent() {
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+
   const handleSignup = async () => {
     try {
       const response = await axios.post("http://127.0.0.1:8080/signup", {
@@ -19,7 +23,8 @@ function SignupComponent() {
         password,
       });
       window.localStorage.setItem("token", response.data.authorisation.token);
-      navigate("/");
+      dispatch(setData(response.data));
+      dispatch(setStep(2));
     } catch (error) {
       console.error("error", error);
     }
