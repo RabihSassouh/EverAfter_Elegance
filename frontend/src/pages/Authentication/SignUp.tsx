@@ -4,6 +4,7 @@ import SignupComponent from '../../components/SignupComponent'
 import Step2 from '../../components/SignupStep1'
 import { RootState } from '../../store/store';
 import CouplesInfo from '../../components/CoupleInfo';
+import WeddingInfo from '../../components/WeddingInfo';
 
 const SignUp: React.FC = () => {
   
@@ -15,7 +16,7 @@ const SignUp: React.FC = () => {
 
   return (
     <>
-    {step === 1 && <SignupComponent/>}
+    {step === 1 && <WeddingInfo/>}
     {step === 2 && <Step2/>}
     {step === 3 && <CouplesInfo/>}
     </>
