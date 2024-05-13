@@ -1,4 +1,21 @@
+// import React, { useRef } from 'react'
+// import CouplesInformationSchema from '../validationSchemas/CouplesInformationSchema';
+// import { toast } from 'react-toastify';
+import { useDispatch } from 'react-redux';
+import { setData, setStep } from '../store/signUpSlice';
+    
 const CouplesInfo = () => {
+
+        const dispatch = useDispatch()
+        // const brideForm = useRef();
+        // const groomForm = useRef();
+    
+        const handleNext = async () => {
+                dispatch(setStep(4));
+    
+        };
+    
+
   return (
     <div className="min-h-screen flex items-center justify-center  px-12 bg-white">
       <div className="container max-w-5xl mx-auto">
@@ -82,7 +99,7 @@ const CouplesInfo = () => {
           </div>
         </div>
         <div className="flex w-full mt-5 items-end justify-end">
-          <button className="bg-primary  font-poppins text-[#FFFFFFEB] font-semibold px-6 py-2 rounded-full hover:bg-secondary hover:shadow-md transition-colors">
+          <button className="bg-primary  font-poppins text-[#FFFFFFEB] font-semibold px-6 py-2 rounded-full hover:bg-secondary hover:shadow-md transition-colors" onClick={handleNext}>
             Next
           </button>
         </div>
