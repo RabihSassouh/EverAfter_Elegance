@@ -16,14 +16,14 @@ function SignupComponent() {
 
   const handleSignup = async () => {
     try {
-      const response = await axios.post("http://127.0.0.1:8080/signup", {
-        firstname,
-        lastname,
-        email,
-        password,
-      });
-      window.localStorage.setItem("token", response.data.authorisation.token);
-      dispatch(setData(response.data));
+    //   const response = await axios.post("http://127.0.0.1:8080/signup", {
+    //     firstname,
+    //     lastname,
+    //     email,
+    //     password,
+    //   });
+    //   window.localStorage.setItem("token", response.data.authorisation.token);
+    //   dispatch(setData(response.data));
       dispatch(setStep(2));
     } catch (error) {
       console.error("error", error);
