@@ -1,12 +1,10 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import utilityReducer from '../reducers/utilitySlice';
-
-const rootReducer = combineReducers({
-    utility: utilityReducer,
-});
-
-export type RootState = ReturnType<typeof rootReducer>;
+import signUpReducer from './signUpSlice';
 
 export const store = configureStore({
-    reducer: rootReducer,
+    reducer: {
+        utility: utilityReducer,
+        signUp: signUpReducer,
+    },
 });
