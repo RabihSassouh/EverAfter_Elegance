@@ -6,6 +6,7 @@ import { RootState } from '../../store/store';
 import CouplesInfo from '../../components/CoupleInfo';
 import WeddingInfo from '../../components/WeddingInfo';
 import FinishSignup from '../../components/FinishSignup';
+import BusinessCategory from '../../components/BusinessCategory';
 
 const SignUp: React.FC = () => {
   
@@ -17,11 +18,13 @@ const SignUp: React.FC = () => {
 
   return (
     <>
-    {step === 1 && <FinishSignup/>}
+    {step === 1 && <BusinessCategory/>}
     {step === 2 && <Step2/>}
-    {step === 3 && <CouplesInfo/>}
-    {step === 4 && <WeddingInfo/>}
-    {step === 5 && <FinishSignup/>}
+    {userType===1 && step === 3 && <CouplesInfo/>}
+    {userType===1 && step === 4 && <WeddingInfo/>}
+    {userType===1 && step === 5 && <FinishSignup/>}
+    {userType===2 && step === 3 && <BusinessCategory/>}
+
     </>
   )
 }
