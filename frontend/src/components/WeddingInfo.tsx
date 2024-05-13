@@ -1,5 +1,19 @@
 
+import { useDispatch } from 'react-redux';
+import { setStep } from '../store/signUpSlice';
+
 const WeddingInfo = () => {
+
+    const dispatch = useDispatch();
+
+    const handleNext = async () => {
+        try {
+            dispatch(setStep(5));
+        } catch (error) {
+            
+            console.error(error);
+        }
+    }
 
     return (
         <div className='w-full flex flex-col p-5 gap-5 items-center justify-center h-full' >
@@ -30,7 +44,7 @@ const WeddingInfo = () => {
                 </div>
             </div>
             <div className='w-[90%] relative mt-5 flex items-center justify-end mx-12 max-w-5xl'>
-                <button className="bg-primary absolute mt-5 font-poppins text-[#FFFFFFEB] font-semibold px-6 py-2 rounded-full hover:bg-secondary hover:shadow-md transition-colors">Next</button>
+                <button className="bg-primary absolute mt-5 font-poppins text-[#FFFFFFEB] font-semibold px-6 py-2 rounded-full hover:bg-secondary hover:shadow-md transition-colors" onClick={handleNext}>Next</button>
             </div>
         </div>
     );
