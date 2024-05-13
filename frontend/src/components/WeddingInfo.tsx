@@ -8,7 +8,9 @@ const WeddingInfo = () => {
                     Wedding information
                 </h1>
             </div>
-               <div className='bg-white h-[80%] p-10 rounded-xl flex flex-col items-center justify-center w-full px-10' style={{height:450}}>
+            <div className='h-450 flex flex-row-reverse items-center justify-center md:justify-between mx-12 max-w-5xl w-full bg-white' style={{maxHeight:450}}>
+                <div className='h-450 md:w-[45%] max-w-lg md:py-0  z-10 flex items-center justify-center border-[1px] border-primary rounded-xl'>
+                    <div className='bg-white h-[80%] p-10 rounded-xl flex flex-col items-center justify-center w-full px-10' style={{height:450}}>
                         <h1 className="text-4xl font-semibold font-poppins mb-10 text-center tracking-wide text-[#000000CC]">Your day</h1>
                         <div className='flex flex-col gap-3 w-full'>
                             <form className='flex flex-col gap-3 w-full' >
@@ -19,7 +21,15 @@ const WeddingInfo = () => {
                             </form>
                         </div>
                     </div>
-                
+                </div>
+                <div className='w-[45%] right-0 hidden md:block' style={{maxHeight:450}}>
+                    <div className='relative h-full w-full'>
+                        <div className="absolute inset-0 bg-[#00000066] rounded-xl opacity-70"></div>
+                        <img src="../../weddinginfo.jpg" alt="Couple Image" className="object-cover w-full h-full rounded-xl" style={{maxHeight:450}}/>
+                    </div>
+                </div>
+            </div>
+           
         </div>
     );
 };
