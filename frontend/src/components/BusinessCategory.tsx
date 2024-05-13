@@ -36,7 +36,13 @@ const BusinessCategory: React.FC = () => {
         dispatch(setData(data));
     };
 
-
+    const handleNext = () => {
+        if (!data.category) {
+            toast.error('Select a category first');
+        } else {
+            dispatch(setStep(4));
+        }
+    };
 
     return (
         <div></div>
