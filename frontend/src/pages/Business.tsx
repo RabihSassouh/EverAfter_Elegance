@@ -19,7 +19,12 @@ const Business: React.FC = () => {
               You Are The Spirit Of Our Website
             </h2>
           </div>
-          
+          <div className="container mx-auto w-full flex flex-col gap-6 items-start justify-center">
+            <h4 className="text-2xl font-medium font-poppins text-primary">
+              Business Information
+            </h4>
+
+          </div>
         </div>
       </div>
       <Footer />
