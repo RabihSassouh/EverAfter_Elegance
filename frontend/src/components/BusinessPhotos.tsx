@@ -19,6 +19,16 @@ const BusinessPhotos: React.FC = () => {
     const dispatch = useDispatch();
     const [photos, setPhotos] = useState<File[]>([]);
 
+    const handlePhotos = () => {
+        const fileInput = document.getElementById('photoInput') as HTMLInputElement;
+        fileInput.click();
+    }
+
+    const handlePhotoInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+        const files = Array.from(event.target.files as FileList);
+        setPhotos(prevPhotos => [...prevPhotos, ...files]);
+    }
+
 
     const handleNext = () => {
         if(photos.length < 4){
