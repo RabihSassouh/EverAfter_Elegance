@@ -25,6 +25,16 @@ const BusinessStep2 = () => {
             </p>
           </div>
         </div>
+        <div className="w-[45%] h-full right-0 hidden md:block">
+          <div className="relative h-full w-full">
+            <div className="absolute inset-0 bg-[#00000066] rounded-xl opacity-70"></div>
+            <img
+              src="../../signUp2.png"
+              alt="Couple Image"
+              className="object-cover h-full w-full rounded-xl"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
