@@ -23,6 +23,21 @@ const Business: React.FC = () => {
             <h4 className="text-2xl font-medium font-poppins text-primary">
               Business Information
             </h4>
+                <div className="flex flex-col gap-1">
+                  <label
+                    htmlFor="company_name"
+                    className="font-poppins text-[#494949]"
+                  >
+                    Company Name
+                  </label>
+                  <input
+                    type="text"
+                    id="company_name"
+                    name="company_name"
+                    className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins"
+                    placeholder="Please enter your company name"
+                  />
+                </div>
 
           </div>
         </div>
