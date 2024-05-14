@@ -29,6 +29,9 @@ const BusinessPhotos: React.FC = () => {
         setPhotos(prevPhotos => [...prevPhotos, ...files]);
     }
 
+    const handleRemovePhoto = (index: number) => {
+        setPhotos(prevPhotos => prevPhotos.filter((_, i) => i !== index));
+    }
 
     const handleNext = () => {
         if(photos.length < 4){
