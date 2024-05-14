@@ -10,6 +10,7 @@ import BusinessCategory from '../../components/BusinessCategory';
 import BusinessLocation from '../../components/BusinessLocation';
 import BusinessStep2 from '../../components/BusinessStep2';
 import BusinessPhotos from '../../components/BusinessPhotos';
+import BusinessInfo from '../../components/BusinessInfo';
 
 const SignUp: React.FC = () => {
   
@@ -21,7 +22,7 @@ const SignUp: React.FC = () => {
 
   return (
     <>
-    {step === 1 && <BusinessPhotos/>}
+    {step === 1 && <BusinessInfo/>}
     {step === 2 && <Step2/>}
     {userType===1 && step === 3 && <CouplesInfo/>}
     {userType===1 && step === 4 && <WeddingInfo/>}
