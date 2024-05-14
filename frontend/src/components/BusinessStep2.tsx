@@ -1,6 +1,12 @@
+import { setStep } from "../store/signUpSlice";
+import { useDispatch } from "react-redux";
 
 const BusinessStep2 = () => {
+  const dispatch = useDispatch();
 
+  const handleNext = () => {
+    dispatch(setStep(6));
+  };
 
   return (
     <div className="w-full h-screen flex flex-col gap-5 items-center justify-center">
