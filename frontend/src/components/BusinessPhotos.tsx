@@ -1,9 +1,36 @@
-import React from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import { FaPlus, FaTimes } from "react-icons/fa"; 
 import Masonry from 'react-masonry-css';
+import { toast } from 'react-toastify';
+import { setData, setStep } from '../store/signUpSlice';
+import { useDispatch } from 'react-redux';
+
+const breakpointObj: { [key: number]: number } = {
+
+    3000: 3,
+    2000: 3,
+    1500: 3,
+    1200: 3,
+    1000: 2,
+    500: 1,
+}
 
 const BusinessPhotos: React.FC = () => {
+    const dispatch = useDispatch();
+    const [photos, setPhotos] = useState<File[]>([]);
 
+
+    const handleNext = () => {
+        if(photos.length < 4){
+            toast.error('Must select at least 4 photos');
+        } else {
+            const data = {
+                photos
+            }
+            dispatch(setData(data));
+            dispatch(setStep(7));
+        }
+    }
 
     return (
         <div className='w-full min-h-screen flex items-center justify-center'>
