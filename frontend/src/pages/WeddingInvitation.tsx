@@ -190,7 +190,25 @@ const WeddingInvitation: React.FC = () => {
           </div>
         </div>
       </div>
-      
+      <div className="container mx-auto px-12 flex flex-col gap-1 w-full mb-10 mt-5">
+        <label
+          htmlFor="congrats message"
+          className="font-poppins text-xl text-[#000000CC] text-start w-full font-semibold"
+        >
+          Guests Book
+        </label>
+        <textarea
+          name="congrats message"
+          id="congrats message"
+          className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins h-52 w-full"
+          placeholder="Write something for the couple"
+        ></textarea>
+      </div>
+      <div className="container mx-auto px-12 flex items-center justify-end gap-1 w-full mb-12 font-poppins">
+        <button className="bg-primary text-white w-24 px-4 py-2 hover:shadow-lg rounded-xl">
+          Submit
+        </button>
+      </div>
       <Footer />
     </div>
   );
