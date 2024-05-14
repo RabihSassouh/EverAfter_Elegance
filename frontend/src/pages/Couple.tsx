@@ -1,13 +1,51 @@
-import React from 'react';
+import React, { ChangeEvent, useEffect, useRef, useState } from 'react';
 import NavigationBar from '../components/NavigationBar';
 import Footer from '../components/Footer';
+import { MdPublish } from 'react-icons/md';
+import { BsFillGiftFill } from 'react-icons/bs';
 
+interface Gift {
+  id: number;
+  file: File;
+  value: number;
+}
 
 const Couples: React.FC = () => {
+  const giftInputRef = useRef<HTMLInputElement>(null);
+  const [gifts, setGifts] = useState<Gift[]>([]);
 
   const brideDress = [1];
   const groomSuit = [1];
 
+  useEffect(() => {
+    document.title = 'Couples Information';
+  }, []);
+
+  const handleDivClick = (inputRef: React.RefObject<HTMLInputElement>) => {
+    inputRef.current?.click();
+  };
+
+  const handleAddGift = (event: ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+    if (files) {
+      const updatedGifts = [...gifts];
+      for (let i = 0; i < files.length; i++) {
+        updatedGifts.push({ id: i + 1, file: files[i], value: 0 });
+      }
+      setGifts(updatedGifts);
+    }
+  };
+
+  const handleGiftValueChange = (index: number, value: number) => {
+    const updatedGifts = [...gifts];
+    updatedGifts[index].value = value;
+    setGifts(updatedGifts);
+  };
+
+  const handleRemoveGift = (index: number) => {
+    const updatedGifts = gifts.filter((_, i) => i !== index);
+    setGifts(updatedGifts);
+  };
 
   return (
     <div>
@@ -46,7 +84,7 @@ const Couples: React.FC = () => {
                       {brideDress.map((i) => {
                         return (
                           <div key={i} className="w-32 h-28 flex items-center justify-center rounded-xl border-[2px] border-gray-400 hover:border-primary">
-                            <img src={'../../public/bride-dress.jpg'} alt={`Gift ${i}`} className="w-full object-cover rounded-xl cursor-pointer h-full" />
+                            <img src={'/bride-dress.jpg'} alt={`Gift ${i}`} className="w-full object-cover rounded-xl cursor-pointer h-full" />
                           </div>
                         );
                       })}
@@ -79,7 +117,7 @@ const Couples: React.FC = () => {
                       {groomSuit.map((i) => {
                         return (
                           <div key={i} className="w-32 h-28 flex items-center justify-center rounded-xl border-[2px] border-gray-400 hover:border-primary">
-                            <img src={'../../public/groom-suit.webp'} alt={`Gift ${i}`} className="w-full object-cover rounded-xl cursor-pointer h-full" />
+                            <img src={'/groom-suit.webp'} alt={`Gift ${i}`} className="w-full object-cover rounded-xl cursor-pointer h-full" />
                           </div>
                         );
                       })}
@@ -113,7 +151,50 @@ const Couples: React.FC = () => {
                 </div>
               </div>
             </div>
-            
+            <div className="flex flex-col gap-4">
+              <h6 className="text-xl font-medium font-poppins text-[#000000CC]">Gifts Lists</h6>
+              <div className="flex flex-wrap gap-8">
+                {gifts.map((gift, i) => {
+                  return (
+                    <div key={gift.id} className="w-44 h-32 flex flex-col cursor-pointer">
+                      <div className="w-44 h-32 flex items-center justify-center rounded-t-xl">
+                        <img src={URL.createObjectURL(gift.file)} alt={`Gift ${i}`} className="w-full object-cover rounded-xl cursor-pointer h-full" />
+                      </div>
+                      <input
+                        type="number"
+                        className="font-poppins py-2 text-[#000000CC] text-center border-none focus-visible:border-none"
+                        placeholder="Value"
+                        value={gift.value}
+                        onChange={(e) => handleGiftValueChange(i, parseInt(e.target.value))}
+                      />
+                      <button className="font-poppins text-white bg-primary py-2 px-4 rounded-b-xl hover:bg-secondary" onClick={() => handleRemoveGift(i)}>Remove Gift</button>
+                    </div>
+                  );
+                })}
+                <div className="flex flex-col gap-10 cursor-pointer" onClick={() => handleDivClick(giftInputRef)}>
+                  <input
+                    ref={giftInputRef}
+                    type="file"
+                    id="add_photo"
+                    accept="image/*"
+                    multiple={false}
+                    style={{ display: 'none' }}
+                    onChange={handleAddGift}
+                  />
+                  <div className="border-[2px] border-dashed border-[#00000033] w-44 h-32 flex items-center justify-center rounded-t-xl">
+                    <BsFillGiftFill fontSize={30} className="text-[#000000CC]" />
+                  </div>
+                  <button className="font-poppins text-white bg-primary py-2 px-4 rounded-b-xl hover:bg-secondary">Add Gift</button>
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center justify-end w-full gap-5 font-poppins mt-5">
+              <button className="flex items-center gap-1 border border-primary bg-primary text-white rounded-xl px-4 py-2 text-[#00000066] hover:shadow-md hover:bg-secondary">
+                Publish Invitation
+                <MdPublish fontSize={20} />
+              </button>
+              <button className="flex items-center gap-1 border border-primary bg-primary text-white rounded-xl px-4 py-2 text-[#00000066] hover:shadow-md hover:bg-secondary">Save</button>
+            </div>
           </div>
         </div>
       </div>

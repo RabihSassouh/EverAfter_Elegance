@@ -1,7 +1,6 @@
 import React, { useState, ChangeEvent } from "react";
 import { FaPlus, FaTimes } from "react-icons/fa";
 import Masonry from "react-masonry-css";
-import { toast } from "react-toastify";
 import { setData, setStep } from "../store/signUpSlice";
 import { useDispatch } from "react-redux";
 
