@@ -18,7 +18,7 @@ interface Position {
 const libraries: Library[] = ["places"];
 const mapContainerStyle = {
   width: "100%",
-  height: "500px", // Ensure the map container fits well within your design
+  height: "500px",
 };
 
 const defaultCenter: Position = {
@@ -27,9 +27,91 @@ const defaultCenter: Position = {
 };
 
 const BusinessLocation: React.FC = () => {
-return(
-    <div></div>
-)
-}
+  const dispatch = useDispatch();
+  const [map, setMap] = useState<google.maps.Map | null>(null);
+  const [position, setPosition] = useState<Position>(defaultCenter);
+  const [loading, setLoading] = useState<boolean>(true);
+  const searchBoxRef = useRef<google.maps.places.SearchBox | null>(null);
+
+  useEffect(() => {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const pos: Position = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+          setPosition(pos);
+          setMapCenter(pos);
+        },
+        () => {
+          console.error("Error: The Geolocation service failed.");
+        }
+      );
+    } else {
+      console.error("Error: Your browser doesn't support geolocation.");
+    }
+  }, []);
+
+
+
+  return (
+    <div className="h-screen w-full flex flex-col gap-8 justify-center items-center my-10 md:my-0 px-12">
+      <div
+        className="max-w-4xl border-[1px] border-primary w-full rounded-xl overflow-hidden relative"
+        style={{ height: "500px" }}
+      >
+        {loading && (
+          <div className="absolute inset-0 flex items-center justify-center flex-col gap-2 bg-white opacity-75">
+            <div className="lds-ripple text-primary">
+              <div></div>
+              <div></div>
+            </div>
+            <span className="font-poppins text-primary font-semibold text-md animate-ping">
+              Loading...
+            </span>
+          </div>
+        )}
+        <LoadScript
+          googleMapsApiKey={`AIzaSyCG5o30-DUuFTU4O0mruQ3MJZOMSfuAORE`}
+          libraries={libraries}
+        >
+          <GoogleMap
+            mapContainerStyle={mapContainerStyle}
+            center={position}
+            zoom={14}
+            onLoad={onLoad}
+            onUnmount={onUnmount}
+            options={{
+              streetViewControl: false, // hide the street view control
+              zoomControl: false, // hide zoom controls
+              mapTypeControl: false, // hide map type control
+              fullscreenControl: false, // hide the fullscreen control
+            }}
+          >
+            <Marker position={position} />
+          </GoogleMap>
+          {!loading && (
+            <StandaloneSearchBox
+              onLoad={(ref) => (searchBoxRef.current = ref)}
+              onPlacesChanged={onPlacesChanged}
+            >
+              <div className="absolute w-full px-5 top-5 font-poppins flex items-center justify-center text-[#000000B0]">
+                <div className="flex gap-3 items-center justify-start w-full max-w-xl px-4 py-2 z-10 rounded-xl bg-white">
+                  <MdLocationPin className="z-20 left-5" />
+                  <input
+                    type="text"
+                    placeholder="Search places..."
+                    className="w-full h-full outline-none"
+                  />
+                </div>
+              </div>
+            </StandaloneSearchBox>
+          )}
+        </LoadScript>
+      </div>
+    </div>
+  );
+};
 
 export default BusinessLocation;
