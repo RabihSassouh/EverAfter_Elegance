@@ -269,7 +269,29 @@ const Business: React.FC = () => {
                 </div>
               </div>
             </div>
-
+            <div className="flex flex-col gap-1 w-full">
+              <label
+                htmlFor="booking_info"
+                className="font-poppins text-[#494949]"
+              >
+                Booking Information
+              </label>
+              <textarea
+                name="booking_info"
+                id="booking_info"
+                className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins h-52 w-full"
+                placeholder="Add booking information"
+              ></textarea>
+            </div>
+            <div className="flex items-center justify-end w-full gap-5 font-poppins">
+              <button className="flex items-center gap-1 border border-[#00000066] rounded-xl px-4 py-2 text-[#00000066] hover:shadow-md hover:bg-gray-400 hover:text-white">
+                Share
+                <GoShareAndroid />
+              </button>
+              <button className="flex items-center gap-1 border border-primary bg-primary text-white rounded-xl px-4 py-2 text-[#00000066] hover:shadow-md hover:bg-secondary">
+                Save
+              </button>
+            </div>
           </div>
         </div>
       </div>
