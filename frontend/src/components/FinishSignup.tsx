@@ -1,5 +1,19 @@
-const FinishSignup = () => {
-    const userType = 1;
+import React from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
+const FinishSignup: React.FC = () => {
+  const navigate = useNavigate();
+  const data = useSelector((state: any) => state.signUp);
+  const { userType } = useSelector((state: any) => state.signUp);
+  const handleFinish = () => {
+    console.log(data);
+    if (userType === 1) {
+      navigate("/couple");
+    } else {
+      navigate("/business");
+    }
+  };
   return (
     <div className='w-full mt-20 flex flex-col gap-5 items-center justify-center' style={{height:450}}>
       <div className='relative flex items-center justify-center md:justify-between mx-12 max-w-5xl h-450 w-full bg-white'>
@@ -20,7 +34,7 @@ const FinishSignup = () => {
         </div>
       </div>
       <div className='w-[90%] mt-5 relative flex items-center justify-end mx-12 max-w-5xl'>
-        <button className="bg-primary absolute mt-5 font-poppins text-[#FFFFFFEB] font-semibold px-6 py-2 rounded-full hover:bg-secondary hover:shadow-md transition-colors">Finish</button>
+        <button className="bg-primary absolute mt-5 font-poppins text-[#FFFFFFEB] font-semibold px-6 py-2 rounded-full hover:bg-secondary hover:shadow-md transition-colors" onClick={handleFinish}>Finish</button>
       </div>
     </div>
   );
