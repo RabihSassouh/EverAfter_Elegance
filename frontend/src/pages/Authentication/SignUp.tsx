@@ -22,7 +22,7 @@ const SignUp: React.FC = () => {
 
   return (
     <>
-    {step === 1 && <BusinessInfo/>}
+    {step === 1 && <SignupComponent/>}
     {step === 2 && <Step2/>}
     {userType===1 && step === 3 && <CouplesInfo/>}
     {userType===1 && step === 4 && <WeddingInfo/>}
@@ -32,6 +32,7 @@ const SignUp: React.FC = () => {
     {userType===2 && step === 5 && <BusinessStep2/>}
     {userType===2 && step === 6 && <BusinessPhotos/>}
     {userType===2 && step === 7 && <BusinessInfo/>}
+    {userType !=1 && step === 8 && <FinishSignup/>}
 
     </>
   )
