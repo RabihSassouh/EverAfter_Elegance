@@ -88,6 +88,31 @@ const Couples: React.FC = () => {
                 </div>
               </div>
             </div>
+            <div className="flex flex-col gap-4 items-start justify-center w-full">
+              <h6 className="text-xl font-medium font-poppins text-[#000000CC]">Wedding Section</h6>
+              <div className="flex flex-col md:flex-row w-full gap-10">
+                <div className="flex flex-col gap-3 w-full md:w-1/2">
+                  <div className="flex flex-col gap-1">
+                    <label htmlFor="wedding_place" className="font-poppins text-[#494949]">Place</label>
+                    <input type="text" id="wedding_place" name="wedding_place" className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins" placeholder="Please enter wedding place name" />
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <label htmlFor="wedding_date" className="font-poppins text-[#494949]">Date</label>
+                    <input type="date" id="wedding_date" name="wedding_date" className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins" placeholder="Please enter wedding date" />
+                  </div>
+                </div>
+                <div className="flex flex-col gap-3 w-full md:w-1/2">
+                  <div className="flex flex-col gap-1">
+                    <label htmlFor="wedding_budget" className="font-poppins text-[#494949]">Budget</label>
+                    <input type="number" id="wedding_budget" name="wedding_budget" className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins" placeholder="Please enter wedding budget" />
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <label htmlFor="wedding_guests_count" className="font-poppins text-[#494949]">Guests Count</label>
+                    <input type="number" id="wedding_guests_count" name="wedding_guests_count" className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins" placeholder="Please enter wedding guests count" />
+                  </div>
+                </div>
+              </div>
+            </div>
             
           </div>
         </div>
