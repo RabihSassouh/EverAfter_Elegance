@@ -163,6 +163,33 @@ const WeddingInvitation: React.FC = () => {
           ))}
         </div>
       </div>
+      <div className="container mx-auto flex flex-col items-center justify-start pt-5 gap-3 px-12 mb-12">
+        <p className="font-poppins text-xl text-[#000000CC] text-start w-full font-semibold">
+          Cash Gift
+        </p>
+        <div className="flex flex-wrap gap-16 w-full">
+          <div className="w-44 h-32 flex flex-col cursor-pointer mb-10">
+            <div className="w-44 h-32 flex items-center justify-center rounded-t-xl">
+              Amount "$"
+            </div>
+            <input
+              type="number"
+              className="font-poppins py-2 text-[#000000CC] text-center border-none focus-visible:border-none"
+              placeholder="00"
+
+              // onChange={(e) => handleGiftValueChange(i, e.target.value)}
+            />
+            <button
+              className="font-poppins text-white bg-primary py-2 px-4 rounded-b-xl hover:bg-secondary"
+              onClick={() => {
+                /* handleRemoveGift(i) */
+              }}
+            >
+              Gift
+            </button>
+          </div>
+        </div>
+      </div>
       
       <Footer />
     </div>
