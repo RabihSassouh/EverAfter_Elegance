@@ -3,11 +3,15 @@ import NavigationBar from "../components/NavigationBar";
 import Footer from "../components/Footer";
 import { CiImageOn } from "react-icons/ci";
 import { BsUpload } from "react-icons/bs";
+import { BiSolidMoviePlay } from "react-icons/bi";
+import { GoShareAndroid } from "react-icons/go";
 import { FaTimes } from "react-icons/fa";
 
 const Business: React.FC = () => {
   const photoInputRef = useRef<HTMLInputElement>(null);
+  const videoInputRef = useRef<HTMLInputElement>(null);
   const [photos, setPhotos] = useState<File[]>([]);
+  const [videos, setVideos] = useState<File[]>([]);
 
   // Function to handle adding photos
   const handleAddPhoto = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,7 +25,17 @@ const Business: React.FC = () => {
     }
   };
 
-
+  // Function to handle adding videos
+  const handleAddVideo = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+    if (files) {
+      const updatedVideos = [...videos];
+      for (let i = 0; i < files.length; i++) {
+        updatedVideos.push(files[i]);
+      }
+      setVideos(updatedVideos);
+    }
+  };
 
   // Function to handle removing photos
   const handleRemovePhoto = (index: number) => {
@@ -30,6 +44,12 @@ const Business: React.FC = () => {
     setPhotos(updatedPhotos);
   };
 
+  // Function to handle removing videos
+  const handleRemoveVideo = (index: number) => {
+    const updatedVideos = [...videos];
+    updatedVideos.splice(index, 1);
+    setVideos(updatedVideos);
+  };
 
   const handleDivClick = (inputRef: React.RefObject<HTMLInputElement>) => {
     inputRef.current?.click();
@@ -187,7 +207,24 @@ const Business: React.FC = () => {
                     </div>
                   );
                 })}
-                
+                {videos.map((video, i) => {
+                  return (
+                    <div key={i} className="flex flex-col gap-2 cursor-pointer">
+                      <div className="border-[2px] border-[#00000033] border-dashed h-32 w-44 rounded-xl flex items-center justify-center">
+                        <div className="relative h-32 w-44">
+                          <FaTimes
+                            className="z-20 absolute top-0 right-0 cursor-pointer text-red-500 bg-white text-xl rounded-full"
+                            onClick={() => handleRemoveVideo(i)}
+                          />
+                          <video
+                            src={URL.createObjectURL(video)}
+                            className="w-full object-cover rounded-xl cursor-pointer h-full"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
                 <div
                   className="flex flex-col gap-2 cursor-pointer"
                   onClick={() => handleDivClick(photoInputRef)}
@@ -209,10 +246,30 @@ const Business: React.FC = () => {
                     <BsUpload />
                   </button>
                 </div>
-                
+                <div
+                  className="flex flex-col gap-2 cursor-pointer"
+                  onClick={() => handleDivClick(videoInputRef)}
+                >
+                  <div className="border-[2px] border-[#00000033] border-dashed h-32 w-44 rounded-xl flex items-center justify-center">
+                    <input
+                      ref={videoInputRef}
+                      type="file"
+                      id="add_video"
+                      accept="video/*"
+                      multiple
+                      style={{ display: "none" }}
+                      onChange={handleAddVideo}
+                    />
+                    <BiSolidMoviePlay className="text-6xl text-[#00000066]" />
+                  </div>
+                  <button className=" font-poppins bg-primary text-white px-4 py-2 rounded-xl flex items-center gap-3">
+                    Upload Video
+                    <BsUpload />
+                  </button>
+                </div>
               </div>
             </div>
-       
+
           </div>
         </div>
       </div>
