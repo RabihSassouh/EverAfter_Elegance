@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import NavigationBar from "../components/NavigationBar";
 import Footer from "../components/Footer";
 
 const Business: React.FC = () => {
 
+  useEffect(() => {
+    document.title = "Your Business";
+  }, []);
 
   return (
     <div>
