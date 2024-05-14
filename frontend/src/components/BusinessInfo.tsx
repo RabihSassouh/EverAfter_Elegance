@@ -28,7 +28,9 @@ const BusinessInformation: React.FC = () => {
                         </div>
                     </div>
                 </form>
-                
+                <div className='flex w-full items-end justify-end'>
+                    <button className="bg-primary  font-poppins text-[#FFFFFFEB] font-semibold px-6 py-2 rounded-full hover:bg-secondary hover:shadow-md transition-colors" onClick={handleNext}>Next</button>
+                </div>
             </div>
         </div>
     );
