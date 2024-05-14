@@ -23,6 +23,8 @@ const Business: React.FC = () => {
             <h4 className="text-2xl font-medium font-poppins text-primary">
               Business Information
             </h4>
+            <div className="flex flex-col md:flex-row items-center justify-between w-full gap-10">
+              <div className="flex flex-col w-full md:w-1/2 gap-4 justify-between">
                 <div className="flex flex-col gap-1">
                   <label
                     htmlFor="company_name"
@@ -83,6 +85,53 @@ const Business: React.FC = () => {
                     placeholder="Please enter you company name"
                   />
                 </div>
+                <div className="flex flex-col gap-1">
+                  <label
+                    htmlFor="social_media"
+                    className="font-poppins text-[#494949]"
+                  >
+                    Social Media Links
+                  </label>
+                  <input
+                    type="text"
+                    id="social_media"
+                    name="social_media"
+                    className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins"
+                    placeholder="Please paste your social media links"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col w-full md:w-1/2 gap-4 justify-between">
+                <div className="flex flex-col gap-1">
+                  <label
+                    htmlFor="facilities"
+                    className="font-poppins text-[#494949]"
+                  >
+                    Facilities
+                  </label>
+                  <textarea
+                    name="facilities"
+                    id="facilities"
+                    className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins h-44"
+                    placeholder="Write down your business facilities"
+                  ></textarea>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <label
+                    htmlFor="offers"
+                    className="font-poppins text-[#494949]"
+                  >
+                    Special Offers
+                  </label>
+                  <textarea
+                    name="offers"
+                    id="offers"
+                    className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins h-44"
+                    placeholder="Special offers"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
 
           </div>
         </div>
