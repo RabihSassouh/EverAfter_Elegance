@@ -7,6 +7,7 @@ import CouplesInfo from '../../components/CoupleInfo';
 import WeddingInfo from '../../components/WeddingInfo';
 import FinishSignup from '../../components/FinishSignup';
 import BusinessCategory from '../../components/BusinessCategory';
+import BusinessLocation from '../../components/BusinessLocation';
 
 const SignUp: React.FC = () => {
   
@@ -18,7 +19,7 @@ const SignUp: React.FC = () => {
 
   return (
     <>
-    {step === 1 && <BusinessCategory/>}
+    {step === 1 && <BusinessLocation/>}
     {step === 2 && <Step2/>}
     {userType===1 && step === 3 && <CouplesInfo/>}
     {userType===1 && step === 4 && <WeddingInfo/>}
