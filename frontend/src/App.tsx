@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Venue from "./pages/Vendors";
 import SingleVenue from "./pages/SingleVendor";
 import React, {useState} from "react";
+import Couples from "./pages/Couple";
 // import AiTest from "./pages/AiTest";
 // import Car1 from "./pages/Test";
 // import Dress1 from "./components/Dress3d";
@@ -44,6 +45,7 @@ function App() {
           <Route element={<Home />} path="/"></Route>
           <Route element={<Venue />} path="/venue"></Route>
           <Route element={<SingleVenue />} path="/venue/:slug"></Route>
+          <Route element={<Couples/>} path="/couple" ></Route>
         </Routes>
       </Router>
       </Context.Provider>
