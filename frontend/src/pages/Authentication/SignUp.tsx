@@ -29,6 +29,7 @@ const SignUp: React.FC = () => {
     {userType===2 && step === 3 && <BusinessCategory/>}
     {userType===2 && step === 4 && <BusinessLocation/>}
     {userType===2 && step === 5 && <BusinessStep2/>}
+    {userType===2 && step === 6 && <BusinessPhotos/>}
 
     </>
   )
