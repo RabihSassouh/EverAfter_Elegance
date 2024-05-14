@@ -7,6 +7,11 @@ interface TimelineEvent {
   value: string;
 }
 
+interface Gift {
+  id: number;
+  file: string;
+  value?: string;
+}
 
 const WeddingInvitation: React.FC = () => {
   const timeline: TimelineEvent[] = [
@@ -21,7 +26,13 @@ const WeddingInvitation: React.FC = () => {
     { time: "12:15 PM", value: "Last Drinks" },
   ];
 
-
+  const gifts: Gift[] = [
+    { id: 18, file: "../../gitf1-SteelBaker-40.webp", value: "40$" },
+    { id: 20, file: "../../gift2-Piece11Set-700.webp", value: "700$" },
+    { id: 35, file: "../../gift3-Blender-100.webp", value: "100$" },
+    { id: 43, file: "../../gift4-CoffeeMaker-80.webp", value: "80$" },
+    { id: 44, file: "../../gift5-Toaster-130.webp", value: "130$" },
+  ];
 
   return (
     <div>
@@ -118,6 +129,38 @@ const WeddingInvitation: React.FC = () => {
           <button className="bg-primary text-white hover:shadow-lg w-24 px-4 py-2 rounded-xl font-semibold">
             No
           </button>
+        </div>
+      </div>
+      <div className="container mx-auto flex flex-col items-center justify-start gap-3 px-12 mb-12">
+        <p className="font-poppins text-xl text-[#000000CC] text-start w-full font-semibold">
+          Gift list
+        </p>
+        <div className="flex flex-wrap gap-16 w-full">
+          {gifts.map((gift, i) => (
+            <div
+              key={gift.id}
+              className="w-44 h-32 flex flex-col cursor-pointer mb-10"
+            >
+              <div className="w-44 h-32 flex items-center justify-center rounded-t-xl">
+                <img
+                  src={gift.file}
+                  alt={`Gift ${i}`}
+                  className="w-full h-32 object-cover rounded-t-xl cursor-pointer"
+                />
+              </div>
+              <p className="font-poppins py-2 text-[#000000CC] text-center border-none focus-visible:border-none">
+                {gift.value}
+              </p>
+              <button
+                className="font-poppins text-white bg-primary py-2 px-4 rounded-b-xl hover:bg-secondary"
+                onClick={() => {
+                  /* handleRemoveGift(i) */
+                }}
+              >
+                Gift
+              </button>
+            </div>
+          ))}
         </div>
       </div>
       
