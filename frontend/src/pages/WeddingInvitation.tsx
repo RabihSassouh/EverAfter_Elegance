@@ -2,10 +2,25 @@ import React from "react";
 import NavigationBar from "../components/NavigationBar";
 import Footer from "../components/Footer";
 
-
+interface TimelineEvent {
+  time: string;
+  value: string;
+}
 
 
 const WeddingInvitation: React.FC = () => {
+  const timeline: TimelineEvent[] = [
+    { time: "4:00 PM", value: "Pre Ceremony" },
+    { time: "4:30 PM", value: "Wedding Ceremony" },
+    { time: "6:00 PM", value: "Social Hours" },
+    { time: "8:00 PM", value: "Welcome Drink" },
+    { time: "8:30 PM", value: "Introduction" },
+    { time: "9:00 PM", value: "Couple Entrance" },
+    { time: "10:00 PM", value: "Dinner" },
+    { time: "11:30 PM", value: "Banquet Toss" },
+    { time: "12:15 PM", value: "Last Drinks" },
+  ];
+
 
 
   return (
@@ -68,7 +83,26 @@ const WeddingInvitation: React.FC = () => {
               <p className="text-white font-medium">Blanc De Chene</p>
             </div>
           </div>
-          
+          <div className="flex flex-col text-center items-center justify-center mb-12">
+            <p className="text-primary font-semibold text-xl mb-5">
+              Wedding Day Timeline
+            </p>
+            <div className="w-full max-w-sm flex flex-col gap-3 items-center justify-center">
+              <div className="flex flex-col gap-2 items-center justify-center">
+                {timeline.map((event, i) => (
+                  <div
+                    key={i}
+                    className="flex text-center w-full items-center gap-5"
+                  >
+                    <p className="text-red-500 font-semibold text-left">
+                      {event.time} :{" "}
+                    </p>
+                    <p className="text-white">{event.value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       
