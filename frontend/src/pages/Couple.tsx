@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { ChangeEvent, useEffect, useRef, useState } from 'react';
 import NavigationBar from '../components/NavigationBar';
 import Footer from '../components/Footer';
+import { MdPublish } from 'react-icons/md';
+import { BsFillGiftFill } from 'react-icons/bs';
+
+
 
 const Couples: React.FC = () => {
+
+  const brideDress = [1];
+
 
   return (
     <div>
@@ -35,7 +42,18 @@ const Couples: React.FC = () => {
                     <label htmlFor="bride_phone_number" className="font-poppins text-[#494949]">Phone Number</label>
                     <input type="text" id="bride_phone_number" name="bride_phone_number" className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins" placeholder="Please enter bride's phone number" />
                   </div>
-                  
+                  <div className="flex flex-col gap-1">
+                    <label htmlFor="wedding_dress" className="font-poppins text-[#494949]">Your Wedding Dress</label>
+                    <div className="flex flex-wrap gap-5">
+                      {brideDress.map((i) => {
+                        return (
+                          <div key={i} className="w-32 h-28 flex items-center justify-center rounded-xl border-[2px] border-gray-400 hover:border-primary">
+                            <img src={'../../public/bride-dress.jpg'} alt={`Gift ${i}`} className="w-full object-cover rounded-xl cursor-pointer h-full" />
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
                 </div>
               </div>
               </div>
