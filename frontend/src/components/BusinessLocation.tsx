@@ -98,7 +98,9 @@ const BusinessLocation: React.FC = () => {
 
   return (
     <div className="h-screen w-full flex flex-col gap-8 justify-center items-center my-10 md:my-0 px-12">
-
+      <h1 className="text-4xl font-medium font-poppins text-[#000000CC] text-center">
+        Your business address?
+      </h1>
       <div
         className="max-w-4xl border-[1px] border-primary w-full rounded-xl overflow-hidden relative"
         style={{ height: "500px" }}
