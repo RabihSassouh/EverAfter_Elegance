@@ -1,4 +1,6 @@
 import React from 'react';
+import { FaPlus, FaTimes } from "react-icons/fa"; 
+import Masonry from 'react-masonry-css';
 
 const BusinessPhotos: React.FC = () => {
 
@@ -14,7 +16,27 @@ const BusinessPhotos: React.FC = () => {
                     </button>
                     <input id="photoInput" type="file" style={{ display: 'none' }} onChange={handlePhotoInputChange} multiple />
                 </div>
-                
+                <div>
+                    {
+                        photos.length > 0 ? (
+                            <Masonry className="flex gap-5 animate-slide-fwd max-w-4xl mt-5" breakpointCols={breakpointObj}>
+                                {photos.map((photo, index) => (
+                                    <div key={index} className="relative">
+                                        <FaTimes className="z-20 absolute top-0 right-0 cursor-pointer text-red-500 bg-white text-xl rounded-full" onClick={() => handleRemovePhoto(index)} />
+                                        <img src={URL.createObjectURL(photo)} alt={`Photo ${index}`} className="w-full object-cover rounded-xl mb-5 border-[2px] border-[#00000033] hover:border-primary cursor-pointer" />
+                                    </div>
+                                ))}
+                            </Masonry>
+                        ) : (
+                            <div className='p-5'>
+                                <p className='font-poppins text-lg font-medium text-red-600'>No image selected</p>
+                            </div>
+                        )
+                    }
+                </div>
+                <div className='flex w-full items-end justify-end'>
+                    <button className="bg-primary  font-poppins text-[#FFFFFFEB] font-semibold px-6 py-2 rounded-full hover:bg-secondary hover:shadow-md transition-colors" onClick={handleNext}>Next</button>
+                </div>
             </div>
         </div>
     )
