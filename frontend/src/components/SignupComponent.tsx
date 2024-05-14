@@ -5,6 +5,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useDispatch } from 'react-redux';
 import { setData, setStep } from '../store/signUpSlice';
+import { SignupSchema } from "../validationSchemas/SignupSchema";
 
 function SignupComponent() {
   const navigate = useNavigate();
@@ -12,18 +13,26 @@ function SignupComponent() {
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword]= useState("")
   const dispatch = useDispatch();
 
   const handleSignup = async () => {
     try {
-    //   const response = await axios.post("http://127.0.0.1:8080/signup", {
-    //     firstname,
-    //     lastname,
-    //     email,
-    //     password,
-    //   });
-    //   window.localStorage.setItem("token", response.data.authorisation.token);
-    //   dispatch(setData(response.data));
+      await SignupSchema.validate({
+        firstname: firstname,
+        lastname: lastname,
+        email,
+        password,
+        confirmPassword: confirmPassword,
+      });
+      const response = await axios.post("http://127.0.0.1:8080/signup", {
+        firstname,
+        lastname,
+        email,
+        password,
+      });
+      window.localStorage.setItem("token", response.data.authorisation.token);
+      dispatch(setData(response.data));
       dispatch(setStep(2));
     } catch (error) {
       console.error("error", error);
