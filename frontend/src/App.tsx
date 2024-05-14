@@ -8,6 +8,7 @@ import SingleVenue from "./pages/SingleVendor";
 import React, {useState} from "react";
 import Couples from "./pages/Couple";
 import WeddingInvitation from "./pages/WeddingInvitation";
+import Business from "./pages/Business"
 // import AiTest from "./pages/AiTest";
 // import Car1 from "./pages/Test";
 // import Dress1 from "./components/Dress3d";
@@ -48,6 +49,7 @@ function App() {
           <Route element={<SingleVenue />} path="/venue/:slug"></Route>
           <Route element={<Couples/>} path="/couple" ></Route>
           <Route element={<WeddingInvitation/>} path="/wedding-invitation" ></Route>
+          <Route element={<Business/>} path="/business" ></Route>
         </Routes>
       </Router>
       </Context.Provider>
