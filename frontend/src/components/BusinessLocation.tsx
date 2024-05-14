@@ -110,6 +110,14 @@ const BusinessLocation: React.FC = () => {
           )}
         </LoadScript>
       </div>
+      <div className="flex max-w-4xl w-full items-end justify-end">
+        <button
+          className="bg-primary text-[#FFFFFFEB] font-poppins font-semibold px-6 py-2 rounded-full hover:bg-secondary hover:shadow-md transition-colors"
+          onClick={handleNext}
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 };
