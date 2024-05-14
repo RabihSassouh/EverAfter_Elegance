@@ -53,7 +53,20 @@ const BusinessLocation: React.FC = () => {
     }
   }, []);
 
+  const setMapCenter = (center: Position) => {
+    if (map) {
+      map.setCenter(center);
+    }
+  };
 
+
+  const handleNext = () => {
+    const data = {
+      position,
+    };
+    dispatch(setData(data));
+    dispatch(setStep(5));
+  };
 
   return (
     <div className="h-screen w-full flex flex-col gap-8 justify-center items-center my-10 md:my-0 px-12">
