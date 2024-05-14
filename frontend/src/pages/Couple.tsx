@@ -1,14 +1,12 @@
-import React, { ChangeEvent, useEffect, useRef, useState } from 'react';
+import React from 'react';
 import NavigationBar from '../components/NavigationBar';
 import Footer from '../components/Footer';
-import { MdPublish } from 'react-icons/md';
-import { BsFillGiftFill } from 'react-icons/bs';
-
 
 
 const Couples: React.FC = () => {
 
   const brideDress = [1];
+  const groomSuit = [1];
 
 
   return (
@@ -56,7 +54,41 @@ const Couples: React.FC = () => {
                   </div>
                 </div>
               </div>
+              <div className="flex flex-col gap-4 items-start justify-center w-full md:w-1/2">
+                <h6 className="text-xl font-medium font-poppins text-[#000000CC]">Groom's Section</h6>
+                <div className="flex flex-col w-full gap-3">
+                  <div className="flex flex-col gap-1">
+                    <label htmlFor="groom_first_name" className="font-poppins text-[#494949]">First Name</label>
+                    <input type="text" id="groom_first_name" name="groom_first_name" className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins" placeholder="Please enter groom's first name" />
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <label htmlFor="groom_last_name" className="font-poppins text-[#494949]">Last name</label>
+                    <input type="text" id="groom_last_name" name="groom_last_name" className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins" placeholder="Please enter groom's last name" />
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <label htmlFor="groom_email" className="font-poppins text-[#494949]">Email</label>
+                    <input type="text" id="groom_email" name="groom_email" className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins" placeholder="Please enter groom's email" />
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <label htmlFor="groom_phone_number" className="font-poppins text-[#494949]">Phone Number</label>
+                    <input type="text" id="groom_phone_number" name="groom_phone_number" className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins" placeholder="Please enter groom's phone number" />
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <label htmlFor="wedding_dress" className="font-poppins text-[#494949]">Your Wedding Suit</label>
+                    <div className="flex flex-wrap gap-5">
+                      {groomSuit.map((i) => {
+                        return (
+                          <div key={i} className="w-32 h-28 flex items-center justify-center rounded-xl border-[2px] border-gray-400 hover:border-primary">
+                            <img src={'../../public/groom-suit.webp'} alt={`Gift ${i}`} className="w-full object-cover rounded-xl cursor-pointer h-full" />
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
               </div>
+            </div>
+            
           </div>
         </div>
       </div>
