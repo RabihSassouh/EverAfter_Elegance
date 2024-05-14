@@ -59,6 +59,34 @@ const BusinessLocation: React.FC = () => {
     }
   };
 
+  const onLoad = useCallback(function callback(map: google.maps.Map) {
+    setMap(map);
+    setLoading(false);
+  }, []);
+
+  const onUnmount = useCallback(function callback() {
+    setMap(null);
+  }, []);
+
+  const onPlacesChanged = () => {
+    const places = searchBoxRef.current?.getPlaces() || [];
+    if (places.length === 0 || !places[0]?.geometry?.location) {
+      return;
+    }
+    const newPosition: Position = {
+      lat: places[0].geometry.location.lat(),
+      lng: places[0].geometry.location.lng(),
+    };
+    const viewport = places[0]?.geometry.viewport;
+
+    if (!viewport) {
+      return;
+    }
+
+    map?.fitBounds(viewport);
+
+    setPosition(newPosition);
+  };
 
   const handleNext = () => {
     const data = {
@@ -70,6 +98,7 @@ const BusinessLocation: React.FC = () => {
 
   return (
     <div className="h-screen w-full flex flex-col gap-8 justify-center items-center my-10 md:my-0 px-12">
+
       <div
         className="max-w-4xl border-[1px] border-primary w-full rounded-xl overflow-hidden relative"
         style={{ height: "500px" }}
