@@ -53,6 +53,21 @@ const Business: React.FC = () => {
                     placeholder="Please enter your phone number"
                   />
                 </div>
+                <div className="flex flex-col gap-1">
+                  <label
+                    htmlFor="email"
+                    className="font-poppins text-[#494949]"
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="text"
+                    id="email"
+                    name="email"
+                    className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins"
+                    placeholder="Please enter your email"
+                  />
+                </div>
 
           </div>
         </div>
