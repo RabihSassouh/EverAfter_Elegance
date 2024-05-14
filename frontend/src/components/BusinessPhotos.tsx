@@ -33,15 +33,12 @@ const BusinessPhotos: React.FC = () => {
   };
 
   const handleNext = () => {
-    if (photos.length < 4) {
-      toast.error("Must select at least 4 photos");
-    } else {
+    
       const data = {
         photos,
       };
       dispatch(setData(data));
       dispatch(setStep(7));
-    }
   };
 
   return (
