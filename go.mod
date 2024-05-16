@@ -10,7 +10,10 @@ require (
 	golang.org/x/crypto v0.23.0
 )
 
+require github.com/gorilla/securecookie v1.1.2 // indirect
+
 require (
 	filippo.io/edwards25519 v1.1.0 // indirect
+	github.com/gorilla/sessions v1.2.2
 	github.com/jinzhu/inflection v1.0.0 // indirect
 )
