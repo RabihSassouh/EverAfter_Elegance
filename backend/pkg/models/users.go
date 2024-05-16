@@ -26,6 +26,17 @@ func init(){
 }
 
 
+func ValidateEmail(email string) error {
+    // Check if the email already exists
+    existingUser, err := GetUserByEmail(email)
+    if err != nil {
+        return errors.New("error checking email existence")
+    }
+    if existingUser != nil {
+        return errors.New("email already used")
+    }
+    return nil
+}
 
 func (u *User) CreateUser() *User {
     // Validate the user object
