@@ -34,7 +34,6 @@ const Step2: React.FC = () => {
     } else {
       
       const formData = userTypes[userType as keyof UserTypes];
-      console.log(formData);
       const user = window.localStorage.getItem("user");
       let parsedUser: User | null = null;
       if (user){
@@ -53,9 +52,8 @@ const Step2: React.FC = () => {
           }
           );
           window.localStorage.setItem("token", response.data.token);
-          console.log(response);
-          console.log(response.data);
           dispatch(setData(formData));
+          window.localStorage.removeItem("user");
           dispatch(setStep(3));
         } catch (error) {
           console.log(error);
