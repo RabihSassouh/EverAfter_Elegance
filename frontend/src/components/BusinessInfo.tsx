@@ -50,7 +50,7 @@ const BusinessInfo: React.FC = () => {
         <form action="" ref={businessInfoForm}>
           <div className="mb-5 flex flex-col gap-8">
             <h1 className="text-3xl font-medium font-poppins text-[#000000CC] text-center">
-              Tell guests what you place has to offer
+              Tell guests about your offers
             </h1>
             <textarea
               name="description"
