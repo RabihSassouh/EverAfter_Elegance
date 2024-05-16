@@ -5,7 +5,7 @@ import axios from "axios";
 
 const WeddingInfo = () => {
   const dispatch = useDispatch();
-  const user_id = localStorage.getItem('id')
+  const user_id = localStorage.getItem('id');
   const [info, setInfo] = useState({
     wedding_date: "",
     venue_preference: "",
@@ -20,7 +20,9 @@ const WeddingInfo = () => {
   };
   const handleNext = async () => {
     try {
-      await axios.put('/update-couple', info);
+      const response = await axios.post('http://127.0.0.1:8080/update-couple', info);
+      console.log(response);
+      
       dispatch(setStep(5));
     } catch (error) {
       console.error(error);
