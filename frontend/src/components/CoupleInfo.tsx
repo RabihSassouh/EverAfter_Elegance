@@ -1,18 +1,44 @@
-// import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 // import CouplesInformationSchema from '../validationSchemas/CouplesInformationSchema';
 // import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { setData, setStep } from '../store/signUpSlice';
+import axios from 'axios';
     
 const CouplesInfo = () => {
 
         const dispatch = useDispatch()
         // const brideForm = useRef();
         // const groomForm = useRef();
+        const [info, setInfo] = useState({
+          bride_firstname: '',
+          bride_lastname: '',
+          bride_email: '',
+          bride_phone: '',
+          groom_firstname: '',
+          groom_lastname: '',
+          groom_email: '',
+          groom_phone: ''
+      });
     
+      const handleInputChange = (e:any) => {
+        const { name, value } = e.target;
+        setInfo({ ...info, [name]: value });
+    };
+
         const handleNext = async () => {
-                dispatch(setStep(4));
-    
+          const token = localStorage.getItem('token')
+          const headers = {
+            'Authorization' : `Bearer ${token}`,
+            'Content-Type' : 'application/json'
+          };
+          try{
+          const response =  await axios.post('http://127.0.0.1:8080/create-couple',info,{headers})
+          console.log(response)
+          // dispatch(setStep(4));
+        } catch (error){
+          console.error('Error creating couple:', error)
+        }    
         };
     
 
@@ -38,25 +64,29 @@ const CouplesInfo = () => {
                   type="text"
                   className="w-full border-[1px] border-gray-600 rounded-xl font-poppins px-4 py-2 placeholder:font-poppins"
                   placeholder="First name"
-                  name="first_name"
+                  name="bride_firstname"
+                  onChange={handleInputChange}
                 />
                 <input
                   type="text"
                   className="w-full border-[1px] border-gray-600 rounded-xl font-poppins px-4 py-2 placeholder:font-poppins"
                   placeholder="Last name"
-                  name="last_name"
+                  name="bride_lastname"
+                  onChange={handleInputChange}
                 />
                 <input
                   type="text"
                   className="w-full border-[1px] border-gray-600 rounded-xl font-poppins px-4 py-2 placeholder:font-poppins"
                   placeholder="Email"
-                  name="email"
+                  name="bride_email"
+                  onChange={handleInputChange}
                 />
                 <input
                   type="text"
                   className="w-full border-[1px] border-gray-600 rounded-xl font-poppins px-4 py-2 placeholder:font-poppins"
                   placeholder="Phone"
-                  name="phone"
+                  name="bride_phone"
+                  onChange={handleInputChange}
                 />
               </form>
             </div>
@@ -74,25 +104,29 @@ const CouplesInfo = () => {
                   type="text"
                   className="w-full border-[1px] border-gray-600 rounded-xl font-poppins px-4 py-2 placeholder:font-poppins"
                   placeholder="First name"
-                  name="first_name"
+                  name="groom_firstname"
+                  onChange={handleInputChange}
                 />
                 <input
                   type="text"
                   className="w-full border-[1px] border-gray-600 rounded-xl font-poppins px-4 py-2 placeholder:font-poppins"
                   placeholder="Last name"
-                  name="last_name"
+                  name="groom_lastname"
+                  onChange={handleInputChange}
                 />
                 <input
                   type="text"
                   className="w-full border-[1px] border-gray-600 rounded-xl font-poppins px-4 py-2 placeholder:font-poppins"
                   placeholder="Email"
-                  name="email"
+                  name="groom_email"
+                  onChange={handleInputChange}
                 />
                 <input
                   type="text"
                   className="w-full border-[1px] border-gray-600 rounded-xl font-poppins px-4 py-2 placeholder:font-poppins"
                   placeholder="Phone"
-                  name="phone"
+                  name="groom_phone"
+                  onChange={handleInputChange}
                 />
               </form>
             </div>
