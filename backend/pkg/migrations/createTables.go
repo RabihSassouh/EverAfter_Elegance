@@ -196,7 +196,7 @@ func (s *MySQLStorage) createCouplesTable() error{
 		venue_preference TEXT,
 		budget TEXT,
 		guest_count VARCHAR(50),
-		couple_id INT,
+		user_id INT,
 		FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 	)`)
 
