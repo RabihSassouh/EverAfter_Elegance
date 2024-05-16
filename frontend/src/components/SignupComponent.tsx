@@ -3,9 +3,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { MdChevronLeft } from "react-icons/md";
 import { useState } from "react";
 import axios from "axios";
-import { useDispatch } from 'react-redux';
-import { setData, setStep } from '../store/signUpSlice';
+import { useDispatch } from "react-redux";
+import { setData, setStep } from "../store/signUpSlice";
 import { SignupSchema } from "../validationSchemas/SignupSchema";
+import { toast } from "react-toastify";
+import { Data } from "@react-google-maps/api";
 
 function SignupComponent() {
   const navigate = useNavigate();
@@ -13,29 +15,41 @@ function SignupComponent() {
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword]= useState("")
+  const [confirmPassword, setConfirmPassword] = useState("");
   const dispatch = useDispatch();
 
-  const handleSignup = async () => {
+  const handleSignup = async (event: any) => {
+    event.preventDefault();
+    const formData1 = new FormData(event.target);
+    const data = Object.fromEntries(formData1.entries());
+    
+    const userData = {
+      firstname: formData1.get("firstname"),
+      lastname: formData1.get("lastname"),
+      email: formData1.get("email"),
+      password: formData1.get("password")
+    };
+    const formData = JSON.stringify(userData);
     try {
-      await SignupSchema.validate({
-        firstname: firstname,
-        lastname: lastname,
-        email,
-        password,
-        confirmPassword: confirmPassword,
-      });
-      const response = await axios.post("http://127.0.0.1:8080/signup", {
-        firstname,
-        lastname,
-        email,
-        password,
-      });
-      window.localStorage.setItem("token", response.data.authorisation.token);
-      dispatch(setData(response.data));
+      await SignupSchema.validate(data, { abortEarly: false });
+    } catch (errors: any) {
+      toast.error(`${errors.errors[0]}`);
+      console.error("Validation errors:", errors.errors);
+      return
+    }
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8080/validate-email",
+        formData,
+      );
+      window.localStorage.setItem("user", formData)
+      dispatch(setData(data));
       dispatch(setStep(2));
+      console.log(formData);
+      console.log(response);
     } catch (error) {
-      console.error("error", error);
+      toast.error(`${error}`)
+      console.log(error);
     }
   };
 
@@ -70,18 +84,23 @@ function SignupComponent() {
             <div className="text-gray-600 text-xs font-bold">OR</div>
             <div className="border-t border-gray-300 w-20 ml-4"></div>
           </div>
-          <form action="" method="post" className="space-y-3" onSubmit={handleSignup}>
+          <form
+            action=""
+            method="post"
+            className="space-y-3"
+            onSubmit={handleSignup}
+          >
             <div>
               <label
                 className="flex flex-left font-poppins text[#494949]"
-                htmlFor="first_name"
+                htmlFor="firstname"
               >
                 First Name
               </label>
               <input
-                id="first_name"
-                name="first_name"
-                type="first_name"
+                id="firstname"
+                name="firstname"
+                type="firstname"
                 placeholder="Your First Name"
                 className="px-4 mt-1 bg-transparent border-[2px] border-[#00000033] w-full p-2 rounded-lg font-poppins placeholder:font-poppins placeholder:text-[#00000066] focus:border-[2px]"
               />
@@ -89,14 +108,14 @@ function SignupComponent() {
             <div>
               <label
                 className="flex flex-left font-poppins text[#494949]"
-                htmlFor="last_name"
+                htmlFor="lastname"
               >
                 Last Name
               </label>
               <input
-                id="last_name"
-                name="last_name"
-                type="last_name"
+                id="lastname"
+                name="lastname"
+                type="lastname"
                 placeholder="Your Last Name"
                 className="px-4 mt-1 bg-transparent border-[2px] border-[#00000033] w-full p-2 rounded-lg font-poppins placeholder:font-poppins placeholder:text-[#00000066] focus:border-[2px]"
               />
@@ -134,14 +153,14 @@ function SignupComponent() {
             <div>
               <label
                 className="flex flex-left font-poppins text[#494949]"
-                htmlFor="confirm_password"
+                htmlFor="confirmPassword"
               >
                 Cofirm Password
               </label>
               <input
-                id="confirm_password"
-                name="confirm_password"
-                type="confirm_password"
+                id="confirmPassword"
+                name="confirmPassword"
+                type="password"
                 placeholder="Cofirm Your Password"
                 className="px-4 mt-1 bg-transparent border-[2px] border-[#00000033] w-full p-2 rounded-lg font-poppins placeholder:font-poppins placeholder:text-[#00000066] focus:border-[2px]"
               />
