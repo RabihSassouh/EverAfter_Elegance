@@ -7,7 +7,7 @@ import (
 	_ `github.com/jinzhu/gorm/dialects/mysql`
 	"github.com/RabihSassouh/EverAfter_Elegance/backend/pkg/routes"
 	// "github.com/go-sql-driver/mysql"
-	"github.com/RabihSassouh/EverAfter_Elegance/backend/pkg/middleware" 
+	"github.com/RabihSassouh/EverAfter_Elegance/backend/pkg/middleware"
 )
 
 func main() {
@@ -21,6 +21,7 @@ func main() {
 	routes.RegisterGuestsRoutes(r)
 	routes.RegisterGuestbookRoutes(r)
 	routes.RegisterCoupleRoutes(r)
+	routes.RegisterSetupRoutes(r)
 	handler := middleware.CORSMiddleware(r)
 	http.Handle("/",r)
 	log.Fatal(http.ListenAndServe("localhost:8080",handler))
