@@ -6,6 +6,7 @@ import (
 	
 )
 
+
 type Couple struct {
 	gorm.Model
 	Groom_firstname   string `json:"groom_firstname"`
