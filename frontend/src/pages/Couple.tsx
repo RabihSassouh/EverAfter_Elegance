@@ -23,12 +23,12 @@ interface Info {
   venue_preference: string;
   budget: string;
   guest_count: string;
-  user_id: string
 }
 
 const Couples: React.FC = () => {
   const giftInputRef = useRef<HTMLInputElement>(null);
   const [gifts, setGifts] = useState<Gift[]>([]);
+  const user = localStorage.getItem('id')
   const [info, setInfo] = useState<Info>({
     groom_firstname: '',
     groom_lastname: '',
@@ -42,13 +42,26 @@ const Couples: React.FC = () => {
     venue_preference: '',
     budget: '',
     guest_count: '',
-    user_id: '',
   });
 
   const brideDress = [1];
   const groomSuit = [1];
-
   useEffect(() => {
+    // Function to fetch couple data from backend
+    const fetchCouple = async () => {
+      try {
+        const response = await fetch(`http://127.0.0.1:8080/get-couple/${user}`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch couple');
+        }
+        const infoData = await response.json();
+        setInfo(infoData);
+        console.log(infoData)
+      } catch (error) {
+        console.error('Error fetching couple:', error);
+      }
+    }; // Call the fetchCouple function
+    fetchCouple();
     document.title = "Couples Information";
   }, []);
 
@@ -101,32 +114,38 @@ const Couples: React.FC = () => {
                 <div className="flex flex-col w-full gap-3">
                   <div className="flex flex-col gap-1">
                     <label
-                      htmlFor="bride_first_name"
+                      htmlFor="bride_firstname"
                       className="font-poppins text-[#494949]"
                     >
                       First Name
                     </label>
                     <input
                       type="text"
-                      id="bride_first_name"
-                      name="bride_first_name"
+                      id="bride_firstname"
+                      name="bride_firstname"
                       className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins"
                       placeholder="Please enter bride's first name"
+                      value={info.bride_firstname}
+                      onChange={(e) => setInfo({ ...info, bride_firstname: e.target.value })}
+                 
                     />
                   </div>
                   <div className="flex flex-col gap-1">
                     <label
-                      htmlFor="bride_last_name"
+                      htmlFor="bride_lastname"
                       className="font-poppins text-[#494949]"
                     >
                       Last name
                     </label>
                     <input
                       type="text"
-                      id="bride_last_name"
-                      name="bride_last_name"
+                      id="bride_lastname"
+                      name="bride_lastname"
                       className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins"
                       placeholder="Please enter bride's last name"
+                      value={info.bride_lastname}
+                      onChange={(e) => setInfo({ ...info, bride_lastname: e.target.value })}
+                 
                     />
                   </div>
                   <div className="flex flex-col gap-1">
@@ -142,21 +161,27 @@ const Couples: React.FC = () => {
                       name="bride_email"
                       className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins"
                       placeholder="Please enter bride's email"
+                      value={info.bride_email}
+                      onChange={(e) => setInfo({ ...info, bride_email: e.target.value })}
+                 
                     />
                   </div>
                   <div className="flex flex-col gap-1">
                     <label
-                      htmlFor="bride_phone_number"
+                      htmlFor="bride_phone"
                       className="font-poppins text-[#494949]"
                     >
                       Phone Number
                     </label>
                     <input
                       type="text"
-                      id="bride_phone_number"
-                      name="bride_phone_number"
+                      id="bride_phone"
+                      name="bride_phone"
                       className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins"
                       placeholder="Please enter bride's phone number"
+                      value={info.bride_phone}
+                      onChange={(e) => setInfo({ ...info, bride_phone: e.target.value })}
+                 
                     />
                   </div>
                   <div className="flex flex-col gap-1">
@@ -192,32 +217,36 @@ const Couples: React.FC = () => {
                 <div className="flex flex-col w-full gap-3">
                   <div className="flex flex-col gap-1">
                     <label
-                      htmlFor="groom_first_name"
+                      htmlFor="groom_firstname"
                       className="font-poppins text-[#494949]"
                     >
                       First Name
                     </label>
                     <input
                       type="text"
-                      id="groom_first_name"
-                      name="groom_first_name"
+                      id="groom_firstname"
+                      name="groom_firstname"
                       className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins"
                       placeholder="Please enter groom's first name"
+                      value={info.groom_firstname}
+                      onChange={(e) => setInfo({ ...info, groom_firstname: e.target.value })}
                     />
                   </div>
                   <div className="flex flex-col gap-1">
                     <label
-                      htmlFor="groom_last_name"
+                      htmlFor="groom_lastname"
                       className="font-poppins text-[#494949]"
                     >
                       Last name
                     </label>
                     <input
                       type="text"
-                      id="groom_last_name"
-                      name="groom_last_name"
+                      id="groom_lastname"
+                      name="groom_lastname"
                       className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins"
                       placeholder="Please enter groom's last name"
+                      value={info.groom_lastname}
+                      onChange={(e) => setInfo({ ...info, groom_lastname: e.target.value })}
                     />
                   </div>
                   <div className="flex flex-col gap-1">
@@ -233,21 +262,26 @@ const Couples: React.FC = () => {
                       name="groom_email"
                       className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins"
                       placeholder="Please enter groom's email"
+                      value={info.groom_email}
+                      onChange={(e) => setInfo({ ...info, groom_email: e.target.value })}
+                 
                     />
                   </div>
                   <div className="flex flex-col gap-1">
                     <label
-                      htmlFor="groom_phone_number"
+                      htmlFor="groom_phone"
                       className="font-poppins text-[#494949]"
                     >
                       Phone Number
                     </label>
                     <input
                       type="text"
-                      id="groom_phone_number"
-                      name="groom_phone_number"
+                      id="groom_phone"
+                      name="groom_phone"
                       className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins"
                       placeholder="Please enter groom's phone number"
+                      value={info.groom_phone}
+                      onChange={(e) => setInfo({ ...info, groom_phone: e.target.value })}
                     />
                   </div>
                   <div className="flex flex-col gap-1">
@@ -285,17 +319,20 @@ const Couples: React.FC = () => {
                 <div className="flex flex-col gap-3 w-full md:w-1/2">
                   <div className="flex flex-col gap-1">
                     <label
-                      htmlFor="wedding_place"
+                      htmlFor="venue_preference"
                       className="font-poppins text-[#494949]"
                     >
-                      Place
+                      Venue preference
                     </label>
                     <input
                       type="text"
-                      id="wedding_place"
-                      name="wedding_place"
+                      id="venue_preference"
+                      name="venue_preference"
                       className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins"
-                      placeholder="Please enter wedding place name"
+                      placeholder="Please enter venue preference"
+                      value={info.venue_preference}
+                      onChange={(e) => setInfo({ ...info, venue_preference: e.target.value })}
+                 
                     />
                   </div>
                   <div className="flex flex-col gap-1">
@@ -303,7 +340,7 @@ const Couples: React.FC = () => {
                       htmlFor="wedding_date"
                       className="font-poppins text-[#494949]"
                     >
-                      Date
+                      Date of the wedding
                     </label>
                     <input
                       type="date"
@@ -311,38 +348,47 @@ const Couples: React.FC = () => {
                       name="wedding_date"
                       className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins"
                       placeholder="Please enter wedding date"
+                      value={info.wedding_date}
+                      onChange={(e) => setInfo({ ...info, wedding_date: e.target.value })}
+                 
                     />
                   </div>
                 </div>
                 <div className="flex flex-col gap-3 w-full md:w-1/2">
                   <div className="flex flex-col gap-1">
                     <label
-                      htmlFor="wedding_budget"
+                      htmlFor="budget"
                       className="font-poppins text-[#494949]"
                     >
                       Budget
                     </label>
                     <input
                       type="number"
-                      id="wedding_budget"
-                      name="wedding_budget"
+                      id="budget"
+                      name="budget"
                       className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins"
                       placeholder="Please enter wedding budget"
+                      value={info.budget}
+                      onChange={(e) => setInfo({ ...info, budget: e.target.value })}
+                 
                     />
                   </div>
                   <div className="flex flex-col gap-1">
                     <label
-                      htmlFor="wedding_guests_count"
+                      htmlFor="guests_count"
                       className="font-poppins text-[#494949]"
                     >
                       Guests Count
                     </label>
                     <input
                       type="number"
-                      id="wedding_guests_count"
-                      name="wedding_guests_count"
+                      id="guests_count"
+                      name="guests_count"
                       className="border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins"
                       placeholder="Please enter wedding guests count"
+                      value={info.guest_count}
+                      onChange={(e) => setInfo({ ...info, guest_count: e.target.value })}
+                 
                     />
                   </div>
                 </div>
