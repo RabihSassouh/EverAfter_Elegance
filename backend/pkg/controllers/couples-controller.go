@@ -2,13 +2,18 @@ package controllers
 
 import (
 	"encoding/json"
-	"net/http"
-	"github.com/RabihSassouh/EverAfter_Elegance/backend/pkg/models"
+	"errors"
 	"fmt"
+	"net/http"
+	"strconv"
+
+	"github.com/RabihSassouh/EverAfter_Elegance/backend/pkg/models"
 	"github.com/dgrijalva/jwt-go"
+	"github.com/gorilla/mux"
+	"github.com/jinzhu/gorm"
 )
 
-
+var db *gorm.DB
 func ExtractUserIDFromContext(r *http.Request) (int, error) {
     // Extract the JWT token from the request header
     tokenString := r.Header.Get("Authorization")
@@ -76,5 +81,68 @@ func CreateCoupleHandler(w http.ResponseWriter, r *http.Request) {
 	// Set the Content-Type header and write the response
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
+	w.Write(response)
+}
+
+
+func UpdateCoupleHandler(w http.ResponseWriter, r *http.Request) {
+	// Parse couple ID from URL parameter
+	params := mux.Vars(r)
+	coupleID, err := strconv.ParseUint(params["id"], 10, 64)
+	if err != nil {
+		http.Error(w, "Invalid couple ID", http.StatusBadRequest)
+		return
+	}
+
+	// Fetch the couple from the database by ID
+	var couple models.Couple
+	result := db.First(&couple, coupleID)
+	if errors.Is(result.Error, gorm.ErrRecordNotFound) {
+		http.Error(w, "Couple not found", http.StatusNotFound)
+		return
+	} else if result.Error != nil {
+		http.Error(w, result.Error.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	// Decode the JSON request body into the Couple struct
+	var updatedCouple models.Couple
+	err = json.NewDecoder(r.Body).Decode(&updatedCouple)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
+
+	// Update the couple fields
+	couple.Groom_firstname = updatedCouple.Groom_firstname
+	couple.Groom_lastname = updatedCouple.Groom_lastname
+	couple.Groom_email = updatedCouple.Groom_email
+	couple.Groom_phone = updatedCouple.Groom_phone
+	couple.Bride_firstname = updatedCouple.Bride_firstname
+	couple.Bride_lastname = updatedCouple.Bride_lastname
+	couple.Bride_email = updatedCouple.Bride_email
+	couple.Bride_phone = updatedCouple.Bride_phone
+	couple.Wedding_date = updatedCouple.Wedding_date
+	couple.Venue_preference = updatedCouple.Venue_preference
+	couple.Budget = updatedCouple.Budget
+	couple.Guest_count = updatedCouple.Guest_count
+
+	// Save the updated couple to the database
+	result = db.Save(&couple)
+	if result.Error != nil {
+		http.Error(w, result.Error.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	// Marshal the updated couple to JSON
+	response, err := json.Marshal(couple)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	// Set the Content-Type header and write the response
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
 	w.Write(response)
 }
