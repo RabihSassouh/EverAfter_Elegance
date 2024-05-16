@@ -12,6 +12,7 @@ const CouplesInfo = () => {
         // const groomForm = useRef();
         
         const user_id = localStorage.getItem('id')
+        
         const [info, setInfo] = useState({
           bride_firstname: '',
           bride_lastname: '',
