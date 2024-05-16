@@ -38,7 +38,7 @@ const CouplesInfo = () => {
           try{
           const response =  await axios.post('http://127.0.0.1:8080/create-couple',info,{headers})
           console.log(response)
-          // dispatch(setStep(4));
+          dispatch(setStep(4));
         } catch (error){
           console.error('Error creating couple:', error)
         }    
