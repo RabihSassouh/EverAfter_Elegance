@@ -22,7 +22,7 @@ const SignUp: React.FC = () => {
 
   return (
     <>
-    {step === 1 && <CouplesInfo/>}
+    {step === 1 && <SignupComponent/>}
     {step === 2 && <Step2/>}
     {userType===1 && step === 3 && <CouplesInfo/>}
     {userType===1 && step === 4 && <WeddingInfo/>}

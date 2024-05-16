@@ -10,6 +10,8 @@ const CouplesInfo = () => {
         const dispatch = useDispatch()
         // const brideForm = useRef();
         // const groomForm = useRef();
+        
+        const user_id = localStorage.getItem('id')
         const [info, setInfo] = useState({
           bride_firstname: '',
           bride_lastname: '',
@@ -18,7 +20,8 @@ const CouplesInfo = () => {
           groom_firstname: '',
           groom_lastname: '',
           groom_email: '',
-          groom_phone: ''
+          groom_phone: '',
+          user_id: user_id
       });
     
       const handleInputChange = (e:any) => {

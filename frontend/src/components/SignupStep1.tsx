@@ -52,6 +52,7 @@ const Step2: React.FC = () => {
           }
           );
           window.localStorage.setItem("token", response.data.token);
+          window.localStorage.setItem("id", response.data.user.id);          
           dispatch(setData(formData));
           window.localStorage.removeItem("user");
           dispatch(setStep(3));
