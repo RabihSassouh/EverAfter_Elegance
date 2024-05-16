@@ -14,15 +14,16 @@ interface Info {
   groom_firstname: string;
   groom_lastname: string;
   groom_email: string;
-  groom_phonenumber: string;
+  groom_phone: string;
   bride_firstname: string;
   bride_lastname: string;
   bride_email: string;
-  bride_phonenumber: string;
+  bride_phone: string;
   wedding_date: string;
   venue_preference: string;
   budget: string;
   guest_count: string;
+  user_id: string
 }
 
 const Couples: React.FC = () => {
@@ -32,17 +33,17 @@ const Couples: React.FC = () => {
     groom_firstname: '',
     groom_lastname: '',
     groom_email: '',
-    groom_phonenumber: '',
+    groom_phone: '',
     bride_firstname: '',
     bride_lastname: '',
     bride_email: '',
-    bride_phonenumber: '',
+    bride_phone: '',
     wedding_date: '',
     venue_preference: '',
     budget: '',
     guest_count: '',
+    user_id: '',
   });
-
 
   const brideDress = [1];
   const groomSuit = [1];
