@@ -54,20 +54,51 @@ func ExtractUserIDFromContext(r *http.Request) (int, error) {
 
 // CreateCoupleHandler handles the creation of a new couple.
 func CreateCoupleHandler(w http.ResponseWriter, r *http.Request) {
-	var couple models.Couple
-
-	// Decode the JSON request body into the Couple struct
-	err := json.NewDecoder(r.Body).Decode(&couple)
+	var requestBody struct {
+		Groom_firstname  string `json:"groom_firstname"`
+		Groom_lastname   string `json:"groom_lastname"`
+		Groom_email      string `json:"groom_email"`
+		Groom_phone      string `json:"groom_phone"`
+		Bride_firstname  string `json:"bride_firstname"`
+		Bride_lastname   string `json:"bride_lastname"`
+		Bride_email      string `json:"bride_email"`
+		Bride_phone      string `json:"bride_phone"`
+		Wedding_date     string `json:"wedding_date"`
+		Venue_preference string `json:"venue_preference"`
+		Budget           string `json:"budget"`
+		Guest_count      string `json:"guest_count"`
+		UserID           string   `json:"user_id"`
+	}
+	err := json.NewDecoder(r.Body).Decode(&requestBody)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
+	
 
-	// userID, err := ExtractUserIDFromContext(r)
-	// if err != nil {
-	// 	http.Error(w, err.Error(), http.StatusUnauthorized)
-	// 	return
-	// }
+	// Parse the string ID to an integer
+	user_id, err := strconv.ParseUint(requestBody.UserID,10,64)
+	if err != nil {
+		http.Error(w, "Invalid ID format", http.StatusBadRequest)
+		return
+	}
+
+	// Set the ID in the couple struct
+	couple := models.Couple{
+		Groom_firstname:  requestBody.Groom_firstname,
+		Groom_lastname:   requestBody.Groom_lastname,
+		Groom_email:      requestBody.Groom_email,
+		Groom_phone:      requestBody.Groom_phone,
+		Bride_firstname:  requestBody.Bride_firstname,
+		Bride_lastname:   requestBody.Bride_lastname,
+		Bride_email:      requestBody.Bride_email,
+		Bride_phone:      requestBody.Bride_phone,
+		Wedding_date:     requestBody.Wedding_date,
+		Venue_preference: requestBody.Venue_preference,
+		Budget:          requestBody.Budget,
+		Guest_count:      requestBody.Guest_count,
+		UserID : uint(user_id),
+	} 
 
 	// couple.UserID= uint(userID)
 	// Create the couple in the database

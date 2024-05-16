@@ -184,6 +184,7 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
     // Add token to response
     response := map[string]interface{}{
         "user":  createdUser,
+		"id": createdUser.ID,
         "token": tokenString,
     }
 
