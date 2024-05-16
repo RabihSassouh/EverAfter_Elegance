@@ -1,23 +1,68 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import { setStep, setUserType } from "../store/signUpSlice";
+import { setData, setStep, setUserType } from "../store/signUpSlice";
+import axios from "axios";
+
+interface UserTypes {
+  1: string;
+  2: string;
+}
+interface User {
+  [key: string]: string;
+}
+
 const Step2: React.FC = () => {
   const dispatch = useDispatch();
   const { userType } = useSelector((state: any) => state.signUp);
-
+  const userTypes: UserTypes = {
+    1: "couple",
+    2: "business owner",
+  };
   const handleUserType = (value: number) => {
+
     dispatch(setUserType(value));
     const string = value === 1 ? "couple" : "business owner";
     toast.success(`User type ${string} selected`);
   };
-
-  const handleNext = () => {
+  
+  const handleNext = async (event: any) => {
+    event.preventDefault();
     if (userType === null) {
       toast.error(`Select a user type`);
       return;
     } else {
-      dispatch(setStep(3));
+      
+      const formData = userTypes[userType as keyof UserTypes];
+      console.log(formData);
+      const user = window.localStorage.getItem("user");
+      let parsedUser: User | null = null;
+      if (user){
+        parsedUser = JSON.parse(user)
+        if (parsedUser){
+        const { firstname, lastname, email, password } = parsedUser;
+        const user_type=formData
+        try {
+          const response = await axios.post(
+            "http://127.0.0.1:8080/signup/",{
+            firstname,
+            lastname,
+            email,
+            password,
+            user_type
+          }
+          );
+          window.localStorage.setItem("token", response.data.token);
+          console.log(response);
+          console.log(response.data);
+          dispatch(setData(formData));
+          dispatch(setStep(3));
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    }
+      
     }
   };
 
