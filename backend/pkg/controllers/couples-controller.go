@@ -9,10 +9,10 @@ import (
 
 	"github.com/RabihSassouh/EverAfter_Elegance/backend/pkg/models"
 	"github.com/dgrijalva/jwt-go"
+	"github.com/gorilla/mux"
 
-	"github.com/jinzhu/gorm"
 	"github.com/RabihSassouh/EverAfter_Elegance/backend/pkg/config"
-	
+	"github.com/jinzhu/gorm"
 )
 
  var db=config.GetDB()
@@ -213,4 +213,94 @@ func UpdateCoupleHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	w.Write(response)
+}
+
+// getCoupleById retrieves a couple from the database by its ID.
+func getCoupleById(coupleID uint) (models.Couple, error) {
+	var couple models.Couple
+	if err := db.Where("id = ?", coupleID).First(&couple).Error; err != nil {
+		if errors.Is(err, gorm.ErrRecordNotFound) {
+			return couple, fmt.Errorf("couple with ID %d not found", coupleID)
+		}
+		return couple, fmt.Errorf("failed to retrieve couple: %v", err)
+	}
+	return couple, nil
+}
+
+// GetCoupleByIDHandler handles the retrieval of a couple by its ID.
+func GetCoupleByIDHandler(w http.ResponseWriter, r *http.Request) {
+    // Extract couple ID from the request URL
+    vars := mux.Vars(r)
+    coupleID := vars["id"]
+
+    // Parse couple ID to integer
+    id, err := strconv.Atoi(coupleID)
+    if err != nil {
+        http.Error(w, "Invalid couple ID", http.StatusBadRequest)
+        return
+    }
+
+    // Call getCoupleById function to get the couple by ID from the database
+    couple, err := getCoupleById(uint(id))
+    if err != nil {
+        http.Error(w, err.Error(), http.StatusNotFound)
+        return
+    }
+
+    // Marshal the couple object to JSON
+    response, err := json.Marshal(couple)
+    if err != nil {
+        http.Error(w, err.Error(), http.StatusInternalServerError)
+        return
+    }
+
+    // Set the Content-Type header and write the response
+    w.Header().Set("Content-Type", "application/json")
+    w.WriteHeader(http.StatusOK)
+    w.Write(response)
+}
+
+// getCoupleByUserID retrieves a couple from the database by its user_id.
+func getCoupleByUserID(userID uint) (models.Couple, error) {
+	var couple models.Couple
+	if err := db.Where("user_id = ?", userID).First(&couple).Error; err != nil {
+		if errors.Is(err, gorm.ErrRecordNotFound) {
+			return couple, fmt.Errorf("couple with user ID %d not found", userID)
+		}
+		return couple, fmt.Errorf("failed to retrieve couple: %v", err)
+	}
+	return couple, nil
+}
+
+// GetCoupleByUserIDHandler handles the retrieval of a couple by its user ID.
+func GetCoupleByUserIDHandler(w http.ResponseWriter, r *http.Request) {
+    // Extract user ID from the request URL
+    vars := mux.Vars(r)
+    userID := vars["id"]
+
+    // Parse user ID to integer
+    id, err := strconv.Atoi(userID)
+    if err != nil {
+        http.Error(w, "Invalid user ID", http.StatusBadRequest)
+        return
+    }
+
+    // Call getCoupleByUserID function to get the couple by user ID from the database
+    couple, err := getCoupleByUserID(uint(id))
+    if err != nil {
+        http.Error(w, err.Error(), http.StatusNotFound)
+        return
+    }
+
+    // Marshal the couple object to JSON
+    response, err := json.Marshal(couple)
+    if err != nil {
+        http.Error(w, err.Error(), http.StatusInternalServerError)
+        return
+    }
+
+    // Set the Content-Type header and write the response
+    w.Header().Set("Content-Type", "application/json")
+    w.WriteHeader(http.StatusOK)
+    w.Write(response)
 }
