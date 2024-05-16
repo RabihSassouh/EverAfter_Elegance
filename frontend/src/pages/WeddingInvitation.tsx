@@ -2,6 +2,64 @@ import React from "react";
 import NavigationBar from "../components/NavigationBar";
 import Footer from "../components/Footer";
 
+
+//   useEffect(() => {
+//     const handleGiftPayment = async (): Promise<void> => {
+//       if (!stripe || !elements) {
+//         // Stripe.js has not loaded yet, wait for it
+//         return;
+//       }
+
+//       try {
+//         // Call your backend to create a PaymentIntent
+//         const response = await fetch("/create-payment-intent", {
+//           method: "POST",
+//           headers: {
+//             "Content-Type": "application/json",
+//           },
+//           body: JSON.stringify({ giftAmount: 1000 }), // Example gift amount
+//         });
+
+//         const { clientSecret } = await response.json();
+
+//         // Access CardElement safely using optional chaining
+//         const cardElement = elements.getElement(CardElement);
+
+//         // Check if cardElement is available before proceeding
+//         if (!cardElement) {
+//           console.error("CardElement is not available");
+//           return;
+//         }
+
+//         // Call Stripe.js to handle the payment
+//         const result = await stripe.confirmCardPayment(clientSecret, {
+//           payment_method: {
+//             card: cardElement,
+//             billing_details: {
+//               name: "Jenny Rosen",
+//             },
+//           },
+//         });
+
+//         if (result.error) {
+//           console.error(result.error.message);
+//           // Show error to your user
+//         } else {
+//           // Payment succeeded
+//           // Show a thank you message to your user
+//         }
+//       } catch (error) {
+//         console.error("Error occurred during payment:", error);
+//         // Show error to your user
+//       }
+//     };
+
+//     handleGiftPayment();
+//   }, [stripe, elements]);
+
+//   return null; // or any other JSX if needed
+// };
+
 interface TimelineEvent {
   time: string;
   value: string;
@@ -117,12 +175,15 @@ const WeddingInvitation: React.FC = () => {
         </div>
       </div>
       <div className="container mx-auto flex flex-col items-center justify-center gap-3 mb-12">
-       <input type="string" placeholder="Full name" className="flex center border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins"
-           />
+        <input
+          type="string"
+          placeholder="Full name"
+          className="flex center border-[2px] border-[#00000033] rounded-xl py-2 px-4 text-[#00000066] placeholder:text-[#00000066] font-poppins"
+        />
         <div className="flex items-center gap-5 font-poppins">
-        <p className="font-poppins text-2xl text-[#000000CC] tracking-wider font-semibold">
-          RSVP
-        </p>
+          <p className="font-poppins text-2xl text-[#000000CC] tracking-wider font-semibold">
+            RSVP
+          </p>
           <button className="bg-primary text-white w-24 px-4 py-2 hover:shadow-lg font-semibold rounded-xl">
             Yes
           </button>
@@ -151,12 +212,7 @@ const WeddingInvitation: React.FC = () => {
               <p className="font-poppins py-2 text-[#000000CC] text-center border-none focus-visible:border-none">
                 {gift.value}
               </p>
-              <button
-                className="font-poppins text-white bg-primary py-2 px-4 rounded-b-xl hover:bg-secondary"
-                onClick={() => {
-                  /* handleRemoveGift(i) */
-                }}
-              >
+              <button className="font-poppins text-white bg-primary py-2 px-4 rounded-b-xl hover:bg-secondary">
                 Gift
               </button>
             </div>
