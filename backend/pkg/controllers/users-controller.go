@@ -167,7 +167,7 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if newUser.UserType == "vendor" {
+	if newUser.UserType == "business owner" {
 		res, _ := json.Marshal(map[string]string{"message": "Vendor registration requires additional information"})
 		w.Header().Set("Content-Type", "application/json")
 		w.WriteHeader(http.StatusOK)
@@ -175,18 +175,19 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Create the user
-	// createdUser := newUser.CreateUser()
-	// if createdUser == nil {
-	//     errorMessage := map[string]string{"error": "failed to create user"}
-	//     res, _ := json.Marshal(errorMessage)
-	//     w.Header().Set("Content-Type", "application/json")
-	//     w.WriteHeader(http.StatusInternalServerError)
-	//     w.Write(res)
-	//     return
-	// }
+	tokenString, err := utils.GenerateToken(createdUser, middleware.JWTKey)
+    if err != nil {
+        http.Error(w, "Failed to generate JWT token", http.StatusInternalServerError)
+        return
+    }
 
-	res, _ := json.Marshal(createdUser)
+    // Add token to response
+    response := map[string]interface{}{
+        "user":  createdUser,
+        "token": tokenString,
+    }
+
+	res, _ := json.Marshal(response)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	w.Write(res)
