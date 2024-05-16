@@ -7,6 +7,6 @@ import (
 
 var RegisterCoupleRoutes = func(router *mux.Router) {
 	router.HandleFunc("/create-couple", controllers.CreateCoupleHandler).Methods("POST")
-	router.HandleFunc("/update-couple", controllers.UpdateCoupleHandler).Methods("PUT")
+	router.HandleFunc("/update-couple", controllers.UpdateCoupleHandler).Methods("POST")
 }
 
