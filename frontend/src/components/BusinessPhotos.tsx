@@ -71,7 +71,7 @@ const BusinessPhotos: React.FC = () => {
               {photos.map((photo, index) => (
                 <div key={index} className="relative">
                   <FaTimes
-                    className="z-20 absolute top-0 right-0 cursor-pointer text-red-500 bg-white text-xl rounded-full"
+                    className="z-20 absolute top-0 right-0 -mt-2 -mr-2 cursor-pointer text-500 bg-white text-xl rounded-full border border-gray-800"
                     onClick={() => handleRemovePhoto(index)}
                   />
                   <img
