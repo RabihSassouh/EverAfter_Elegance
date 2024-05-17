@@ -9,7 +9,7 @@ import React, {useState} from "react";
 import Couples from "./pages/Couple";
 import WeddingInvitation from "./pages/WeddingInvitation";
 import Business from "./pages/Business"
-// import AiTest from "./pages/AiTest";
+import AiTest from "./pages/AiTest";
 // import Car1 from "./pages/Test";
 // import Dress1 from "./components/Dress3d";
 // import Venue1 from "./components/Venue3d";
@@ -44,7 +44,7 @@ function App() {
         <Routes>
           <Route element={<Login />} path="/login"></Route>
           <Route element={<SignUp />} path="/sign-up"></Route>
-          <Route element={<Home />} path="/"></Route>
+          <Route element={<AiTest />} path="/"></Route>
           <Route element={<Venue />} path="/venue"></Route>
           <Route element={<SingleVenue />} path="/venue/:slug"></Route>
           <Route element={<Couples/>} path="/couple" ></Route>
