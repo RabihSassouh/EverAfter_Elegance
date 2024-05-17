@@ -11,7 +11,7 @@ const FinishSignup: React.FC = () => {
     if (userType === 1) {
       navigate("/couple");
     } else {
-      navigate("/business");
+      navigate("/");
     }
   };
   return (
