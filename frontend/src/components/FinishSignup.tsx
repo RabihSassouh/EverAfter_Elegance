@@ -13,6 +13,7 @@ const FinishSignup: React.FC = () => {
     console.log(data);
     if (userType === 1) {
       navigate("/couple");
+      dispatch(setStep(1))
     } else {
       navigate("/");
       dispatch(setStep(1))
