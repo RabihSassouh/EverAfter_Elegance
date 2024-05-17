@@ -28,7 +28,7 @@ const Ai: React.FC = () => {
         }
     ]);
 
-    const [minimized, setMinimized] = useState(false);
+    const [minimized, setMinimized] = useState(true);
     const chatContainerRef = useRef<HTMLDivElement>(null);
 
     const handleSend = async (message: string) => {
