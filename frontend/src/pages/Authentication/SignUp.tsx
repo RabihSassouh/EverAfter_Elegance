@@ -33,7 +33,7 @@ const SignUp: React.FC = () => {
     {userType===2 && step === 6 && <BusinessPhotos/>}
     {userType===2 && step === 7 && <BusinessInfo/>}
     {userType !=1 && step === 8 && <FinishSignup/>}
-
+    
     </>
   )
 }
