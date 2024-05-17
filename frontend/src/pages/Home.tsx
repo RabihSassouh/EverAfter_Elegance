@@ -7,7 +7,7 @@ import Services from "../components/Services";
 import PopularVenues from "../components/PopularVenues";
 import ContactUs from "../components/ContactUs";
 import Footer from "../components/Footer";
-import FAB from "../components/Fab";
+import Ai from "../components/AiAssistant";
 // import ThreeScene from "../components/Dress3d";
 
 
@@ -21,8 +21,7 @@ const Home = () => {
       <Services/>
       <PopularVenues/>
       <ContactUs/>
-      {/* <FAB fabLabelRef={React.createRef()}/>
-       */}
+      <Ai/>
       <Footer/>
     </div>
   );
