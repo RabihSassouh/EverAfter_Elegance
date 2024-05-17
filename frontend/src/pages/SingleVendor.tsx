@@ -67,7 +67,7 @@ const SingleVenue: React.FC = () => {
       <Slider />
       <VenueDetails venue={venue} />
       {venue.category === "venues" && <Venue1 width="300" height="300" />}
-      {venue.category === "dresses" && <Dress1 />}
+      {venue.category === "wedding_dress" && <Dress1 />}
       {venue.category === "photographers" && <Car1 />}
       <Footer />
     </div>
