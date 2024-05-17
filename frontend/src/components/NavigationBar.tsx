@@ -20,31 +20,31 @@ const NavigationBar = () => {
       label: "Home",
       href: "/",
     },
+    // {
+    //   value: 2,
+    //   label: "Planning Tools",
+    //   href: "/",
+    // },
     {
       value: 2,
-      label: "Planning Tools",
-      href: "/",
-    },
-    {
-      value: 3,
       label: "Venue",
       href: "/venue",
     },
     {
-      value: 4,
+      value: 3,
       label: "Vendors",
       href: "/",
     },
     {
-      value: 5,
+      value: 4,
       label: "Offers",
       href: "/",
     },
-    {
-      value: 6,
-      label: "Your Business",
-      href: "/",
-    },
+    // {
+    //   value: 6,
+    //   label: "Your Business",
+    //   href: "/",
+    // },
   ];
 
   // Function to navigate to login page
