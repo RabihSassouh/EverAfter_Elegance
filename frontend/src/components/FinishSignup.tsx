@@ -1,9 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { setStep } from "../store/signUpSlice";
 
 const FinishSignup: React.FC = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const data = useSelector((state: any) => state.signUp);
   const { userType } = useSelector((state: any) => state.signUp);
   const handleFinish = () => {
@@ -12,6 +15,7 @@ const FinishSignup: React.FC = () => {
       navigate("/couple");
     } else {
       navigate("/");
+      dispatch(setStep(1))
     }
   };
   return (
