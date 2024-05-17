@@ -27,7 +27,7 @@ const VenueCard: React.FC<VenueCardProps> = ({ venue }) => {
     <Link to={`/venue/${slug}`} className="md:max-w-sm rounded-lg overflow-hidden cursor-pointer">
       <div className="relative md:h-64">
         <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center rounded-lg"></div>
-        <img className="w-full md:h-64 object-cover rounded-lg" src={imageUrl} alt={name} />
+        <img className="w-full md:h-64 object-cover rounded-lg" src="/venue.jpg" alt={name} />
         <div className="absolute bottom-0 left-0 right-0 p-4 rounded-b-lg">
           <h3 className="text-white text-lg font-semibold font-poppins tracking-wide">{name}</h3>
           <div className='flex gap-2 items-center'>
