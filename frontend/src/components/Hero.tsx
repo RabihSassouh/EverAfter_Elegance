@@ -67,7 +67,7 @@ const Hero: React.FC = () => {
     {
       id: 10,
       label: "Wedding Dresses",
-      value: "dresses",
+      value: "wedding_dress",
     },
     {
       id: 11,
