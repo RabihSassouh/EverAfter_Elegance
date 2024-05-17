@@ -21,7 +21,7 @@ const AiTest: React.FC = () => {
     const [typing, setTyping] = useState(false);
     const [messages, setMessages] = useState<MessageModel[]>([
         {
-            message: "Hello from chatgpt",
+            message: "Welcome to EverAfter Elegance!",
             sender: "AI",
             direction: "incoming",
             position: "single"
@@ -70,7 +70,7 @@ const AiTest: React.FC = () => {
         });
         const systemMessage = {
             role: "system",
-            content: "Explain all concepts"
+            content: "For this session, you are a wedding planner website and you should only answer questions related to wedding. This includes topics like vendors, honey moons, best places to visit for honeymoon, in addition, you should help users to plan their wedding and give them advices to make their wedding day better. In addition you need to give the users advice on how to use their budget to get the most out of it so that they can have the best wedding possible. In addition you can answer business owners and vendors on how to make their business better. Please ignore any questions that are not related to these topics."
         }
         const apiRequestBody = {
             "model": "gpt-3.5-turbo",
@@ -113,7 +113,7 @@ const AiTest: React.FC = () => {
         <div>
             <div className={`fixed bottom-0 right-0 transition-all ${minimized ? "h-0" : "h-[500px]"} w-[400px]`}>
                 <MainContainer>
-                    <div ref={chatContainerRef} className="flex flex-col h-full" style={{width:400}}>
+                    <div ref={chatContainerRef} className="flex flex-col h-full" >
                         {!minimized && (
                             <>
                                 <div className="flex-grow overflow-y-auto w-full" style={{width:400}}>
