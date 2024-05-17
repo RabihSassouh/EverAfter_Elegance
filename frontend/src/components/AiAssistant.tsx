@@ -17,7 +17,7 @@ interface MessageModel {
 
 const API_key = "sk-proj-g0FQMKiJXvgCnXvwe7RpT3BlbkFJoVsuqzKXkArwQjvRD1Hw";
 
-const AiTest: React.FC = () => {
+const Ai: React.FC = () => {
     const [typing, setTyping] = useState(false);
     const [messages, setMessages] = useState<MessageModel[]>([
         {
@@ -152,4 +152,4 @@ const AiTest: React.FC = () => {
 
 }
 
-export default AiTest;
+export default Ai;
