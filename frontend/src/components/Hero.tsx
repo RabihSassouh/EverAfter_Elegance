@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import "../styles/Hero.css";
 import { Category } from "@mui/icons-material";
@@ -12,9 +12,10 @@ interface Category {
   value: string;
 }
 const Hero: React.FC = () => {
+  const selectsRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<Category | null>(null);
-  const navigate= useNavigate();
+  const navigate = useNavigate();
   // const [VenueData, setVenueData] = useState<any[]>([]);
   // const { venuesData, setVenuesData } = useContext(Context);
 
@@ -86,8 +87,6 @@ const Hero: React.FC = () => {
     },
   ];
 
-
-
   const handleCategoryClick = (category: Category): void => {
     setSelectedOption(category);
     setIsOpen(false);
@@ -98,9 +97,9 @@ const Hero: React.FC = () => {
         const response = await axios.post("http://127.0.0.1:8080/vendors", {
           category: selectedOption.value,
         });
-        localStorage.setItem('venuesData', JSON.stringify(response.data));
+        localStorage.setItem("venuesData", JSON.stringify(response.data));
         console.log(response.data);
-        navigate("/venue")
+        navigate("/venue");
       } catch (error) {
         console.error("Error fetching data from API:", error);
       }
@@ -122,9 +121,12 @@ const Hero: React.FC = () => {
         <h1 className="text-white text-4xl font-poppins font-semibold mb-4">
           Bringing Dreams to life...
         </h1>
-        <div className=" p-4 flex justify-center items-center w-full">
-          <div style={{transition:"all 3s"}} className=" flex justify-center items-center overflow-hidden w-full">
-            <div className="relative inline-block w-[50%]">
+        <div className="relative p-4 flex flex-col justify-center items-center w-full max-w-xl">
+          <div
+            className="flex justify-center items-center overflow-hidden w-full"
+            
+          >
+            <div className="relative inline-block w-full">
               <div
                 className={`cursor-pointer appearance-none bg-[#FFFFFF0F] px-4 py-2 text-[#FFFFFFCC] focus:outline-none font-poppins w-full transition-all duration-300 ease-in-out ${
                   isOpen ? "rounded-tl-lg" : "rounded-s-lg"
@@ -139,26 +141,30 @@ const Hero: React.FC = () => {
                 <MdOutlineKeyboardArrowDown className="w-6 h-6" />
               </div>
             </div>
-            <button className="bg-primary text-white px-4 py-2 hover:bg-secondary font-poppins rounded-e-lg"
-            onClick={handleSearchClick}>
+            <button
+              className="bg-primary text-white px-4 py-2 hover:bg-secondary font-poppins rounded-e-lg"
+              onClick={handleSearchClick}
+            >
               Search
             </button>
           </div>
           {isOpen && (
-            <div className="flex flex-col justify-start px-4 mt-2 my-3 items-start overflow-hidden w-[94%] appearance-none bg-[#FFFFFF0F] py-2 text-[#FFFFFFCC] focus:outline-none font-poppins rounded-b-lg max-h-52 overflow-y-scroll transition-all duration-300 ease-in-out">
-              {categories.map((category) => (
-                <div
-                  className={`group flex items-center tracking-wide cursor-pointer hover:text-primary w-full ${
-                    selectedOption?.id === category.id
-                      ? "text-primary font-semibold"
-                      : ""
-                  }`}
-                  onClick={() => handleCategoryClick(category)}
-                  key={category.id}
-                >
-                  <span>{category.label}</span>
-                </div>
-              ))}
+            <div className="absolute top-12 flex flex-col justify-start px-4 my-3 items-start overflow-hidden w-[94%] appearance-none bg-[#FFFFFF0F] py-2 text-[#FFFFFFCC] focus:outline-none font-poppins rounded-b-lg max-h-52 overflow-y-scroll transition-all duration-300 ease-in-out">
+              {categories.map((category) => {
+                return (
+                  <div
+                    className={`group flex items-center tracking-wide cursor-pointer hover:text-primary w-full ${
+                      selectedOption?.id === category.id
+                        ? "text-primary font-semibold"
+                        : ""
+                    }`}
+                    onClick={() => handleCategoryClick(category)}
+                    key={category.id}
+                  >
+                    <span>{category.label}</span>
+                  </div>
+                );
+              })}
             </div>
           )}
         </div>
