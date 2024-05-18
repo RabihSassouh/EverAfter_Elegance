@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import "../styles/Hero.css";
 import { Category } from "@mui/icons-material";
@@ -12,7 +12,6 @@ interface Category {
   value: string;
 }
 const Hero: React.FC = () => {
-  const selectsRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<Category | null>(null);
   const navigate = useNavigate();
