@@ -31,7 +31,7 @@ const VenueDetails: React.FC<VenueDetailsProps> = ({ venue }) => {
               </h1>
               <div className="flex items-center text-xl gap-1 font-poppins text-[#00000099]">
                 <MdLocationOn />
-                <p>Bikfaya</p>
+                <p>Hasbaya</p>
               </div>
             </div>
             <div className="flex gap-2 items-center">
@@ -40,7 +40,7 @@ const VenueDetails: React.FC<VenueDetailsProps> = ({ venue }) => {
             </div>
             <Rating rating={venue.rating} reviewCount={venue.reviewCount} />
             <div className="flex gap-3 items-center">
-              <p className="font-poppins text-[#494949] font-medium">Their Social Media:</p>
+              <p className="font-poppins text-[#494949] font-medium">Their Social Media</p>
               <div className="flex gap-2 font-poppins text-[#00000099]">
                 <FaFacebook />
                 <FaInstagram />
@@ -50,10 +50,10 @@ const VenueDetails: React.FC<VenueDetailsProps> = ({ venue }) => {
             </div>
           </div>
           <div className="flex gap-3 font-poppins mt-2">
-            <button className="flex items-center gap-1 border border-[#00000066] rounded-lg px-4 py-1 text-[#00000066] hover:shadow-md">
+            {/* <button className="flex items-center gap-1 border border-[#00000066] rounded-lg px-4 py-1 text-[#00000066] hover:shadow-md">
               Share
               <GoShareAndroid />
-            </button>
+            </button> */}
             <button className="flex items-center gap-1 border border-[#00000066] rounded-lg px-4 py-1 text-[#00000066] hover:shadow-md">
               Save
               <MdOutlineBookmarkBorder />
@@ -65,11 +65,11 @@ const VenueDetails: React.FC<VenueDetailsProps> = ({ venue }) => {
           </div>
         </div>
         <div className="flex flex-col gap-2">
-          <h1 className="text-3xl font-medium font-poppins text-[#000000]">Information:</h1>
+          <h1 className="text-3xl font-medium font-poppins text-[#000000]">Information</h1>
           <p className="text-[#494949] font-poppins">{venue.description}</p>
         </div>
         <div className="flex flex-col gap-2">
-          <h1 className="text-3xl font-medium font-poppins text-[#000000]">Facilities:</h1>
+          <h1 className="text-3xl font-medium font-poppins text-[#000000]">Facilities</h1>
           <ul className="list-disc list-inside font-poppins text-[#494949] flex flex-col gap-1">
             {venue.facilities.map((facility, i) => {
               return <li key={i}>{facility}</li>;
@@ -77,7 +77,7 @@ const VenueDetails: React.FC<VenueDetailsProps> = ({ venue }) => {
           </ul>
         </div>
         <div className="flex flex-col gap-2">
-          <h1 className="text-3xl font-medium font-poppins text-[#000000]">Special offers:</h1>
+          <h1 className="text-3xl font-medium font-poppins text-[#000000]">Special offers</h1>
           <ul className="list-disc list-inside font-poppins text-[#494949] flex flex-col gap-1">
             {venue.special_offers.map((offers, i) => {
               return <li key={i}>{offers}</li>;
