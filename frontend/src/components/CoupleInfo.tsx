@@ -1,8 +1,8 @@
-import React, { useRef, useState } from 'react'
+import { useState } from 'react'
 // import CouplesInformationSchema from '../validationSchemas/CouplesInformationSchema';
 // import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
-import { setData, setStep } from '../store/signUpSlice';
+import { setStep } from '../store/signUpSlice';
 import axios from 'axios';
     
 const CouplesInfo = () => {

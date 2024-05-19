@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
-import { MainContainer, ChatContainer, MessageList, Message, MessageInput, MessagePayload, MessageType, TypingIndicator } from '@chatscope/chat-ui-kit-react';
+import { MainContainer, MessageList, Message, MessageInput, MessagePayload, MessageType, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 import { FaCommentAlt, FaTimes } from 'react-icons/fa';
 
 type MessageDirection = "incoming" | "outgoing" | 0 | 1;

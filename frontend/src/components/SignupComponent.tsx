@@ -1,21 +1,21 @@
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import { MdChevronLeft } from "react-icons/md";
-import { useState } from "react";
+// import { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { setData, setStep } from "../store/signUpSlice";
 import { SignupSchema } from "../validationSchemas/SignupSchema";
 import { toast } from "react-toastify";
-import { Data } from "@react-google-maps/api";
+// import { Data } from "@react-google-maps/api";
 
 function SignupComponent() {
   const navigate = useNavigate();
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  // const [firstname, setFirstname] = useState("");
+  // const [lastname, setLastname] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+  // const [confirmPassword, setConfirmPassword] = useState("");
   const dispatch = useDispatch();
 
   const handleSignup = async (event: any) => {
