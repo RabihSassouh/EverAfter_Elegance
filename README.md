@@ -23,6 +23,10 @@
 - As a wedding guest, I want to view the couple's wedding website, so I can get all the details about the event.
 - As a wedding guest, I want to RSVP to the wedding online, so I can confirm my attendance easily.
 - As a wedding guest, I want to find the gift registry, so I can choose a gift that the couple will love.
+## Admin
+- As an admin, I want to manage user accounts, so I can ensure the platform is being used appropriately.
+- As an admin, I want to review new business listings, so I can maintain the quality of services offered on the platform.
+- As an admin, I want to reply to users' emails, so I can provide support and assistance.
 
 <br><br>
 <!-- Tech stack -->
