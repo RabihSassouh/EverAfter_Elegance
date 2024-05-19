@@ -39,6 +39,7 @@
 - Tailwind CSS (https://tailwindcss.com/) is used for styling the application. Tailwind is a utility-first CSS framework that allows for rapid UI development with low-level utility classes.
 - For persistent storage (database), the app uses MySQL (https://www.mysql.com/), a widely-used relational database management system that ensures reliable and efficient data management.
 - To enhance user engagement, our website incorporates the cutting-edge OpenAI endpoint, leveraging the capabilities of the GPT-3.5-turbo model. This AI-driven feature provides users with intelligent and personalized assistance for wedding-related questions, offering support to couples and business owners alike.
+- Our website offers a unique feature that provides 3D models showcasing vendors, allowing couples to visually explore and assess vendors' offerings before making their decisions.
 
 <br><br>
 <!-- UI UX -->
