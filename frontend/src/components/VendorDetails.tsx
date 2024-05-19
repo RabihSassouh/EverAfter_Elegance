@@ -3,7 +3,7 @@ import { FaPhone, FaUser } from 'react-icons/fa';
 import { MdLocationOn, MdOutlineBookmarkBorder } from 'react-icons/md';
 import Rating from './Rating';
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
-import { GoGlobe, GoShareAndroid } from 'react-icons/go';
+import { GoGlobe } from 'react-icons/go';
 
 interface Venue {
   company_name: string;

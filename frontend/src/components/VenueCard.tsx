@@ -21,8 +21,8 @@ interface VenueData {
   
 
 const VenueCard: React.FC<VenueCardProps> = ({ venue }) => {
-  const { name, guests, location, rating, reviewCount, imageUrl, slug } = venue;
-
+  const { name, guests, location, rating, reviewCount, slug } = venue;
+  // imageUrl,
   return (
     <Link to={`/venue/${slug}`} className="md:max-w-sm rounded-lg overflow-hidden cursor-pointer">
       <div className="relative md:h-64">
