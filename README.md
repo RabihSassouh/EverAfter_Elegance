@@ -11,10 +11,18 @@
 > 3D demonstration to help couples envision how their dream day will look like.
 
 ### User Stories
+## Couples
 - As a couple, we want to explore wedding themes and styles, so we can find inspiration for our dream wedding.
 - As a couple, we want to customize our wedding package, so we can modify it to match our unique preferences and vision.
 - As a couple, we want to manage our payments online, so we can easily keep track of our wedding expenses and avoid any inconveniences during the planning process.
-
+## Business Owners
+- As a business owner, I want to list my wedding services on the website, so I can attract more clients.
+- As a business owner, I want to manage my bookings and inquiries online, so I can keep my business organized.
+- As a business owner, I want to receive reviews from clients, so I can build my reputation and improve my services.
+## Wedding Guests
+- As a wedding guest, I want to view the couple's wedding website, so I can get all the details about the event.
+- As a wedding guest, I want to RSVP to the wedding online, so I can confirm my attendance easily.
+- As a wedding guest, I want to find the gift registry, so I can choose a gift that the couple will love.
 
 <br><br>
 <!-- Tech stack -->
