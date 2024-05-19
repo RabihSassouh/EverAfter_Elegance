@@ -11,19 +11,19 @@
 > 3D demonstration to help couples envision how their dream day will look like.
 
 ### User Stories
-## Couples
+#### Couples
 - As a couple, we want to explore wedding themes and styles, so we can find inspiration for our dream wedding.
 - As a couple, we want to customize our wedding package, so we can modify it to match our unique preferences and vision.
 - As a couple, we want to manage our payments online, so we can easily keep track of our wedding expenses and avoid any inconveniences during the planning process.
-## Business Owners
+#### Business Owners
 - As a business owner, I want to list my wedding services on the website, so I can attract more clients.
 - As a business owner, I want to manage my bookings and inquiries online, so I can keep my business organized.
 - As a business owner, I want to receive reviews from clients, so I can build my reputation and improve my services.
-## Wedding Guests
+#### Wedding Guests
 - As a wedding guest, I want to view the couple's wedding website, so I can get all the details about the event.
 - As a wedding guest, I want to RSVP to the wedding online, so I can confirm my attendance easily.
 - As a wedding guest, I want to find the gift registry, so I can choose a gift that the couple will love.
-## Admin
+#### Admin
 - As an admin, I want to manage user accounts, so I can ensure the platform is being used appropriately.
 - As an admin, I want to review new business listings, so I can maintain the quality of services offered on the platform.
 - As an admin, I want to reply to users' emails, so I can provide support and assistance.
@@ -62,7 +62,7 @@
 <!-- Database Design -->
 <img src="./readme/title5.svg"/>
 
-###  Architecting Data Excellence: Innovative Database Design Strategies:
+###  Architecting Data Excellence: Pioneering Advanced Database Design Techniques:
 
 - <img src="./readme/demo/Database_ER_diagram.png">
 
@@ -85,9 +85,9 @@
 <!-- Prompt Engineering -->
 <img src="./readme/title7.svg"/>
 
-###  Mastering AI Interaction: Unveiling the Power of Prompt Engineering:
+###  Mastering AI Interaction: Unlocking the Potential of Prompt Engineering:
 
-- This project uses advanced prompt engineering techniques to optimize the interaction with natural language processing models. By skillfully crafting input instructions, we tailor the behavior of the models to achieve precise and efficient language understanding and generation for various tasks and preferences.
+- This project utilizes advanced prompt engineering techniques to optimize interactions with AI models. By skillfully crafting input instructions, we enhance the AI's ability to answer wedding-related questions and assist both couples and business owners. This AI-driven feature is designed to improve user experience and provide personalized support throughout the wedding planning process.
 
 <br><br>
 
@@ -113,7 +113,7 @@
 <!-- How to run -->
 <img src="./readme/title10.svg"/>
 
-> To set up Coffee Express locally, follow these steps:
+> To set up Ever After Elegance locally, follow these steps:
 
 ### Prerequisites
 
