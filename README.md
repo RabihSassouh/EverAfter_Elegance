@@ -53,9 +53,8 @@
 
 ### Mockups
 | Home screen  | Login Screen | Signup Screen | SignupStep1 Screen | ChooseBusiness Screen | SingleVendor Screen | WeddingInvitation Screen |
-| ---| ---| ---|
-| ![Landing](./readme/demo/Homepage.png) | ![Login](./readme/demo/Login.png) | ![Signup](./readme/demo/Signup.png) | 
-![SignupStep1](./readme/demo/Signup-1.png) | ![ChooseBusiness](./readme/demo/Choosebusinesscategory.png) | ![Singlevendor](./readme/demo/Singlevendor.png) | ![WeddingInvitaionPage](./readme/demo/Weddingpage.png) |
+| ---| ---| ---| ---| ---| ---| ---|
+| ![Landing](./readme/demo/Homepage.png) | ![Login](./readme/demo/Login.png) | ![Signup](./readme/demo/Signup.png) | ![SignupStep1](./readme/demo/Signup-1.png) | ![ChooseBusiness](./readme/demo/Choosebusinesscategory.png) | ![Singlevendor](./readme/demo/Singlevendor.png) | ![WeddingInvitaionPage](./readme/demo/Weddingpage.png) |
 <br><br>
 
 <!-- Database Design -->
