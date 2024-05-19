@@ -15,7 +15,7 @@ function Dress1() {
       camera={{ fov: 45 }}
       style={{ position: "absolute" }}
     >
-      <color attach="background" args={["#808b3e"]} />
+      <color attach="background" args={["#94977f"]} />
       <PresentationControls
         speed={1.5}
         global
