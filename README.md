@@ -96,7 +96,7 @@
 
 ###  Efficient AI Deployment: Unleashing the Potential with AWS Integration:
 
-- This project leverages AWS deployment strategies to seamlessly integrate and deploy natural language processing models. With a focus on scalability, reliability, and performance, we ensure that AI applications powered by these models deliver robust and responsive solutions for diverse use cases.
+- The website is currently hosted on AWS infrastructure, ensuring reliability and scalability through services like EC2.
 
 <br><br>
 
@@ -138,5 +138,6 @@ _Below is an example of how you can instruct your audience on installing and set
    ```js
    const API_KEY = 'ENTER YOUR API';
    ```
+5. npm run dev
 
-Now, you should be able to run Coffee Express locally and explore its features.
+Now, you should be able to run Ever After Elegance locally and explore its features.
