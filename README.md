@@ -48,14 +48,14 @@
 
 > We designed EverAfter Elegance using wireframes and mockups, iterating on the design until we reached the ideal layout for easy navigation and a seamless user experience.
 
-- Project Figma design [figma](https://www.figma.com/file/LsuOx5Wnh5YTGSEtrgvz4l/Purrfect-Pals?type=design&node-id=257%3A79&mode=design&t=adzbABt5hbb91ucZ-1)
+- Project Figma design [figma](https://www.figma.com/design/MlNKZdeOmr4v8RdqBNgRz6/Final_Project?node-id=287-1361&t=PEn8rIBTbfvBI9z6-0)
 
 
 ### Mockups
-| Home screen  | Menu Screen | Order Screen |
-| ---| ---| ---|
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
-
+| Home screen  | Login Screen | Signup Screen | SignupStep1 Screen | ChooseBusiness Screen | SingleVendor Screen | WeddingInvitation Screen |
+| ---| ---| ---| ---| ---| ---| ---|
+| ![Landing](./readme/demo/Homepage.svg) | ![Login](./readme/demo/Login.svg) | ![Signup](./readme/demo/Signup.svg) | 
+![SignupStep1](./readme/demo/Signup-1.svg) | ![ChooseBusiness](./readme/demo/Choosebusinesscategory.svg) | ![Singlevendor](./readme/demo/Singlevendor.svg) | ![WeddingInvitaionPage](./readme/demo/Weddingpage.svg) |
 <br><br>
 
 <!-- Database Design -->
