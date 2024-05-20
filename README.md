@@ -75,7 +75,7 @@
 
 
 ### User Screens
-<table>
+
   <tr>
     <th>Landing screen</th>
     <th>Landing screen</th>
@@ -106,7 +106,7 @@
     <br><br>
     <td><img src="./readme/demo/BusinessSelect.png" alt="Landing" width="350" /></td>
   </tr>
-</table>
+
 
 <br><br>
 
