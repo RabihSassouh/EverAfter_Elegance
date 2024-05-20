@@ -73,44 +73,28 @@
 <!-- Implementation -->
 <img src="./readme/title6.svg"/>
 
-
 ### User Screens
 
-| Landing screen | Landing2 screen | Landing3 screen |
+| Landing screen | Landing screen2 | Landing screen3 |
 | ---| ---| ---|
 | ![Landing](./readme/demo/Landing_screen.png) | ![Landing2](./readme/demo/Landing2.png) | ![Landing3](./readme/demo/Landing3.png) |
 
-| Landing4 screen | Landing5 screen | Login screen |
+| Landing screen4 | Landing screen5 | Login screen |
 | ---| ---| ---|
 | ![Landing4](./readme/demo/Landing4.png) | ![Landing5](./readme/demo/Landing5.png) | ![Login](./readme/demo/Login_.png) |
 
-| Register screen | Vendors screen | SingleVendor Screen |
+| Register screen | Vendors screen | SingleVendor Screen1 |
 | ---| ---| ---|
 | ![Register](./readme/demo/Signup_.png) | ![Vendors](./readme/demo/Vendors.png) |![Singlevendor](./readme/demo/Single_vendor.png) |
 
-| SingleVendor2 Screen | Select business screen | Wedding invitation1 screen |
+| SingleVendor Screen2 | Select business screen | Wedding invitation screen1 |
 | ---| ---| ---|
 | ![SingleVendor2](./readme/demo/SingleVendor2.png) | ![Select business](./readme/demo/BusinessSelect.png) | ![Wedding invitation1](./readme/demo/weddingInvitation1.png) |
 
-| Wedding invitation2 screen | Wedding invitation3 screen | Wedding invitation4 screen |
+| Wedding invitation screen2 | Wedding invitation screen3 | Wedding invitation screen4 |
 | ---| ---| ---|
 | ![Wedding invitation2](./readme/demo/weddingInvitation2.png) | ![Wedding invitation3](./readme/demo/weddingInvitation3.png) | ![Wedding invitation4](./readme/demo/weddingInvitation4.png) |
   
-  <!-- <tr>
-    <td><img src="./readme/demo/Landing_screen.png" alt="Landing" width="300" /></td>
-    <td><img src="./readme/demo/Landing2.png" alt="Landing" width="300" /></td>
-    <td><img src="./readme/demo/Landing3.png" alt="Landing" width="300" /></td>
-    <td><img src="./readme/demo/Landing4.png" alt="Landing" width="300" /></td>
-    <td><img src="./readme/demo/Landing5.png" alt="Landing" width="300" /></td>
-    <td><img src="./readme/demo/Login_.png" alt="Login" width="300" /></td>
-    <td><img src="./readme/demo/Signup_.png" alt="Register" width="300" /></td>
-    <td><img src="./readme/demo/Vendors.png" alt="Vendors" width="300" /></td>
-    <td><img src="./readme/demo/Single_vendor.png" alt="SingleVendor" width="300"/></td>
-    <td><img src="./readme/demo/SingleVendor2.png" alt="Landing" width="300" /></td>
-    <td><img src="./readme/demo/BusinessSelect.png" alt="Landing" width="300" /></td>
-  </tr> -->
-
-
 <br><br>
 
 ### 3d Screens
