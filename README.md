@@ -78,6 +78,10 @@
 <table>
   <tr>
     <th>Landing screen</th>
+    <th>Landing screen</th>
+    <th>Landing screen</th>
+    <th>Landing screen</th>
+    <th>Landing screen</th>
     <th>Login screen</th>
     <th>Register screen</th>
     <th>Vendors screen</th>
@@ -85,20 +89,16 @@
     <th>Select business screen</th>
   </tr>
   <tr>
-    <td>
-    <img src="./readme/demo/Landing_screen.png" alt="Landing" width="200"/>
-    <img src="./readme/demo/Landing2.png" alt="Landing" width="200"/>
-    <img src="./readme/demo/Landing3.png" alt="Landing" width="200"/>
-    <img src="./readme/demo/Landing4.png" alt="Landing" width="200"/>
-    <img src="./readme/demo/Landing5.png" alt="Landing" width="200"/>
-    </td>
+    <td><img src="./readme/demo/Landing_screen.png" alt="Landing" width="200"/></td>
+    <td><img src="./readme/demo/Landing2.png" alt="Landing" width="200"/></td>
+    <td><img src="./readme/demo/Landing3.png" alt="Landing" width="200"/></td>
+    <td><img src="./readme/demo/Landing4.png" alt="Landing" width="200"/></td>
+    <td><img src="./readme/demo/Landing5.png" alt="Landing" width="200"/></td>
     <td><img src="./readme/demo/Login_.png" alt="Login" width="200"/></td>
     <td><img src="./readme/demo/Signup_.png" alt="Register" width="200"/></td>
     <td><img src="./readme/demo/Vendors.png" alt="Vendors" width="200"/></td>
-    <td>
-    <img src="./readme/demo/Single_vendor.png" alt="SingleVendor" width="200"/>
-    <img src="./readme/demo/SingleVendor2.png" alt="Landing" width="200"/>
-    </td>
+    <td><img src="./readme/demo/Single_vendor.png" alt="SingleVendor" width="200"/></td>
+    <td><img src="./readme/demo/SingleVendor2.png" alt="Landing" width="200"/></td>
     <td><img src="./readme/demo/BusinessSelect.png" alt="Landing" width="200"/></td>
   </tr>
 </table>
@@ -120,7 +120,15 @@
 
 ###  Efficient AI Deployment: Unleashing the Potential with AWS Integration:
 
-- The website is currently hosted on AWS infrastructure, ensuring reliability and scalability through services like EC2.
+#### The website is currently hosted on AWS infrastructure, ensuring reliability and scalability through services like EC2:
+- install and configure mysql:
+Installed mysql server on the instance and create a dedicated user for the application.
+-  Install go runtime:
+Installed go runtime necessary to run the backend project.
+-  Install and configure nginx:
+Installed and configured nginx as the reverse proxy listening at port 80 and proxying traffic to the backend running on port 8080
+
+<img src="./readme/demo/Postman-aws.png">
 
 <br><br>
 
