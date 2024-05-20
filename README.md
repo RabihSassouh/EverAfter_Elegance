@@ -36,6 +36,7 @@
 
 - This project uses the GoLang programming language (https://golang.org/). GoLang is a statically typed, compiled programming language known for its simplicity and performance.
 - For the frontend development, the project utilizes React.js (https://reactjs.org/), a popular JavaScript library for building user interfaces, combined with TypeScript (https://www.typescriptlang.org/) for type safety and improved developer experience.
+- Additionally, our project leverages Three.js (https://threejs.org/) for integrating captivating 3D models into the user experience. With Three.js, users can interactively explore and evaluate vendors' products and services, enhancing their decision-making process with engaging visual content.
 - Tailwind CSS (https://tailwindcss.com/) is used for styling the application. Tailwind is a utility-first CSS framework that allows for rapid UI development with low-level utility classes.
 - For persistent storage (database), the app uses MySQL (https://www.mysql.com/), a widely-used relational database management system that ensures reliable and efficient data management.
 - To enhance user engagement, our website incorporates the cutting-edge OpenAI endpoint, leveraging the capabilities of the GPT-3.5-turbo model. This AI-driven feature provides users with intelligent and personalized assistance for wedding-related questions, offering support to couples and business owners alike.
