@@ -99,7 +99,7 @@
 
 ### 3d Screens
 
-[![Video](https://youtu.be/10Yg8i29BLU)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID_HERE)
+[![Video](https://youtu.be/10Yg8i29BLU)](https://youtu.be/10Yg8i29BLU)
 
    <!-- <img src="./readme/demo/3d-venue.mp4"> -->
 <br><br>
