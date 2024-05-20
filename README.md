@@ -76,9 +76,25 @@
 
 ### User Screens
 
-| Landing screen | Landing2 screen | Landing3 screen | Landing4 screen | Landing5 screen | Login screen | Register screen | Vendors screen | SingleVendor Screen | SingleVendor2 Screen | Select business screen | Wedding invitation1 screen | Wedding invitation2 screen | Wedding invitation3 screen | Wedding invitation4 screen |
+| Landing screen | Landing2 screen | Landing3 screen |
 | ---| ---| ---|
-| ![Landing](./readme/demo/Landing_screen.png) | ![Landing2](./readme/demo/Landing2.png) | ![Landing3](./readme/demo/Landing3.png) | ![Landing4](./readme/demo/Landing4.png) | ![Landing5](./readme/demo/Landing5.png) | ![Login](./readme/demo/Login_.png) | ![Register](./readme/demo/Signup_.png) | ![Vendors](./readme/demo/Vendors.png) |![Singlevendor](./readme/demo/Single_vendor.png) | ![SingleVendor2](./readme/demo/SingleVendor2.png) | ![Select business](./readme/demo/BusinessSelect.png) | ![Wedding invitation1](./readme/demo/weddingInvitation1.png) | ![Wedding invitation2](./readme/demo/weddingInvitation2.png) | ![Wedding invitation3](./readme/demo/weddingInvitation3.png) | ![Wedding invitation4](./readme/demo/weddingInvitation4.png) |
+| ![Landing](./readme/demo/Landing_screen.png) | ![Landing2](./readme/demo/Landing2.png) | ![Landing3](./readme/demo/Landing3.png) |
+
+| Landing4 screen | Landing5 screen | Login screen |
+| ---| ---| ---|
+| ![Landing4](./readme/demo/Landing4.png) | ![Landing5](./readme/demo/Landing5.png) | ![Login](./readme/demo/Login_.png) |
+
+| Register screen | Vendors screen | SingleVendor Screen |
+| ---| ---| ---|
+| ![Register](./readme/demo/Signup_.png) | ![Vendors](./readme/demo/Vendors.png) |![Singlevendor](./readme/demo/Single_vendor.png) |
+
+| SingleVendor2 Screen | Select business screen | Wedding invitation1 screen |
+| ---| ---| ---|
+| ![SingleVendor2](./readme/demo/SingleVendor2.png) | ![Select business](./readme/demo/BusinessSelect.png) | ![Wedding invitation1](./readme/demo/weddingInvitation1.png) |
+
+| Wedding invitation2 screen | Wedding invitation3 screen | Wedding invitation4 screen |
+| ---| ---| ---|
+| ![Wedding invitation2](./readme/demo/weddingInvitation2.png) | ![Wedding invitation3](./readme/demo/weddingInvitation3.png) | ![Wedding invitation4](./readme/demo/weddingInvitation4.png) |
   
   <!-- <tr>
     <td><img src="./readme/demo/Landing_screen.png" alt="Landing" width="300" /></td>
