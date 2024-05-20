@@ -21,11 +21,10 @@ const Login: React.FC = () => {
         password: password,
       });
       const token = response.data.token;
-      if (token){
-      window.localStorage.setItem("token", token);
-      navigate("/");
-      }
-      else {
+      if (token) {
+        window.localStorage.setItem("token", token);
+        navigate("/");
+      } else {
         console.error("token not found in response:", response.data);
       }
     } catch (error) {
@@ -59,9 +58,12 @@ const Login: React.FC = () => {
             </div>
             <form onSubmit={handleLogin} className="space-y-4">
               <div>
-                <p className="flex justify-left font-poppins text[#494949]">
+                <label
+                  htmlFor="email"
+                  className="flex justify-left font-poppins text[#494949]"
+                >
                   Email
-                </p>
+                </label>
                 <input
                   id="email"
                   name="email"
@@ -73,9 +75,12 @@ const Login: React.FC = () => {
                 />
               </div>
               <div>
-                <p className="flex justify-left font-poppins text[#494949]">
+                <label
+                  htmlFor="password"
+                  className="flex justify-left font-poppins text[#494949]"
+                >
                   Password
-                </p>
+                </label>
                 <input
                   id="password"
                   name="password"
@@ -92,7 +97,10 @@ const Login: React.FC = () => {
                   Forgot Password?
                 </Link>
               </div>
-              <button className=" bg-primary text-white font-poppins font-medium w-full p-2 rounded-lg hover:bg-secondary">
+              <button
+                data-testid="login-button"
+                className=" bg-primary text-white font-poppins font-medium w-full p-2 rounded-lg hover:bg-secondary"
+              >
                 Login
               </button>
             </form>
