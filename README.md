@@ -89,17 +89,17 @@
     <th>Select business screen</th>
   </tr>
   <tr>
-    <td><img src="./readme/demo/Landing_screen.png" alt="Landing" width="350" height="300"/></td>
-    <td><img src="./readme/demo/Landing2.png" alt="Landing" width="350" height="300"/></td>
-    <td><img src="./readme/demo/Landing3.png" alt="Landing" width="350" height="300"/></td>
-    <td><img src="./readme/demo/Landing4.png" alt="Landing" width="350" height="300"/></td>
-    <td><img src="./readme/demo/Landing5.png" alt="Landing" width="350" height="300"/></td>
-    <td><img src="./readme/demo/Login_.png" alt="Login" width="350" height="300"/></td>
-    <td><img src="./readme/demo/Signup_.png" alt="Register" width="350" height="300"/></td>
-    <td><img src="./readme/demo/Vendors.png" alt="Vendors" width="350" height="300"/></td>
-    <td><img src="./readme/demo/Single_vendor.png" alt="SingleVendor" width="350" height="300"/></td>
-    <td><img src="./readme/demo/SingleVendor2.png" alt="Landing" width="350" height="300"/></td>
-    <td><img src="./readme/demo/BusinessSelect.png" alt="Landing" width="350" height="300"/></td>
+    <td><img src="./readme/demo/Landing_screen.png" alt="Landing" width="350" /></td>
+    <td><img src="./readme/demo/Landing2.png" alt="Landing" width="350" /></td>
+    <td><img src="./readme/demo/Landing3.png" alt="Landing" width="350" /></td>
+    <td><img src="./readme/demo/Landing4.png" alt="Landing" width="350" /></td>
+    <td><img src="./readme/demo/Landing5.png" alt="Landing" width="350" /></td>
+    <td><img src="./readme/demo/Login_.png" alt="Login" width="350" /></td>
+    <td><img src="./readme/demo/Signup_.png" alt="Register" width="350" /></td>
+    <td><img src="./readme/demo/Vendors.png" alt="Vendors" width="350" /></td>
+    <td><img src="./readme/demo/Single_vendor.png" alt="SingleVendor" width="350"/></td>
+    <td><img src="./readme/demo/SingleVendor2.png" alt="Landing" width="350" /></td>
+    <td><img src="./readme/demo/BusinessSelect.png" alt="Landing" width="350" /></td>
   </tr>
 </table>
 
@@ -107,8 +107,9 @@
 
 ### 3d Screens
 
-   <img src="./readme/demo/3d-dress.mp4">
-   <img src="./readme/demo/3d-venue.mp4">
+[![Video](https://youtu.be/10Yg8i29BLU)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID_HERE)
+
+   <!-- <img src="./readme/demo/3d-venue.mp4"> -->
 <br><br>
 <!-- Prompt Engineering -->
 <img src="./readme/title7.svg"/>
