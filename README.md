@@ -76,19 +76,11 @@
 
 ### User Screens
 
-  <tr>
-    <th>Landing screen</th>
-    <th>Landing screen</th>
-    <th>Landing screen</th>
-    <th>Landing screen</th>
-    <th>Landing screen</th>
-    <th>Login screen</th>
-    <th>Register screen</th>
-    <th>Vendors screen</th>
-    <th>Single vendors screen</th>
-    <th>Select business screen</th>
-  </tr>
-  <tr>
+| Landing screen | Landing2 screen | Landing3 screen | Landing4 screen | Landing5 screen | Login screen | Register screen | Vendors screen | SingleVendor Screen | SingleVendor2 Screen | Select business screen |
+| ---| ---| ---|
+| ![Landing](./readme/demo/Landing_screen.png) | ![Landing2](./readme/demo/Landing2.png) | ![Landing3](./readme/demo/Landing3.png) | ![Landing4](./readme/demo/Landing4.png) | ![Landing5](./readme/demo/Landing5.png) | ![Login](./readme/demo/Login_.png) | ![Register](./readme/demo/Signup_.png) | ![Vendors](./readme/demo/Vendors.png) |![Singlevendor](./readme/demo/Single_vendor.png) | ![SingleVendor2](./readme/demo/SingleVendor2.png) | ![Select business](./readme/demo/BusinessSelect.png) |
+  
+  <!-- <tr>
     <td><img src="./readme/demo/Landing_screen.png" alt="Landing" width="300" /></td>
     <td><img src="./readme/demo/Landing2.png" alt="Landing" width="300" /></td>
     <td><img src="./readme/demo/Landing3.png" alt="Landing" width="300" /></td>
@@ -100,7 +92,7 @@
     <td><img src="./readme/demo/Single_vendor.png" alt="SingleVendor" width="300"/></td>
     <td><img src="./readme/demo/SingleVendor2.png" alt="Landing" width="300" /></td>
     <td><img src="./readme/demo/BusinessSelect.png" alt="Landing" width="300" /></td>
-  </tr>
+  </tr> -->
 
 
 <br><br>
