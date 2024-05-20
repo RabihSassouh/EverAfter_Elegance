@@ -141,10 +141,21 @@ Installed and configured nginx as the reverse proxy listening at port 80 and pro
 
 ###  Precision in Development: Harnessing the Power of Unit Testing:
 
-- This project employs rigorous unit testing methodologies to ensure the reliability and accuracy of code components. By systematically evaluating individual units of the software, we guarantee a robust foundation, identifying and addressing potential issues early in the development process.
+#### Login Component Test
+
+This test checks whether the login form renders correctly and handles login functionality properly.
+
+##### Test Setup
+
+This test is written using Jest and @testing-library/react. Make sure to have these dependencies installed in your project.
+
+##### Running the Test
+
+To run the test, execute the following command in your terminal:
+
+npm test
 
 <br><br>
-
 
 <!-- How to run -->
 <img src="./readme/title10.svg"/>
