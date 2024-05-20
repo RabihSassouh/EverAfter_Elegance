@@ -111,7 +111,9 @@
 
 ###  Mastering AI Interaction: Unlocking the Potential of Prompt Engineering:
 
-- This project utilizes advanced prompt engineering techniques to optimize interactions with AI models. By skillfully crafting input instructions, we enhance the AI's ability to answer wedding-related questions and assist both couples and business owners. This AI-driven feature is designed to improve user experience and provide personalized support throughout the wedding planning process.
+- At EverAfter Elegance, we prioritize intelligent Prompt Engineering powered by OpenAI's cutting-edge natural language processing technology. This approach lies at the core of our commitment to delivering dynamic and contextually relevant interactions for our users.
+- Our journey begins by engaging users with a tailored questionnaire designed to capture their preferences and requirements. As users interact with these questions, our system analyzes their responses to extract key phrases and words that are indicative of their needs.
+- The extracted keywords serve as the foundation for our meticulously crafted prompts. By skillfully integrating these keywords, we ensure that our prompts are not only engaging but also highly relevant to each user's unique situation.
 
 <br><br>
 
