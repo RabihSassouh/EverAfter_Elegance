@@ -89,22 +89,17 @@
     <th>Select business screen</th>
   </tr>
   <tr>
-    <td><img src="./readme/demo/Landing_screen.png" alt="Landing" width="350" /></td>
-    <td><img src="./readme/demo/Landing2.png" alt="Landing" width="350" /></td>
-    <br><br>
-    <td><img src="./readme/demo/Landing3.png" alt="Landing" width="350" /></td>
-    <td><img src="./readme/demo/Landing4.png" alt="Landing" width="350" /></td>
-    <br><br>
-    <td><img src="./readme/demo/Landing5.png" alt="Landing" width="350" /></td>
-    <td><img src="./readme/demo/Login_.png" alt="Login" width="350" /></td>
-    <br><br>
-    <td><img src="./readme/demo/Signup_.png" alt="Register" width="350" /></td>
-    <td><img src="./readme/demo/Vendors.png" alt="Vendors" width="350" /></td>
-    <br><br>
-    <td><img src="./readme/demo/Single_vendor.png" alt="SingleVendor" width="350"/></td>
-    <td><img src="./readme/demo/SingleVendor2.png" alt="Landing" width="350" /></td>
-    <br><br>
-    <td><img src="./readme/demo/BusinessSelect.png" alt="Landing" width="350" /></td>
+    <td><img src="./readme/demo/Landing_screen.png" alt="Landing" width="300" /></td>
+    <td><img src="./readme/demo/Landing2.png" alt="Landing" width="300" /></td>
+    <td><img src="./readme/demo/Landing3.png" alt="Landing" width="300" /></td>
+    <td><img src="./readme/demo/Landing4.png" alt="Landing" width="300" /></td>
+    <td><img src="./readme/demo/Landing5.png" alt="Landing" width="300" /></td>
+    <td><img src="./readme/demo/Login_.png" alt="Login" width="300" /></td>
+    <td><img src="./readme/demo/Signup_.png" alt="Register" width="300" /></td>
+    <td><img src="./readme/demo/Vendors.png" alt="Vendors" width="300" /></td>
+    <td><img src="./readme/demo/Single_vendor.png" alt="SingleVendor" width="300"/></td>
+    <td><img src="./readme/demo/SingleVendor2.png" alt="Landing" width="300" /></td>
+    <td><img src="./readme/demo/BusinessSelect.png" alt="Landing" width="300" /></td>
   </tr>
 
 
