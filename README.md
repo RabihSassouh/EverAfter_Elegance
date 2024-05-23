@@ -79,35 +79,47 @@
 
 ### User Screens
 
-| Landing screen | Landing screen2 | Landing screen3 |
-| ---| ---| ---|
-| ![Landing](./readme/demo/Landing_screen.png) | ![Landing2](./readme/demo/Landing2.png) | ![Landing3](./readme/demo/Landing3.png) |
+| Landing screen1 | Landing screen2 |
+| ---| ---|
+| ![Landing](./readme/demo/Landing_screen.png) | ![Landing2](./readme/demo/Landing2.png) |
 
-| Landing screen4 | Landing screen5 | Login screen |
-| ---| ---| ---|
-| ![Landing4](./readme/demo/Landing4.png) | ![Landing5](./readme/demo/Landing5.png) | ![Login](./readme/demo/Login_.png) |
+| Landing screen3 | Landing screen4 |
+| ---| ---|
+| ![Landing3](./readme/demo/Landing3.png) | ![Landing4](./readme/demo/Landing4.png) |
 
-| Register screen | Vendors screen | SingleVendor Screen1 |
-| ---| ---| ---|
-| ![Register](./readme/demo/Signup_.png) | ![Vendors](./readme/demo/Vendors.png) |![Singlevendor](./readme/demo/Single_vendor.png) |
+| Landing screen5 | Login screen |
+| ---| ---|
+| ![Landing5](./readme/demo/Landing5.png) | ![Login](./readme/demo/Login_.png) |
 
-| SingleVendor Screen2 | Select business screen | Wedding invitation screen1 |
-| ---| ---| ---|
-| ![SingleVendor2](./readme/demo/SingleVendor2.png) | ![Select business](./readme/demo/BusinessSelect.png) | ![Wedding invitation1](./readme/demo/weddingInvitation1.png) |
+| Register screen | Vendors screen |
+| ---| ---|
+| ![Register](./readme/demo/Signup_.png) | ![Vendors](./readme/demo/Vendors.png) |
 
-| Wedding invitation screen2 | Wedding invitation screen3 | Wedding invitation screen4 |
-| ---| ---| ---|
-| ![Wedding invitation2](./readme/demo/weddingInvitation2.png) | ![Wedding invitation3](./readme/demo/weddingInvitation3.png) | ![Wedding invitation4](./readme/demo/weddingInvitation4.png) |
+| SingleVendor Screen1 | SingleVendor Screen2 |
+| ---| ---|
+| ![Singlevendor](./readme/demo/Single_vendor.png) | ![SingleVendor2](./readme/demo/SingleVendor2.png) |
+
+| Select business screen | Wedding invitation screen1 |
+| ---| ---|
+| ![Select business](./readme/demo/BusinessSelect.png) | ![Wedding invitation1](./readme/demo/weddingInvitation1.png) |
+
+| Wedding invitation screen2 | Wedding invitation screen3 |
+| ---| ---|
+| ![Wedding invitation2](./readme/demo/weddingInvitation2.png) | ![Wedding invitation3](./readme/demo/weddingInvitation3.png) |
+
+| Wedding invitation screen4 |
+| ---|
+| ![Wedding invitation4](./readme/demo/weddingInvitation4.png) |
   
 <br><br>
 
 ### 3d Screens
 | 3D dress screen |
-| -|
+| ---|
 | [![Video](https://i.ytimg.com/vi/10Yg8i29BLU/hqdefault.jpg)](https://youtu.be/10Yg8i29BLU) |
 
 | 3D venue screen |
-| -|
+| ---|
 | [![Video](https://i.ytimg.com/vi/JXEENU4ttRQ/hqdefault.jpg)](https://www.youtube.com/watch?v=JXEENU4ttRQ) |
 
    <!-- <img src="./readme/demo/3d-venue.mp4"> -->
