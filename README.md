@@ -54,10 +54,10 @@
 
 ### Mockups
 | Home screen | SingleVendor Screen |
-| ---| ---|
+| --| --|
 | ![Landing](./readme/demo/Homepage.png) | ![Singlevendor](./readme/demo/Singlevendor.png) |
-| WeddingInvitation Screen |
-| ---| ---|
+| WeddingInvitation Screen | CoupleProfile Screen |
+| --| --|
 | ![WeddingInvitaionPage](./readme/demo/Weddingpage.png) | ![CoupleProfile](./readme/demo/couplesprofile.png) |
 
 <!-- | ![Login](./readme/demo/Login.png) | ![Signup](./readme/demo/Signup.png) | ![SignupStep1](./readme/demo/Signup-1.png) | ![ChooseBusiness](./readme/demo/Choosebusinesscategory.png)  -->
