@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, MessageList, Message, MessageInput, MessagePayload, MessageType, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 import { FaCommentAlt, FaTimes } from 'react-icons/fa';
+const API_key = import.meta.env.VITE_API_KEY;
 
 type MessageDirection = "incoming" | "outgoing" | 0 | 1;
 
@@ -15,7 +16,6 @@ interface MessageModel {
     payload?: MessagePayload;
 }
 
-const API_key = "sk-proj-g0FQMKiJXvgCnXvwe7RpT3BlbkFJoVsuqzKXkArwQjvRD1Hw";
 
 const Ai: React.FC = () => {
     const [typing, setTyping] = useState(false);
